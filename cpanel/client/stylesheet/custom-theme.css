@@ -1,0 +1,201 @@
+.box {
+  background-color: transparent;
+}
+
+.panel-body {
+  padding-top: 15px;
+  background-color: rgba(2555, 255, 255, .3);
+}
+
+/* ---------------------------------
+   Particle background (use package)
+   --------------------------------- */
+#particles {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: -2;
+  /*background-image: url('images/labo.png');*/
+  /*background-repeat: no-repeat;*/
+}
+
+/* ------------------
+   Logo for Loginform
+   ------------------ */
+.iconmelon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: block;
+  fill: #525151;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+}
+
+/* Add asterisk (*) after the label for required fields */
+[data-required] label:after {
+  content: '*';
+  color: red;
+}
+
+/* SignIn Footer */
+.signIn-footer {
+  color: #444;
+  /*border-top: 1px solid #d2d6de;*/
+  text-align: center;
+}
+
+/* Clock on Layout */
+#clock {
+  font-size: 14px;
+  padding: 5px 0px;
+  padding-right: 40px;
+  margin-bottom: 0px;
+  color: white
+}
+
+/* Custom Error Message error */
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: rgba(217, 92, 92, 0.95);
+}
+
+/* Meteor status */
+.meteor-status {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Selectize for input-sm */
+.selectize-input {
+  min-height: 25px;
+  height: 30px;
+  padding: 4px 12px;
+  border-radius: 0px;
+}
+
+.selectize-dropdown .active {
+  background-color: #337ab7;
+  color: #ffffff;
+}
+
+.selectize-input.dropdown-active {
+  border-radius: 0px;
+}
+
+/* NotFound Page */
+.not-found > h1, h2 {
+  text-transform: uppercase;
+  /*margin: 6px 0;*/
+}
+
+.not-found > h1 {
+  font-weight: bold;
+  font-size: 100px;
+  color: #44A2E2;
+  line-height: 80px;
+}
+
+.not-found > h2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 30px;
+}
+
+/* Button Action*/
+.btn-action {
+  background-color: #44A2E2;
+  color: #FEFEFE !important;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 10px 30px;
+}
+
+.btn-action:hover {
+  background-color: #458CBD;
+}
+
+/* Alertify Header Font*/
+.alertify .ajs-header {
+  font-size: 17px;
+}
+
+/*Login Box*/
+/*.login-box {*/
+/*-webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.50);*/
+/*-moz-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.50);*/
+/*box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.50);*/
+/*}*/
+
+.img-circle {
+  height: 35px;
+  width: 35px;
+}
+
+/* Paginate */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+/* Button */
+.btn.btn-flat {
+  text-transform: none;
+}
+
+/* Fix table align */
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+  padding: 5px;
+  vertical-align: baseline;
+}
+
+/* Date time picker */
+.daterangepicker .ranges li.active, .daterangepicker .ranges li:hover {
+  background: #03a9f4;
+  border: 1px solid #03a9f4;
+}
+
+.daterangepicker .ranges li {
+  color: #03a9f4;
+  margin-bottom: 5px;
+  border-radius: 0px;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+/* Mutiselect Option */
+option {
+  padding: 5px 5px 5px;
+}
+
+small, .small {
+  color: #FFFFFF;
+}
+
+li > h3 {
+  color: #FFFFFF;
+}
+
+/* Form Footer
+-----------------------*/
+.form-footer {
+  background-color: #fff;
+  padding: 19px 0px 3px;
+  /*border-top: 1px solid #e5e5e5;*/
+  border-radius: 0 0 6px 6px;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-height: 43px;
+  text-align: right;
+}

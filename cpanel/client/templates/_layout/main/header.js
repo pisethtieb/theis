@@ -1,7 +1,12 @@
 /**
  * Helper
  */
-Template.headerLayout.helpers({
+Template._sidebar.helpers({
+    sidebar: function () {
+        var currentModule = Session.get('currentModule');
+        // var menu = s.decapitalize(currentModule);
+        return `${currentModule}_sidebar`;
+    },
     navbar: function () {
         var currentModule = Session.get('currentModule');
         var currentBranch = Session.get('currentBranch');
@@ -10,7 +15,7 @@ Template.headerLayout.helpers({
         }
         var bar = s.decapitalize(currentModule);
 
-        return {show: true, template: {left: bar + '_navbar', right: bar + '_navbarRight'}};
+        return {show: true, template: {left: bar + '_sidebar', right: bar + '_navbarRight'}};
     },
     currentBranch: function () {
         var currentModule = Session.get('currentModule');

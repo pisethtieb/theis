@@ -1,0 +1,172 @@
+.dropdown .dropdown-menu {
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+}
+
+.profile-info {
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 15px;
+  text-align: center;
+}
+
+.profile-info .username {
+  font-size: 1.8em;
+}
+
+.btn-user-action:not(.btn-link):not(.btn-flat) {
+  /*background-color: transparent;*/
+  /*color: rgba(0, 0, 0, 0.84);*/
+  background-color: #F0F0F0;
+  border-color: #EAEAEA;
+}
+
+.btn-user-action:hover {
+  background-color: #EAEAEA;
+}
+
+.profile-img {
+  width: 150px;
+  margin: auto;
+  height: auto;
+}
+
+img.profile-img {
+  border-radius: 50%;
+  padding-top: 15px;
+
+}
+
+.image-header {
+  width: 20px;
+  height: auto;
+}
+
+#mainnav-shortcut {
+  max-height: 50px;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  #mainnav-shortcut {
+    /*-webkit-transition: all .15s;*/
+    /*transition: all .15s;*/
+  }
+
+
+}
+.sidebar-collapse #mainnav-shortcut li {
+  -webkit-transition: all .20s ease .10s;
+  transition: all .20s ease .10s;
+}
+@media (min-width: 1200px) {
+  #mainnav-shortcut .shortcut-grid i {
+    -webkit-transition: font-size .17s linear .15s;
+    transition: font-size .17s linear .15s;
+  }
+}
+
+#mainnav-shortcut .shortcut-grid {
+  display: table;
+  border: 0;
+  width: 100%;
+  height: auto;
+  color: #fff;
+}
+
+#mainnav-shortcut .shortcut-grid > i {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+#mainnav-shortcut ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#mainnav-shortcut li {
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.sidebar-collapse #mainnav-shortcut > ul > li {
+  width: 100%;
+  padding-bottom: 15px;
+
+}
+
+.sidebar-collapse #mainnav-shortcut {
+  max-height: 120px;
+  padding-top: 10px;
+}
+
+.sidebar-collapse #mainnav-shortcut .shortcut-grid {
+  padding-bottom: 15px;
+}
+
+.jumbotron h1 {
+  text-align: center;
+}
+
+.pad-top {
+  margin-top: 10px;
+}
+
+.page-heading {
+  padding: 15px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.page-heading h3 {
+  color: #49586e;
+  font-size: 25px;
+  font-weight: normal;
+  margin: 10px 0;
+  position: absolute;
+}
+
+.page-heading .breadcrumb {
+  padding: 0;
+  margin: 0;
+  background: none;
+  padding-top: 17px;
+  float: right;
+}
+
+.not-found {
+  margin-top: 10%;
+  padding-bottom: 15px;
+}
+
+.pad-bottom {
+  padding-bottom: 10px;
+}
+
+.centers {
+  text-align: center;
+}
+
+form{
+  padding-bottom: 10px;
+}
+
+.logo-sidebar{
+  width: 25px;
+  height: auto;
+}
+
+button a {
+  color: rgba(0, 0, 0, 0.84);
+}
+
+button a:hover {
+  color: rgba(0, 0, 0, 0.84);
+}

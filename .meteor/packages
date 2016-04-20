@@ -103,6 +103,8 @@ dburles:spacebars-tohtml
 raix:handlebar-helpers
 mpowaga:autoform-summernote
 #netanelgilad:bootstrap-material-datepicker
+trsdln:flyouts
+forwarder:autoform-wizard
 
 ### Date ###
 momentjs:moment
@@ -110,22 +112,25 @@ lbee:moment-helpers
 
 ### List View ###
 aldeed:tabular
+miro:json2html
 
 ### Modal, Alert ###
-mizzao:bootboxjs
-ovcharik:alertifyjs
+theara:alertifyjs
 czbaker:lightbox2
 themeteorchef:bert
 
 ### File ###
 cfs:standard-packages
 cfs:gridfs
-#yogiben:autoform-file
+yogiben:autoform-file
+peerlibrary:fs
+ostrio:meteor-root
 
 ### Reactive ###
 xamfoo:reactive-obj
 manuel:reactivearray
 frozeman:template-var
+peerlibrary:reactive-field
 
 ### Excel ###
 netanelgilad:excel
@@ -147,7 +152,7 @@ dalgard:viewmodel
 ### Others ###
 underscorestring:underscore.string
 erasaur:meteor-lodash
-digilord:sugarjs
+#digilord:sugarjs
 ecwyne:mathjs
 lepozepo:accounting
 numeral:numeral
@@ -179,3 +184,5 @@ theara:scrollup
 
 natestrauser:select2
 sergeyt:typeahead
+jackyqiu:meteor-jquery-nicescroll
+lookback:tooltips
