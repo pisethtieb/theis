@@ -1,0 +1,81 @@
+<template name="navbar">
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="{{pathFor 'cpanel.module'}}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><img class="image-header" src="../rabbit.png"></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><img class="image-header" src="../rabbit.png"> Rabbit System</span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <div class="navbar-custom-menu">
+
+      <ul class="nav navbar-nav">
+        <!-- Navbar right-->
+          <!--{{#if navbar.show}}-->
+        <!--{{> Template.dynamic template=navbar.template.navbar}}-->
+          <!--{{/if}}-->
+
+        <!--Sub is ready-->
+        <li class="{{isActiveRoute regex='cpanel.module'}}">
+          {{#if isSubReady "cpanel_branch"}}
+            {{#if currentBranch.show}}
+              <a href="{{pathFor 'cpanel.module'}}">
+                <i class="fa fa-sitemap"></i>
+                {{currentBranch.title}}
+              </a>
+            {{/if}}
+          {{else}}
+            <a>{{> iconLoading}}</a>
+          {{/if}}
+        </li>
+      <li class="dropdown user user-menu ">
+        {{#if role}}
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            {{#if currentUser.profile.photo}}
+              {{#each images}}
+                <img src="{{this.url}}" alt="" class="user-image"/>
+              {{/each}}
+            {{else}}
+              <img src="../images/avatar.png" class="user-image" alt="User Image"/>
+            {{/if}}
+            <span class="hidden-xs"> {{currentUser.profile.fullName}} <i class="fa fa-angle-down"></i></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right animated fadeInDown">
+            <li class="profile-img">
+              {{#if currentUser.profile.photo}}
+                {{#each images}}
+                  <img src="{{this.url}}" alt="" class="profile-img"/>
+                {{/each}}
+              {{else}}
+                <img src="../images/avatar.png" class="profile-img"
+                     alt="User Image"/>
+              {{/if}}
+            </li>
+            <li>
+              <div class="profile-info">
+                <h4 class="username">{{currentUser.profile.fullName}}</h4>
+                <p>Member since {{date}}</p>
+                <div class="btn-group margin-bottom-2x" role="group">
+                  <button type="button" class="btn btn-user-action show-user"><i
+                      class="fa fa-user"></i> Profile
+                  </button>
+                  <button type="button" class="btn btn-user-action js-logout"><i
+                      class="fa fa-sign-out"></i> Logout
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        {{/if}}
+        </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</template>

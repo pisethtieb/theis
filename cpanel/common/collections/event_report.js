@@ -9,6 +9,9 @@ Cpanel.Schema.EventReport = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.ListForReport.user();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         }
     },
@@ -19,6 +22,9 @@ Cpanel.Schema.EventReport = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.ListForReport.type();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         },
         optional: true
@@ -30,6 +36,9 @@ Cpanel.Schema.EventReport = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.ListForReport.module();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         },
         optional: true
@@ -41,6 +50,9 @@ Cpanel.Schema.EventReport = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.ListForReport.branch();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         },
         optional: true

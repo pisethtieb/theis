@@ -33,6 +33,9 @@ Cpanel.Schema.WelcomeConfig = new SimpleSchema({
                 value: function () {
                     return Meteor.isClient && Session.get('currentBranch');
                 }
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         }
     }

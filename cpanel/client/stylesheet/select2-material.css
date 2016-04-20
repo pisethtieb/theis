@@ -1,81 +1,117 @@
 /*! Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
-.select2-container--bootstrap {
-    display: block;
-    /*------------------------------------*\
+/*------------------------------------*\
             #COMMON STYLES
     \*------------------------------------*/
-    /**
-     * Search field in the Select2 dropdown.
-     */
-    /**
-     * No outline for all search fields - in the dropdown
-     * and inline in multi Select2s.
-     */
-    /**
-     * Adjust Select2's choices hover and selected styles to match
-     * Bootstrap 3's default dropdown styles.
-     *
-     * @see http://getbootstrap.com/components/#dropdowns
-     */
-    /**
-     * Clear the selection.
-     */
-    /**
-     * Address disabled Select2 styles.
-     *
-     * @see https://select2.github.io/examples.html#disabled
-     * @see http://getbootstrap.com/css/#forms-control-disabled
-     */
-    /*------------------------------------*\
-            #DROPDOWN
-    \*------------------------------------*/
-    /**
-     * Dropdown border color and box-shadow.
-     */
-    /**
-     * Limit the dropdown height.
-     */
-    /*------------------------------------*\
-            #SINGLE SELECT2
-    \*------------------------------------*/
-    /*------------------------------------*\
-        #MULTIPLE SELECT2
-    \*------------------------------------*/
-    /**
-     * Address Bootstrap control sizing classes
-     *
-     * 1. Reset Bootstrap defaults.
-     * 2. Adjust the dropdown arrow button icon position.
-     *
-     * @see http://getbootstrap.com/css/#forms-control-sizes
-     */
-    /* 1 */
-    /*------------------------------------*\
-        #RTL SUPPORT
-    \*------------------------------------*/
+/**
+ * Search field in the Select2 dropdown.
+ */
+/**
+ * No outline for all search fields - in the dropdown
+ * and inline in multi Select2s.
+ */
+/**
+ * Adjust Select2's choices hover and selected styles to match
+ * Bootstrap 3's default dropdown styles.
+ *
+ * @see http://getbootstrap.com/components/#dropdowns
+ */
+/**
+ * Clear the selection.
+ */
+/**
+ * Address disabled Select2 styles.
+ *
+ * @see https://select2.github.io/examples.html#disabled
+ * @see http://getbootstrap.com/css/#forms-control-disabled
+ */
+/*------------------------------------*\
+        #DROPDOWN
+\*------------------------------------*/
+/**
+ * Dropdown border color and box-shadow.
+ */
+/**
+ * Limit the dropdown height.
+ */
+/*------------------------------------*\
+        #SINGLE SELECT2
+\*------------------------------------*/
+/*------------------------------------*\
+    #MULTIPLE SELECT2
+\*------------------------------------*/
+/**
+ * Address Bootstrap control sizing classes
+ *
+ * 1. Reset Bootstrap defaults.
+ * 2. Adjust the dropdown arrow button icon position.
+ *
+ * @see http://getbootstrap.com/css/#forms-control-sizes
+ */
+/* 1 */
+/*------------------------------------*\
+    #RTL SUPPORT
+\*------------------------------------*/
+.select2-container{
+    z-index: 999999;
+}
+
+.select2-container--bootstrap {
+    display: block;
+    border: 0;
+    background-image: linear-gradient(#0097a7, #0097a7), linear-gradient(#d2d2d2, #d2d2d2);
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background 0s ease-out;
+}
+
+.select2-container--bootstrap:active {
+    /*outline: none;*/
+    /*background-image: linear-gradient(#009688, #009688), linear-gradient(#d2d2d2, #d2d2d2);*/
+    /*background-size: 100% 2px, 100% 1px;*/
+    /*box-shadow: none;*/
+    /*transition-duration: 0.3s;*/
+}
+
+.select2-container--bootstrap.select2-container--open {
+    outline: none;
+    background-image: linear-gradient(#009688, #009688), linear-gradient(#d2d2d2, #d2d2d2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
 }
 
 .select2-container--bootstrap .select2-selection {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #555555;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    outline: 0;
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    /*background-color: #fff;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 4px;*/
+    /*color: #555555;*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    /*outline: 0;*/
 }
 
 .select2-container--bootstrap .select2-search--dropdown .select2-search__field {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: #555555;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
+    /*background-color: #fff;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 4px;*/
+    /*color: #555555;*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    border: 0;
+    background-image: linear-gradient(#0097a7, #0097a7), linear-gradient(#d2d2d2, #d2d2d2);
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background 0s ease-out;
 }
 
 .select2-container--bootstrap .select2-search__field {
@@ -129,12 +165,12 @@
 }
 
 .select2-container--bootstrap .select2-results__option[aria-selected=true] {
-    background-color: #f5f5f5;
+    background-color: #DCDCDC;
     color: #262626;
 }
 
 .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
-    background-color: #337ab7;
+    background-color: #0097a7;
     color: #fff;
 }
 
@@ -175,18 +211,18 @@
     color: #777777;
     display: block;
     padding: 6px 12px;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.428571429;
     white-space: nowrap;
 }
 
 .select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    border-color: #66afe9;
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);*/
+    /*-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;*/
+    /*-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;*/
+    /*transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;*/
+    /*border-color: #66afe9;*/
 }
 
 .select2-container--bootstrap.select2-container--open {
@@ -251,9 +287,9 @@
 .select2-container--bootstrap .select2-dropdown {
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-    border-color: #66afe9;
+    border-color: #d2d2d2;
     overflow-x: hidden;
-    margin-top: -1px;
+    margin-top: 0px;
 }
 
 .select2-container--bootstrap .select2-dropdown--above {
@@ -304,7 +340,7 @@
     color: #999;
 }
 
-.select2-container--bootstrap .select2-selection--multiple {
+.select2-container--bootstrap .select2-selection--multiple--open {
     min-height: 34px;
     /**
      * Make Multi Select2's choices match Bootstrap 3's default button styles.
@@ -328,6 +364,7 @@
     width: 100%;
     text-overflow: ellipsis;
     white-space: nowrap;
+
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder {
@@ -340,17 +377,18 @@
     color: #555555;
     background: #fff;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 0px;
     cursor: default;
     float: left;
     margin: 5px 0 0 6px;
     padding: 0 6px;
+
 }
 
 .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
     background: transparent;
     padding: 0 12px;
-    height: 32px;
+    height: 34px;
     line-height: 1.428571429;
     margin-top: 0;
     min-width: 5em;
@@ -552,8 +590,8 @@
 
 .has-warning .select2-container--focus .select2-selection,
 .has-warning .select2-container--open .select2-selection {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;*/
     border-color: #66512c;
 }
 
@@ -567,14 +605,27 @@
 
 .has-error .select2-dropdown,
 .has-error .select2-selection {
-    border-color: #a94442;
+    /*border-color: #a94442;*/
+    border: 0;
+    background-image: linear-gradient(#f44336, #f44336), linear-gradient(#d2d2d2, #d2d2d2);
+    background-size: 0 2px, 100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom, center calc(100% - 1px);
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background 0s ease-out;
 }
 
-.has-error .select2-container--focus .select2-selection,
 .has-error .select2-container--open .select2-selection {
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
-    border-color: #843534;
+    /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;*/
+    /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;*/
+    /*border-color: #843534;*/
+    /*border-color: rgba(217, 92, 92, 0.95) !important;*/
+    outline: none;
+    background-image: linear-gradient(#f44336, #f44336), linear-gradient(#d2d2d2, #d2d2d2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
 }
 
 .has-error.select2-drop-active {

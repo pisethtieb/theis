@@ -13,6 +13,9 @@ Cpanel.Schema.Setting = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.List.branch();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         }
     },
@@ -22,6 +25,9 @@ Cpanel.Schema.Setting = new SimpleSchema({
             type: "select2",
             options: function () {
                 return Cpanel.List.currency();
+            },
+            select2Options: {
+                theme: "bootstrap"
             }
         }
     }
