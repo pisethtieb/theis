@@ -3,7 +3,7 @@
     <title>Rabbit Project</title>
 </head>
 
-<template name="mainLayout">
+<template name="MainLayout">
   {{#AdminLTE sidebarMini=true}}
     <!-- your html here -->
     <div class="wrapper">
@@ -11,21 +11,8 @@
       {{> navbar}}
       <!-- Begin page content -->
       <div class="content-wrapper">
-        <div class="page-heading">
-          <h3>
-            {{pageHeader}}
-            <small>Subtext for header</small>
-          </h3>
-          <ol class="breadcrumb">
-            {{#each breadcrumb}}
-              {{#if activeClass}}
-                <li class="{{activeClass}}">{{title}}</li>
-              {{else}}
-                <li><a href="{{url}}">{{title}}</a></li>
-              {{/if}}
-            {{/each}}
-          </ol>
-        </div>
+        <!-- Content Header (Page header with Breadcrum) -->
+        {{> _pageHeader}}
         <!-- Main content -->
         <section class="content">
           {{> Template.dynamic template=content}}

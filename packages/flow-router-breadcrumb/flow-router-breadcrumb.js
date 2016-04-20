@@ -1,4 +1,4 @@
-var Breadcrumb = {};
+Breadcrumb = {};
 
 // Register
 var data = {};
@@ -18,13 +18,14 @@ Breadcrumb.render = function (routeName) {
 
     // Gen route url
     var paramAndQuery = genParamAndQuery(getRouter.options.breadcrumb);
-    var url = FlowRouter.path(routeName, paramAndQuery.params, paramAndQuery.queryParams);
+    var url = FlowRouter.url(routeName, paramAndQuery.params, paramAndQuery.queryParams);
 
     // Push data
     dataArray.push({
-        url: url,
         title: getRouter.options.breadcrumb.title,
-        activeClass: 'active'
+        url: url,
+        icon: getRouter.options.breadcrumb.icon,
+        isActive: 'active'
     });
 
     // Check parent
@@ -41,13 +42,14 @@ var getParent = function (route) {
 
     // Gen route url
     var paramAndQuery = genParamAndQuery(getRouter.options.breadcrumb);
-    var url = FlowRouter.path(route, paramAndQuery.params, paramAndQuery.queryParams);
+    var url = FlowRouter.url(route, paramAndQuery.params, paramAndQuery.queryParams);
 
     // Push data
     dataArray.push({
-        url: url,
         title: getRouter.options.breadcrumb.title,
-        activeClass: ''
+        url: url,
+        icon: getRouter.options.breadcrumb.icon,
+        isActive: false
     });
 
     // Check parent parent

@@ -1,7 +1,7 @@
 // Declare state for server date time
 //var state = new ReactiveObj();
 
-Template.mainLayout.helpers({
+Template.MainLayout.helpers({
     appName: function () {
         var module = Session.get('currentModule');
         var branch = Session.get('currentBranch');

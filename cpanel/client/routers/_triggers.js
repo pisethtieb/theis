@@ -1,12 +1,11 @@
 FlowRouter.triggers.enter([
     function (context, redirect) {
-        var currentModule = Session.get('currentModule');
-        var currentBranch = Session.get('currentBranch');
-
+        let currentModule = Session.get('currentModule');
+        let currentBranch = Session.get('currentBranch');
         if (!Meteor.userId() || !currentModule || !currentBranch) {
-            FlowRouter.go('cpanel.welcome');
+            FlowRouter.go('cpanel.module');
         }
     }
 ], {
-    except: ["cpanel.welcome"]
+    except: ["cpanel.module","cpanel.register"]
 });

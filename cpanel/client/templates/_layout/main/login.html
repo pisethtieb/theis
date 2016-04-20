@@ -1,0 +1,17 @@
+<template name="LoginLayout">
+  {{#AdminLTE skin="login-page"}}
+    <!-- particles.js container -->
+    <!--<div id="particles-js"></div>-->
+    {{> Template.dynamic template=content}}
+    <!-- Alert -->
+    <!--{{> sAlert}}-->
+    <!-- Connection Status -->
+    {{> meteorStatus}}
+    <!--<h5 class="text-center text-gray">-->
+      <!--&copy; {{_footerInfo.copyright}}-->
+      <!--<a href="http://{{_footerInfo.website}}">{{_footerInfo.company}}.</a>-->
+      <!--&#9990; {{_footerInfo.tel}}-->
+    <!--</h5>-->
+
+  {{/AdminLTE}}
+</template>

@@ -13,6 +13,7 @@ rabbitRoutes.route('/customer', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'customer',
+        icon: 'user',
         parent: 'rabbit.home'
     }
 });

@@ -17,6 +17,7 @@ FlowRouter.route('/level1', {
     },
     breadcrumb: {
         title: 'Level 1',
+        icon: 'hom' // <i class="fa fa-home"></i>
     }
 });
 
@@ -69,11 +70,15 @@ FlowRouter.route('/level4/:level2Id/:level3Id', {
 
 <!--Render with custom-->
 <ol class="breadcrumb">
-    {{#each breadcrumb}}
-        {{#if activeClass}}
-            <li class="{{activeClass}}">{{title}}</li>
+    {{#each bc in breadcrumb}}
+        {{#if bc.isActive}}
+            <li class="{{bc.isActive}}">
+                {{#if bc.icon}}<i class="fa fa-{{bc.icon}}"></i> {{/if}}{{bc.title}}
+            </li>
         {{else}}
-            <li><a href="{{url}}">{{title}}</a></li>
+            <li>
+                <a href="{{bc.url}}">{{#if bc.icon}}<i class="fa fa-{{bc.icon}}"></i> {{/if}}{{bc.title}}</a>
+            </li>
         {{/if}}
     {{/each}}
 </ol>

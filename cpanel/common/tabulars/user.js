@@ -11,7 +11,7 @@ Cpanel.TabularTable.User = new Tabular.Table({
     ],
     order: [['1', 'desc']],
     columns: [
-        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.cpanel_userAction},
+        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.Cpanel_userAction},
         {data: "username", title: "User Name"},
         {
             data: "emails",

@@ -1,0 +1,152 @@
+<template name="CpanelModule">
+  {{#if currentUser}}
+    {{#if role}}
+      {{> CpanelModuleConfig}}
+    {{else}}
+      {{> CpanelModuleAccessDenied}}
+    {{/if}}
+  {{else}}
+    {{> CpanelModuleLogin}}
+  {{/if}}
+</template>
+
+<!--Login-->
+<template name="CpanelModuleLogin">
+  <div class="login-box">
+    <div class="login-box-body">
+      <!-- login-logo -->
+      <div class="login-logo">
+        <a href="{{pathFor 'cpanel.module'}}" class=""><b>Rabbit</b> Technology</a>
+      </div>
+      <h5 class="login-box-msg">Sign in to start your system !!!</h5>
+      {{#autoForm schema=Cpanel.Schema.WelcomeLogin id="CpanelModuleLogin"}}
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="username"}} has-error{{/if}}">
+          {{> afFieldInput name="username" placeholder="Username"}}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="username"}}
+            <span class="help-block">{{afFieldMessage name="username"}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="password"}} has-error{{/if}}">
+          {{> afFieldInput  type="password" name="password" placeholder="Password"}}
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="password"}}
+            <span class="help-block">{{afFieldMessage name="password"}}</span>
+          {{/if}}
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="glyphicon glyphicon-log-in"></span> Sign In
+            </button>
+          </div>
+        </div>
+      {{/autoForm}}
+      <a href="{{pathFor 'register'}}" class="text-center centers">Register a new account</a>
+    </div>
+  </div>
+</template>
+
+
+<!--Access Denied-->
+<template name="CpanelModuleAccessDenied">
+  <div class="not-found text-center">
+    <h1>403</h1>
+    <h2>Sorry, You don't have Permission.</h2>
+    <p>To access this application. Please contact administrator.</p>
+    <a href="{{pathFor 'cpanel.module'}}">
+      <div class="js-logout btn btn-primary">Log out</div>
+    </a>
+  </div>
+</template>
+
+<!--Config-->
+<template name="CpanelModuleConfig">
+  <div class="login-box">
+    <div class="login-box-body">
+      <!-- login-logo -->
+      <div class="login-logo">
+        <a href="{{pathFor 'cpanel.module'}}"><b>Rabbit</b> Technology</a>
+      </div>
+      <h5 class="login-box-msg">Hi <b>{{headerInfo}}!</b></h5>
+      {{#if templateSubsReady}}
+        {{#autoForm schema=Cpanel.Schema.WelcomeConfig id="CpanelModuleConfig" type="normal"}}
+          <div class="row">
+            <div class="col-xs-12">
+              {{> afQuickField name="module"}}
+              {{> afQuickField name="branch"}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              <button type="submit" class="btn btn-primary btn-block ">
+                <i class="fa fa-angle-double-right"></i> Go
+              </button>
+            </div>
+            <div class="col-xs-6">
+              <button type="button" class="btn btn-danger btn-block js-logout">
+                <span class="glyphicon glyphicon-log-out"></span> Sign Out
+              </button>
+            </div>
+          </div>
+        {{/autoForm}}
+
+      {{else}}
+        <div class="text-center">
+          {{> iconLoading}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<!--Register-->
+<template name="CpanelModuleRegister">
+  <div class="login-box">
+    <div class="login-box-body">
+      <!-- login-logo -->
+      <div class="login-logo">
+        <a href="{{pathFor 'cpanel.module'}}"><b>Rabbit</b> Technology</a>
+      </div>
+      <h5 class="login-box-msg">Register a new user !!!</h5>
+      {{#autoForm schema=Cpanel.Schema.WelcomeRegister id="CpanelModuleRegister"}}
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="username"}} has-error{{/if}}">
+          {{> afFieldInput name="username" placeholder="Username"}}
+          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="username"}}
+            <span class="help-block">{{afFieldMessage name="username"}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="email"}} has-error{{/if}}">
+          {{> afFieldInput name="email" placeholder="Email"}}
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="email"}}
+            <span class="help-block">{{afFieldMessage name="email"}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="password"}} has-error{{/if}}">
+          {{> afFieldInput  type="password" name="password" placeholder="Password"}}
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="password"}}
+            <span class="help-block">{{afFieldMessage name="password"}}</span>
+          {{/if}}
+        </div>
+        <div class="form-group has-feedback{{#if afFieldIsInvalid name="confirmPassword"}} has-error{{/if}}">
+          {{> afFieldInput  type="password" name="confirmPassword" placeholder="Confirm Password"}}
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          {{#if afFieldIsInvalid name="confirmPassword"}}
+            <span class="help-block">{{afFieldMessage name="confirmPassword"}}</span>
+          {{/if}}
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="glyphicon glyphicon-log-in"></span> Sign In
+            </button>
+          </div>
+        </div>
+      {{/autoForm}}
+      <a href="{{pathFor 'cpanel.module'}}" class="text-center pad-top">I already have an account</a></div>
+  </div>
+</template>

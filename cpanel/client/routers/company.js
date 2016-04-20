@@ -10,6 +10,6 @@ cpanelRoutes.route('/company', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Company',
-        parent: 'cpanel.welcome'
+        parent: 'cpanel.home'
     }
 });

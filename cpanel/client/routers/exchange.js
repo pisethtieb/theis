@@ -10,6 +10,6 @@ cpanelRoutes.route('/exchange', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Exchange',
-        parent: 'cpanel.welcome'
+        parent: 'cpanel.home'
     }
 });

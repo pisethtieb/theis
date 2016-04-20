@@ -8,7 +8,7 @@ Cpanel.TabularTable.Branch = new Tabular.Table({
     ],
     order: [['1', 'desc']],
     columns: [
-        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.cpanel_branchAction},
+        {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.Cpanel_branchAction},
         {
             data: "_id",
             title: "ID",

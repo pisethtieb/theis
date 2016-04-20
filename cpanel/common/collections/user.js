@@ -1,13 +1,4 @@
 /**
- * User profile
- */
-var UserProfile = new SimpleSchema({
-    fullName: {
-        type: String
-    }
-});
-
-/**
  * Schema
  */
 Cpanel.Schema.User = new SimpleSchema({
@@ -40,7 +31,21 @@ Cpanel.Schema.User = new SimpleSchema({
         }
     },
     profile: {
-        type: UserProfile
+        type: Object
+    },
+    'profile.fullName': {
+        type: String
+    },
+    'profile.photo': {
+        type: String,
+        autoform: {
+            afFieldInput: {
+                type: 'fileUpload',
+                collection: 'Files',
+                accept: 'image/*'
+            }
+        },
+        optional: true
     },
     roles: {
         type: [String],
@@ -62,12 +67,56 @@ Cpanel.Schema.User = new SimpleSchema({
             }
         }
     }
+});
 
+Cpanel.Schema.UserProfile = new SimpleSchema({
+    username: {
+        type: String,
+        label: 'Username',
+        unique: true,
+        min: 3
+    },
+    email: {
+        type: String,
+        label: 'Email',
+        unique: true,
+        regEx: SimpleSchema.RegEx.Email,
+        optional: true
+    },
+    profile: {
+        type: Object
+    },
+    'profile.name': {
+        type: String
+    }
+});
+
+Cpanel.Schema.UserPassword = new SimpleSchema({
+    oldPassword: {
+        type: String,
+        label: "Old password",
+        min: 6
+    },
+    newPassword: {
+        type: String,
+        label: "New password",
+        min: 6
+    },
+    newConfirmPassword: {
+        type: String,
+        label: "New confirm password",
+        min: 6,
+        custom: function () {
+            if (this.value !== this.field('newPassword').value) {
+                return "passwordMismatch";
+            }
+        }
+    }
 });
 
 /**
  * Errors message
  */
 SimpleSchema.messages({
-    "passwordMismatch": "Passwords don't match."
+    "passwordMismatch": "[label] don't match."
 });

@@ -7,6 +7,7 @@ cpanelRoutes.route('/home', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Home',
-        parent: 'cpanel.welcome'
+        icon: 'home'
+        // parent: 'cpanel.welcome'
     }
 });

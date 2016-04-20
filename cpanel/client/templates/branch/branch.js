@@ -1,77 +1,93 @@
 // Declare template
-var indexTpl = Template.cpanel_branch,
-    insertTpl = Template.cpanel_branchInsert,
-    updateTpl = Template.cpanel_branchUpdate,
-    showTpl = Template.cpanel_branchShow;
+var indexTpl = Template.Cpanel_branch,
+  newTpl = Template.Cpanel_branchNew,
+  editTpl = Template.Cpanel_branchEdit,
+  showTpl = Template.Cpanel_branchShow;
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Branch',
-        description: 'Description for this page'
-    });
-});
-
-indexTpl.onRendered(function () {
     // Create new  alertify
     createNewAlertify("branch", {size: 'lg'});
 });
 
 indexTpl.events({
-    'click .insert': function (e, t) {
-        alertify.branch(fa("plus", "Branch"), renderTemplate(insertTpl));
+    'click .js-create': function (e, t) {
+        alertify.branch(fa("plus", "Branch"), renderTemplate(newTpl));
     },
-    'click .update': function (e, t) {
-        var data = Cpanel.Collection.Branch.findOne(this._id);
-        alertify.branch(fa("pencil", "Branch"), renderTemplate(updateTpl, data));
+    'click .js-update': function (e, t) {
+        alertify.branch(fa("pencil", "Branch"), renderTemplate(editTpl, this));
     },
-    'click .remove': function (e, t) {
-        var id = this._id;
+    'click .js-destroy': function (e, t) {
+        destroyAction(
+          Cpanel.Collection.Branch,
+          {_id: this._id},
+          {title: 'Branch', item: this._id}
+        );
+    },
+    'click .js-display': function (e, t) {
+        alertify.alert(fa("eye", "Branch"), renderTemplate(showTpl, this).html);
+    }
+});
 
-        alertify.confirm(
-            fa("remove", "Branch"),
-            "Are you sure to delete [" + id + "]?",
-            function () {
-                Cpanel.Collection.Branch.remove(id, function (error) {
-                    if (error) {
-                        alertify.error(error.message);
-                    } else {
-                        alertify.success("Success");
-                    }
-                });
-            },
-            null);
-    },
-    'click .show': function (e, t) {
-        var data = Cpanel.Collection.Branch.findOne(this._id);
-        alertify.alert(fa("eye", "Branch"), renderTemplate(showTpl, data).html);
+// Edit
+editTpl.onCreated(function () {
+    let self = this;
+    self.autorun(function () {
+        self.subscribe('Cpanel.branch', {_id: self.data._id});
+    });
+});
+
+editTpl.helpers({
+    data: function () {
+        let data = Cpanel.Collection.Branch.findOne(this._id);
+        return data;
+    }
+});
+
+// Show
+showTpl.onCreated(function () {
+    let self = this;
+    self.autorun(function () {
+        self.subscribe('Cpanel.branch', {_id: self.data._id});
+    });
+});
+
+showTpl.helpers({
+    data: function () {
+        let data = Cpanel.Collection.Branch.findOne(this._id);
+        return data;
     }
 });
 
 // Hook
 AutoForm.hooks({
-    cpanel_branchInsert: {
-        before: {
-            insert: function (doc) {
-                doc._id = idGenerator.gen(Cpanel.Collection.Branch, 3);
-                return doc;
-            }
-        },
+    Cpanel_branchNew: {
         onSuccess: function (formType, result) {
-            alertify.success('Success');
+            Bert.alert({
+                message: 'Success',
+                type: 'success'
+            });
         },
         onError: function (formType, error) {
-            alertify.error(error.message);
+            Bert.alert({
+                message: error.message,
+                type: 'danger'
+            });
         }
     },
-    cpanel_branchUpdate: {
+    Cpanel_branchEdit: {
         onSuccess: function (formType, result) {
             alertify.branch().close();
-            alertify.success('Success');
+            Bert.alert({
+                message: 'Success',
+                type: 'success'
+            });
         },
         onError: function (formType, error) {
-            alertify.error(error.message);
+            Bert.alert({
+                message: error.message,
+                type: 'danger'
+            });
         }
     }
 });

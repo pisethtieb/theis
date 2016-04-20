@@ -1,6 +1,9 @@
 Layout = {
     main: function (regions) {
-        render('mainLayout', regions);
+        render('MainLayout', regions);
+    },
+    login: function (regions) {
+        render('LoginLayout', regions);
     },
     report: function (regions) {
         render('reportLayout', regions);

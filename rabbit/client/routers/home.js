@@ -6,7 +6,7 @@ rabbitRoutes.route('/home', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'Home'
-        //parent: 'Home'
+        title: 'Home',
+        icon: 'home'
     }
 });

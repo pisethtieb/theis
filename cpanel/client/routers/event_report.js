@@ -7,7 +7,7 @@ cpanelRoutes.route('/eventReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Event Report',
-        parent: 'cpanel.welcome'
+        parent: 'cpanel.home'
     }
 });
 

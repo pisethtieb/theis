@@ -1,31 +1,71 @@
 // Declare template
-var indexTpl = Template.cpanel_user,
-    insertTpl = Template.cpanel_userInsert,
-    updateTpl = Template.cpanel_userUpdate,
-    showTpl = Template.cpanel_userShow;
+let indexTpl = Template.Cpanel_user,
+    newTpl = Template.Cpanel_userNew,
+    editTpl = Template.Cpanel_userEdit,
+    showTpl = Template.Cpanel_userShow;
 
 // Index
 indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'User',
-        description: 'Description for this page'
-    });
-});
-
-indexTpl.onRendered(function () {
     // Create new  alertify
     createNewAlertify("user", {size: 'lg'});
 });
 
 indexTpl.events({
-    'click .insert': function (e, t) {
-        alertify.user(fa("plus", "User"), renderTemplate(insertTpl));
+    'click .js-new': function (e, t) {
+        alertify.user(fa("plus", "User"), renderTemplate(newTpl));
     },
-    'click .update': function (e, t) {
-        var id = this._id;
-        var data = Meteor.users.findOne(id);
+    'click .js-update': function (e, t) {
+        alertify.user(fa("pencil", "User"), renderTemplate(editTpl, this));
+    },
+    'click .js-destroy': function (e, t) {
+        let self = this;
 
+        alertify.confirm(
+            fa("remove", "User"),
+            "Are you sure to delete [" + self.username + "]?",
+            function () {
+                Meteor.call('userRemove', self._id, function (error, result) {
+                    if (error) {
+                        Bert.alert({
+                            message: error.message,
+                            type: 'danger'
+                        });
+                    } else {
+                        Bert.alert({
+                            message: 'Success',
+                            type: 'success'
+                        });
+                    }
+                });
+            },
+            null);
+    },
+    'click .js-display': function (e, t) {
+        alertify.alert(fa("eye", "User"), renderTemplate(showTpl, this).html);
+    }
+});
+
+// New
+newTpl.onCreated(function () {
+    let self = this;
+    self.autorun(function () {
+        self.subscribe('Cpanel.branch', {});
+    });
+});
+
+// Edit
+editTpl.onCreated(function () {
+    let self = this;
+    self.autorun(function () {
+        self.subscribe('Cpanel.branch', {});
+        self.subscribe('Cpanel.user', {_id: self.data._id});
+    });
+});
+
+editTpl.helpers({
+    data: function () {
+        let self = this;
+        let data = Meteor.users.findOne(self._id);
         data.password = 'the same';
         data.confirmPassword = 'the same';
 
@@ -33,101 +73,115 @@ indexTpl.events({
             data.email = data.emails[0].address;
         }
 
-        var roles = [];
-        var getGroup = Roles.getGroupsForUser(id);
+        let roles = [];
+        let getGroup = Roles.getGroupsForUser(self._id);
         _.each(getGroup, function (group) {
-            var getRole = Roles.getRolesForUser(id, group);
+            let getRole = Roles.getRolesForUser(self._id, group);
             _.each(getRole, function (role) {
                 roles.push(group + ':' + role);
             });
         });
-
         data.roles = roles;
 
-        alertify.user(fa("pencil", "User"), renderTemplate(updateTpl, data));
-    },
-    'click .remove': function (e, t) {
-        var id = this._id;
+        return data;
+    }
+});
 
-        alertify.confirm(
-            fa("remove", "User"),
-            "Are you sure to delete [" + this.username + "]?",
-            function () {
-                Meteor.call('userRemove', id, function (error, result) {
-                    if (error) {
-                        alertify.error(error.message);
-                    } else {
-                        alertify.success("Success");
-                    }
-                });
-            },
-            null);
-    },
-    'click .show': function (e, t) {
+// Show
+showTpl.onCreated(function () {
+    let self = this;
+    self.autorun(function () {
+        self.subscribe('Cpanel.user', {_id: self.data._id});
+    });
+});
+
+showTpl.helpers({
+    data: function () {
+        let self = this;
+        let data = Meteor.users.findOne(self._id);
+
         // Check email
-        if (typeof this.emails !== 'undefined') {
-            this.emails = this.emails[0].address;
+        if (typeof data.emails !== 'undefined') {
+            data.email = data.emails[0].address;
         } else {
-            this.emails = "";
-        }
-
-        // Check branch
-        if (_.isObject(this.profile.branch)) {
-            this.profile.branch = JSON.stringify(this.profile.branch);
-        } else {
-            this.profile.branch = "";
+            data.email = '';
         }
 
         // Check roles
-        if (_.isObject(this.roles)) {
-            this.roles = JSON.stringify(this.roles);
+        if (_.isObject(data.roles)) {
+            data.roles = JSON.stringify(data.roles);
         } else {
-            this.roles = "";
+            data.roles = '';
         }
 
-        alertify.alert(fa("eye", "User"), renderTemplate(showTpl, this).html);
+        // Check branch
+        if (_.isObject(data.rolesBranch)) {
+            data.rolesBranch = JSON.stringify(data.rolesBranch);
+        } else {
+            data.rolesBranch = '';
+        }
+
+        return data;
     }
 });
 
 // Hook
 AutoForm.hooks({
-    cpanel_userInsert: {
+    Cpanel_userNew: {
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
             this.event.preventDefault();
 
             Meteor.call('userInsert', insertDoc, function (error, result) {
                 if (error) {
-                    alertify.error(error.message);
+                    Bert.alert({
+                        message: error.message,
+                        type: 'danger'
+                    });
                 }
             });
 
             this.done();
         },
-        onSuccess: function (formType, error) {
-            alertify.success('Success');
+        onSuccess: function (formType, result) {
+            Bert.alert({
+                message: 'Success',
+                type: 'success'
+            });
         },
         onError: function (formType, error) {
-            alertify.error(error.message);
+            Bert.alert({
+                message: error.message,
+                type: 'danger'
+            });
         }
     },
-    cpanel_userUpdate: {
+    Cpanel_userEdit: {
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
             this.event.preventDefault();
 
             Meteor.call('userUpdate', currentDoc._id, insertDoc, function (error, result) {
                 if (error) {
-                    alertify.error(error.message);
+                    Bert.alert({
+                        message: error.message,
+                        type: 'danger'
+                    });
                 }
             });
 
             this.done();
         },
-        onSuccess: function (formType, error) {
+        onSuccess: function (formType, result) {
             alertify.user().close();
-            alertify.success('Success');
+            Bert.alert({
+                message: 'Success',
+                type: 'success'
+            });
         },
         onError: function (formType, error) {
-            alertify.error(error.message);
+            Bert.alert({
+                message: error.message,
+                type: 'danger'
+            });
         }
     }
 });

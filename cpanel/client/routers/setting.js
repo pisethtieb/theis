@@ -10,6 +10,6 @@ cpanelRoutes.route('/setting', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Setting',
-        parent: 'cpanel.welcome'
+        parent: 'cpanel.home'
     }
 });
