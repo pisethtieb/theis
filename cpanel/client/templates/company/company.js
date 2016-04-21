@@ -2,14 +2,6 @@
 var indexTpl = Template.cpanel_company,
     updateTpl = Template.cpanel_companyUpdate;
 
-// Index
-indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Company',
-        description: 'Description for this page'
-    });
-});
 
 indexTpl.onRendered(function () {
     // Create new  alertify

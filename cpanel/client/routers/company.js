@@ -1,5 +1,6 @@
 cpanelRoutes.route('/company', {
     name: 'cpanel.company',
+    title: 'Company',
     subscriptions: function (params, queryParams) {
         this.register('cpanel_company', Meteor.subscribe('cpanel_company'));
     },
@@ -10,6 +11,7 @@ cpanelRoutes.route('/company', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Company',
+        icon: 'building',
         parent: 'cpanel.home'
     }
 });

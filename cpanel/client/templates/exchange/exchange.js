@@ -4,15 +4,6 @@ var indexTpl = Template.cpanel_exchange,
     updateTpl = Template.cpanel_exchangeUpdate,
     showTpl = Template.cpanel_exchangeShow;
 
-// Index
-indexTpl.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Exchange',
-        description: 'Description for this page'
-    });
-});
-
 indexTpl.onRendered(function () {
     // Create new  alertify
     createNewAlertify("exchange", {size: 'lg'});

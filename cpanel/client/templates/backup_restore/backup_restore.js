@@ -7,14 +7,6 @@ var state = new ReactiveObj({
     branch: ''
 });
 
-Template.cpanel_backup.onCreated(function () {
-    // SEO
-    SEO.set({
-        title: 'Backup',
-        description: 'Description for this page'
-    });
-});
-
 Template.cpanel_backup.helpers({
     type: function () {
         let module = state.get('module');

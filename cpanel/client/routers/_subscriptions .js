@@ -1,6 +1,8 @@
 FlowRouter.subscriptions = function () {
     // User
     this.register('cpanel_user', Meteor.subscribe('cpanel_user'));
+    // User
+    this.register('Cpanel.currentUser', Meteor.subscribe('Cpanel.currentUser'));
     // Currency
     this.register('cpanel_currency', Meteor.subscribe('cpanel_currency'));
     // Setting

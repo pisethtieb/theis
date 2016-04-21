@@ -32,3 +32,8 @@ Template._sidebar.helpers({
         }
     }
 });
+Template._sidebar.events({
+    'click .js-logout': function (e, t) {
+        SignOut();
+    }
+});

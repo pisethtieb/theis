@@ -124,5 +124,34 @@ Meteor.methods({
         });
 
         return id;
+    },
+    'Capanel.userProfile': function (id, doc) {
+        check(id, String);
+        check(doc, Object);
+
+        // Update account
+        if (_.isEmpty(doc.email)) {
+            Meteor.users.update(id, {
+                $set: {
+                    username: doc.username,
+                    profile: doc.profile
+                }
+            });
+        } else {
+            Meteor.users.update(id, {
+                $set: {
+                    username: doc.username,
+                    emails: [
+                        {
+                            address: doc.email,
+                            verified: false
+                        }
+                    ],
+                    profile: doc.profile
+                }
+            });
+        }
+
+        return 'Success';
     }
 });

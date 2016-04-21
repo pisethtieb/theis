@@ -170,3 +170,6 @@ button a {
 button a:hover {
   color: rgba(0, 0, 0, 0.84);
 }
+select[multiple].form-control, select[multiple].form-control:focus, select[multiple].form-control.focus {
+  height: 108px;
+}

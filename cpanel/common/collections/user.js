@@ -86,7 +86,7 @@ Cpanel.Schema.UserProfile = new SimpleSchema({
     profile: {
         type: Object
     },
-    'profile.name': {
+    'profile.fullName': {
         type: String
     }
 });

@@ -1,5 +1,6 @@
 cpanelRoutes.route('/setting', {
     name: 'cpanel.setting',
+    title: 'Setting',
     subscriptions: function(params, queryParams) {
         this.register('cpanel_setting', Meteor.subscribe('cpanel_setting'));
     },
@@ -10,6 +11,7 @@ cpanelRoutes.route('/setting', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Setting',
+        icon: 'sliders',
         parent: 'cpanel.home'
     }
 });

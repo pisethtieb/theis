@@ -1,6 +1,6 @@
 Package.describe({
     name: 'theara:alertifyjs',
-    version: '1.6.6',
+    version: '1.6.7',
     // Brief, one-line summary of the package.
     summary: 'A javascript framework for developing pretty browser dialogs and notifications',
     // URL to the Git repository containing the source code for this package.
