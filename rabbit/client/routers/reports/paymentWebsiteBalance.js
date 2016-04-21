@@ -11,6 +11,7 @@ rabbitRoutes.route('/paymentWebsiteBalanceReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'paymentWebsiteBalance Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

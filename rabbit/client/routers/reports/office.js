@@ -17,6 +17,7 @@ rabbitRoutes.route('/officeReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'office Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

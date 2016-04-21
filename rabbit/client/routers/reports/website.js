@@ -16,6 +16,7 @@ rabbitRoutes.route('/websiteReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'website Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

@@ -1,0 +1,149 @@
+<template name="Rabbit_sidebar">
+  <li class="{{isActiveRoute name='rabbit.home'}}">
+    <a href="{{pathFor 'rabbit.home'}}">
+      <i class="fa fa-home"></i> <span>Home</span>
+    </a>
+  </li>
+  <li class="header">DATA</li>
+  <li class="{{isActiveRoute name='rabbit.customer'}}">
+    <a href="{{pathFor 'rabbit.customer'}}">
+      <i class="fa fa-users"></i> <span>Customer</span>
+    </a>
+  </li>
+  <li class="{{isActiveRoute name='rabbit.quotation'}}">
+    <a href="{{pathFor 'rabbit.quotation'}}">
+      <i class="fa fa-sticky-note-o"></i> <span>Quotation</span>
+    </a>
+  </li>
+  <li class="{{isActiveRoute name='rabbit.agent'}}">
+    <a href="{{pathFor 'rabbit.agent'}}">
+      <i class="fa fa-users"></i> <span>Agent</span>
+    </a>
+  </li>
+  <!--Reports-->
+  {{#if isInRole 'report' 'Rabbit'}}
+    <li class="header">REPORT</li>
+    <li class="treeview">
+      <a href="#">
+        <i class="fa fa-file-text-o"></i> <span>MIS Reports</span> <i class="fa fa-angle-left pull-right"></i>
+        <small class="label pull-right bg-yellow">{{getPublishedCount 'alertRenewMaintenance'}}</small>
+      </a>
+      <ul class="treeview-menu">
+        <li class="{{isActiveRoute name='rabbit.quotationReport'}}">
+          <a href="{{pathFor 'rabbit.quotationReport'}}">Quotation</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.agentReport'}}">
+          <a href="{{pathFor 'rabbit.agentReport'}}">Agent</a>
+        </li>
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header">Contract</li>
+        <li class="{{isActiveRoute name='rabbit.contractReport'}}">
+          <a href="{{pathFor 'rabbit.contractReport'}}">Contract</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.officeReport'}}">
+          <a href="{{pathFor 'rabbit.officeReport'}}">Office</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.maintenanceReport'}}">
+          <a href="{{pathFor 'rabbit.maintenanceReport'}}">Maintenance </a>
+        </li>
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header">Payment</li>
+        <li class="{{isActiveRoute name='rabbit.paymentOfficeReport'}}">
+          <a href="{{pathFor 'rabbit.paymentOfficeReport'}}">PaymentOffice</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.paymentMaintenanceReport'}}">
+          <a href="{{pathFor 'rabbit.paymentMaintenanceReport'}}">PaymentMaintenance</a>
+        </li>
+        <li class="dropdown-header">Outstanding</li>
+        <li class="{{isActiveRoute name='rabbit.paymentOfficeBalanceReport'}}">
+          <a href="{{pathFor 'rabbit.paymentOfficeBalanceReport'}}">OS PaymentOffice</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.paymentMaintenanceBalanceReport'}}">
+          <a href="{{pathFor 'rabbit.paymentMaintenanceBalanceReport'}}">Os PaymentMaintenance</a>
+        </li>
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header ">ReNew Maintenance</li>
+        <li class="{{isActiveRoute name='rabbit.renewMaintenanceReport' }} renewMaintenance">
+          <a href="{{pathFor 'rabbit.renewMaintenanceReport'}}">
+            <i class="fa fa-envelope"></i> <span>Renew
+            Maintenance</span>
+            <small class="label pull-right bg-yellow">{{getPublishedCount 'alertRenewMaintenance'}}</small>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="treeview">
+      <a href="#">
+        <i class="fa fa-file-text-o"></i> <span>Website Reports</span> <i class="fa fa-angle-left pull-right"></i>
+        <small class="label pull-right bg-yellow">{{getPublishedCount 'alertRenewService'}}</small>
+      </a>
+      <ul class="treeview-menu">
+        <li class="{{isActiveRoute name='rabbit.websiteReport'}}">
+          <a href="{{pathFor 'rabbit.websiteReport'}}">Website</a>
+        </li>
+        <li class="{{isActiveRoute name='rabbit.serviceReport'}}">
+          <a href="{{pathFor 'rabbit.serviceReport'}}">Service</a>
+        </li>
+
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header">Payment</li>
+        <li class="{{isActiveRoute name='rabbit.paymentWebsiteReport'}}">
+          <a href="{{pathFor 'rabbit.paymentWebsiteReport'}}">Payment</a>
+        </li>
+
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header">Outstanding</li>
+        <li class="{{isActiveRoute name='rabbit.paymentWebsiteBalanceReport'}}">
+          <a href="{{pathFor 'rabbit.paymentWebsiteBalanceReport'}}">Payment</a>
+        </li>
+        <!--<li class="{{isActiveRoute name='rabbit.serviceBalanceReport'}}">-->
+        <!--<a href="{{pathFor 'rabbit.serviceBalanceReport'}}">Service</a>-->
+        <!--</li>-->
+        <b>
+          <li role="separator" class="divider"></li>
+        </b>
+        <li class="dropdown-header">ReNew Service</li>
+        <!--<li class="{{isActiveRoute name='rabbit.renewServiceReport'}}">-->
+        <!--<a href="{{pathFor 'rabbit.renewServiceReport'}}">{{> service_alertEventMsg}} Service-->
+        <!--​ </a>-->
+        <!--</li>-->
+        <li class="{{isActiveRoute name='rabbit.renewServiceReport' }}">
+          <a href="{{pathFor 'rabbit.renewServiceReport'}}">
+            <i class="fa fa-envelope"></i> <span>Service</span>
+            <small class="label pull-right bg-yellow">{{getPublishedCount 'alertRenewService'}}</small>
+          </a>
+        </li>
+      </ul>
+    </li>
+  {{/if}}
+  <!--Settings-->
+  {{#if isInRole 'setting' 'Rabbit'}}
+    <li class="header">Setting</li>
+    <li class="{{isActiveRoute name='rabbit.product'}}">
+      <a href="{{pathFor 'rabbit.product'}}">
+        <i class="fa fa-cubes"></i> <span>Product</span>
+      </a>
+    </li>
+    <li class="{{isActiveRoute name='rabbit.contractor'}}">
+      <a href="{{pathFor 'rabbit.contractor'}}">
+        <i class="fa fa-users"></i> <span>Contractor</span>
+      </a>
+    </li>
+    <li class="{{isActiveRoute name='cpanel.exchange'}}">
+      <a href="{{pathFor 'cpanel.exchange'}}">
+        <i class="fa fa-money"></i> <span>Exchange</span>
+      </a>
+    </li>
+  {{/if}}
+</template>
+

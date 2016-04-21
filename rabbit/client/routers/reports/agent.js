@@ -4,6 +4,7 @@
 var subs = new SubsManager();
 rabbitRoutes.route('/agentReport', {
     name: 'rabbit.agentReport',
+    title: 'Agent Report',
     subscriptions: function (params, queryParams) {
         // agent
         this.register('rabbit_agent', subs.subscribe('rabbit_agent'));
@@ -15,7 +16,8 @@ rabbitRoutes.route('/agentReport', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'agent Report',
+        title: 'Agent Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

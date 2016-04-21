@@ -16,6 +16,7 @@ rabbitRoutes.route('/serviceReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'service Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

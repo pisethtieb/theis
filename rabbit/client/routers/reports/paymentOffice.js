@@ -17,6 +17,7 @@ rabbitRoutes.route('/paymentOfficeReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'paymentOffice Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

@@ -10,6 +10,7 @@ rabbitRoutes.route('/customerReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Customer Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

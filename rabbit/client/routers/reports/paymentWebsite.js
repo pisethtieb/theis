@@ -16,6 +16,7 @@ rabbitRoutes.route('/paymentWebsiteReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'paymentWebsite Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

@@ -17,6 +17,7 @@ rabbitRoutes.route('/contractReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'contract Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

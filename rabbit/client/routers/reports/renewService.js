@@ -16,6 +16,7 @@ rabbitRoutes.route('/renewServiceReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'renewService Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

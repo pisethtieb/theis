@@ -17,6 +17,7 @@ rabbitRoutes.route('/quotationReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'quotation Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

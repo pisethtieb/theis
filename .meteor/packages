@@ -123,7 +123,7 @@ themeteorchef:bert
 ### File ###
 cfs:standard-packages
 cfs:gridfs
-yogiben:autoform-file
+#yogiben:autoform-file
 peerlibrary:fs
 ostrio:meteor-root
 

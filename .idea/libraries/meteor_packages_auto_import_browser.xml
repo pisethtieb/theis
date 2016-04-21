@@ -135,10 +135,8 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/miro_json2html/1.0.3/web.browser/packages/miro_json2html.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_reactive-property/0.0.4/web.browser/packages/cfs_reactive-property.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_standard-packages/0.5.9/web.browser/packages/cfs_standard-packages.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/mpowaga_jquery-fileupload/9.11.2/web.browser/packages/mpowaga_jquery-fileupload.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_storage-adapter/0.2.3/web.browser/packages/cfs_storage-adapter.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_inject-data/1.4.1/web.browser/packages/meteorhacks_inject-data.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/mpowaga_jquery-ui-widget/1.11.4/web.browser/packages/mpowaga_jquery-ui-widget.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_subs-manager/1.6.2/web.browser/packages/meteorhacks_subs-manager.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_tempstore/0.1.5/web.browser/packages/cfs_tempstore.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/momentjs_moment/2.10.6/web.browser/packages/momentjs_moment.js" />
@@ -357,7 +355,6 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afQuickField/afQuickField.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afObjectField/afObjectField.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afQuickFields/afQuickFields.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/yogiben_autoform-file/0.4.2/web.browser/lib/client/autoform-file.coffee" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afEachArrayItem/afEachArrayItem.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/inputTypes/tel/tel.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/inputTypes/url/url.js" />
@@ -603,10 +600,8 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/miro_json2html/1.0.3/web.browser/packages/miro_json2html.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_reactive-property/0.0.4/web.browser/packages/cfs_reactive-property.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_standard-packages/0.5.9/web.browser/packages/cfs_standard-packages.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/mpowaga_jquery-fileupload/9.11.2/web.browser/packages/mpowaga_jquery-fileupload.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_storage-adapter/0.2.3/web.browser/packages/cfs_storage-adapter.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_inject-data/1.4.1/web.browser/packages/meteorhacks_inject-data.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/mpowaga_jquery-ui-widget/1.11.4/web.browser/packages/mpowaga_jquery-ui-widget.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_subs-manager/1.6.2/web.browser/packages/meteorhacks_subs-manager.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/cfs_tempstore/0.1.5/web.browser/packages/cfs_tempstore.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/momentjs_moment/2.10.6/web.browser/packages/momentjs_moment.js" />
@@ -825,7 +820,6 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afQuickField/afQuickField.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afObjectField/afObjectField.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afQuickFields/afQuickFields.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/yogiben_autoform-file/0.4.2/web.browser/lib/client/autoform-file.coffee" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/components/afEachArrayItem/afEachArrayItem.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/inputTypes/tel/tel.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/aldeed_autoform/5.7.1/web.browser/inputTypes/url/url.js" />

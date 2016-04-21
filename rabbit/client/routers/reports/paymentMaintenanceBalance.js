@@ -17,6 +17,7 @@ rabbitRoutes.route('/paymentMaintenanceBalanceReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'paymentMaintenance Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

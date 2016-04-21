@@ -17,6 +17,7 @@ rabbitRoutes.route('/maintenanceReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'maintenance Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });
