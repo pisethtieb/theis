@@ -74,22 +74,6 @@
   padding: 10px;
 }
 
-/* Selectize for input-sm */
-.selectize-input {
-  min-height: 25px;
-  height: 30px;
-  padding: 4px 12px;
-  border-radius: 0px;
-}
-
-.selectize-dropdown .active {
-  background-color: #337ab7;
-  color: #ffffff;
-}
-
-.selectize-input.dropdown-active {
-  border-radius: 0px;
-}
 
 /* NotFound Page */
 .not-found > h1, h2 {

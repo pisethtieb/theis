@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/paymentMaintenance/:customerId/:contractId', {
     name: 'rabbit.paymentMaintenance',
+    title: 'Payment Maintenance',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_contract', subs.subscribe('rabbit_contract'));
@@ -14,7 +15,8 @@ rabbitRoutes.route('/paymentMaintenance/:customerId/:contractId', {
     breadcrumb: {
         params: ['customerId', 'contractId'],
         //queryParams: ['show', 'color'],
-        title: 'paymentMaintenance',
+        title: 'Payment Maintenance',
+        icon: 'money',
         parent: 'rabbit.contract'
     }
 });

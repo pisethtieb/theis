@@ -1641,10 +1641,10 @@ fieldset[disabled] .form-control.focus:disabled,
   background-image: linear-gradient(#f44336, #f44336), linear-gradient(#d2d2d2, #d2d2d2);
 }
 
-.form-group .control-label,
-.form-group-default .control-label {
-  color: rgba(0, 0, 0, 0.84);
-}
+/*.form-group .control-label,*/
+/*.form-group-default .control-label {*/
+  /*color: rgba(0, 0, 0, 0.84);*/
+/*}*/
 
 .form-group-black .control-label {
   color: #000000;

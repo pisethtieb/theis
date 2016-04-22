@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/service/:customerId/:websiteId', {
     name: 'rabbit.service',
+    title: 'Service',
     subscriptions: function (params, queryParams) {
         // Customer
         Meteor.subscribe('rabbit_paymentWebsite');
@@ -13,7 +14,8 @@ rabbitRoutes.route('/service/:customerId/:websiteId', {
     breadcrumb: {
         params: ['customerId', 'contractId'],
         //queryParams: ['show', 'color'],
-        title: 'service',
+        title: 'Service',
+        icon: 'gear',
         parent: 'rabbit.website'
     }
 });

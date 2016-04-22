@@ -808,7 +808,7 @@
 
 .select2-container--bootstrap.select2-container--disabled .select2-selection,
 .select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice {
-    background-color: #eeeeee;
+    /*background-color: #eeeeee;*/
 }
 
 .select2-container--bootstrap.select2-container--disabled .select2-selection__clear,

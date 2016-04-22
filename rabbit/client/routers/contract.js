@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/contract/:customerId', {
     name: 'rabbit.contract',
+    title: 'Mis Contract',
     subscriptions: function (params, queryParams) {
         // Customer
 
@@ -16,7 +17,8 @@ rabbitRoutes.route('/contract/:customerId', {
     breadcrumb: {
         params: ['customerId'],
         //queryParams: ['show', 'color'],
-        title: 'contract',
+        title: 'Mis Contract',
+        icon: 'sticky-note',
         parent: 'rabbit.customer'
     }
 });

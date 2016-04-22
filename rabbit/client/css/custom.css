@@ -29,6 +29,24 @@
     width: 50%;
     float: left;
 }
+.col-sm-6-custom-right{
+    width: 50%;
+    padding-left: 15px;
+    float: left;
+}
+
+.col-sm-6-custom-left {
+    width: 50%;
+    padding-right: 15px;
+    float: left;
+}
+.col-sm-6-custom-left > .form-group > label {
+    margin-bottom: 0;
+}
+
+.col-sm-6-custom-right > .form-group > label {
+    margin-bottom: 0;
+}
 
 /*.fully, .monthly {*/
 /*width: 1282px*/

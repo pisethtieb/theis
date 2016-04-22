@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/paymentWebsite/:customerId/:websiteId', {
     name: 'rabbit.paymentWebsite',
+    title: 'Payment Website',
     subscriptions: function (params, queryParams) {
         // Customer
         //this.register('rabbit_website', subs.subscribe('rabbit_website', Session.get('currentBranch')));
@@ -12,7 +13,8 @@ rabbitRoutes.route('/paymentWebsite/:customerId/:websiteId', {
     breadcrumb: {
         params: ['customerId', 'contractId'],
         //queryParams: ['show', 'color'],
-        title: 'paymentWebsite',
+        title: 'Payment Website',
+        icon: 'money',
         parent: 'rabbit.website'
     }
 });

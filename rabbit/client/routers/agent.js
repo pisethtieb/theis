@@ -14,7 +14,7 @@ rabbitRoutes.route('/agent', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Agent',
-        icon: 'user',
+        icon: 'users',
         parent: 'rabbit.home'
     }
 });

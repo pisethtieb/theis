@@ -6,7 +6,6 @@ Template._pageHeader.helpers({
             return 'No Title';
         }
         let contentHeaderTitle = s.titleize(s.humanize(words[1]));
-
         return contentHeaderTitle;
     }
 });

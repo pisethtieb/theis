@@ -12,10 +12,8 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/bigdsk_inputmask/3.1.63/web.browser/packages/bigdsk_inputmask.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/peerlibrary_fs/0.1.7/web.browser/packages/peerlibrary_fs.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ccorcos_subs-cache/0.0.5/web.browser/packages/ccorcos_subs-cache.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/chhib_selectize-bootstrap-3/0.0.1/web.browser/packages/chhib_selectize-bootstrap-3.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/summernote_standalone/0.6.16/web.browser/packages/summernote_standalone.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/summernote_standalone/0.6.16/web.browser/packages/summernote_standalone/dist/summernote.css" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/chhib_selectize-bootstrap-3/0.0.1/web.browser/packages/chhib_selectize-bootstrap-3/selectize/dist/css/selectize.bootstrap3.css" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/peerlibrary_reactive-field/0.1.0/web.browser/packages/peerlibrary_reactive-field.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/reywood_publish-composite/1.4.2/web.browser/packages/reywood_publish-composite.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/tmeasday_publish-counts/0.7.2/web.browser/packages/tmeasday_publish-counts.js" />
@@ -477,10 +475,8 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/bigdsk_inputmask/3.1.63/web.browser/packages/bigdsk_inputmask.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/peerlibrary_fs/0.1.7/web.browser/packages/peerlibrary_fs.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ccorcos_subs-cache/0.0.5/web.browser/packages/ccorcos_subs-cache.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/chhib_selectize-bootstrap-3/0.0.1/web.browser/packages/chhib_selectize-bootstrap-3.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/summernote_standalone/0.6.16/web.browser/packages/summernote_standalone.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/summernote_standalone/0.6.16/web.browser/packages/summernote_standalone/dist/summernote.css" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/chhib_selectize-bootstrap-3/0.0.1/web.browser/packages/chhib_selectize-bootstrap-3/selectize/dist/css/selectize.bootstrap3.css" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/peerlibrary_reactive-field/0.1.0/web.browser/packages/peerlibrary_reactive-field.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/reywood_publish-composite/1.4.2/web.browser/packages/reywood_publish-composite.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/tmeasday_publish-counts/0.7.2/web.browser/packages/tmeasday_publish-counts.js" />

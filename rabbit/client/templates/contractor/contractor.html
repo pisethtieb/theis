@@ -5,13 +5,13 @@
   </p>
   {{> tabular table=Rabbit.TabularTable.Contractor class="table table-striped table-bordered table-condensed table-hover-pointer"}}
 </template>
+
 <!--Action-->
 <template name="rabbit_contractorAction">
   {{#tabularAction}}
   <li><a href="#" class="js-update">{{fa "pencil"}} Update</a></li>
   <li><a href="#" class="js-remove">{{fa "remove"}} Remove</a></li>
   <li><a href="#" class="js-show">{{fa "eye"}} Show</a></li>
-
   {{/tabularAction}}
 </template>
 
@@ -30,8 +30,6 @@
       <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
     </div>
   </div>
-
-
   {{/autoForm}}
 </template>
 

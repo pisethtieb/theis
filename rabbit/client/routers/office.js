@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/office/:customerId/:contractId', {
     name: 'rabbit.office',
+    title: 'Office',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_contract', subs.subscribe('rabbit_contract', Session.get('currentBranch')));
@@ -13,7 +14,8 @@ rabbitRoutes.route('/office/:customerId/:contractId', {
     breadcrumb: {
         params: ['customerId', 'contractId'],
         //queryParams: ['show', 'color'],
-        title: 'office',
+        title: 'Office',
+        icon: 'building',
         parent: 'rabbit.contract'
     }
 });
