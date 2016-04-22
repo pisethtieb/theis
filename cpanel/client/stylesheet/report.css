@@ -13,39 +13,39 @@
 }
 
 /* A4 Paper */
-.report-a4-portrait {
+.paper-a4-portrait {
     margin: 0px auto;
     width: 720px;
     padding: 0px;
 }
 
-.report-a4-landscape {
+.paper-a4-landscape {
     margin: 0px auto;
     width: 1020px;
     padding: 0px;
 }
 
 /* A5 Paper */
-.report-a5-portrait {
+.paper-a5-portrait {
     margin: 0px auto;
     width: 510px;
     padding: 0px;
 }
 
-.report-a5-landscape {
+.paper-a5-landscape {
     margin: 0px auto;
     width: 720px;
     padding: 0px;
 }
 
 /* Mini Paper */
-.report-mini-portrait {
+.paper-mini-portrait {
     margin: 0px auto;
     width: 260px;
     padding: 0px;
 }
 
-.report-mini-landscape {
+.paper-mini-landscape {
     margin: 0px auto;
     width: 260px;
     padding: 0px;
@@ -107,7 +107,7 @@
     border: 1px solid #000000;
 }
 
-.report-content-header th {
+.content-header th {
     background-color: #d0d2d0;
     padding: 3px;
     text-align: center;
@@ -115,7 +115,7 @@
     border: 1px solid #555555;
 }
 
-.report-content-body td {
+.content-body td {
     padding: 3px;
     border: 1px solid #555555;
 }

@@ -24,6 +24,7 @@ rabbitRoutes.route('/agentReport', {
 
 rabbitRoutes.route('/agentReportGen', {
     name: 'rabbit.agentReportGen',
+    title: "Agent Report",
     action: function (params, queryParams) {
         Layout.report('rabbit_agentReportGen');
     }
