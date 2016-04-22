@@ -7,10 +7,9 @@
         <small>
 
             {{#with contract}}
-                <a href="#" class="jsInfo">{{_id}} | ContractDate : {{contractDate}} |
-                    Product : {{_product.name}}|
-                    || Customer(company) : {{_customer.companyName}}  |
-                    ContractName : {{_customer.contractName}}</a>
+                <span class="jsInfo">{{_id}} | ContractDate : {{contractDate}} |
+                    Product : {{_product.name}} | Customer(company) : {{_customer.companyName}} |
+                    ContractName : {{_customer.contractName}}</span>
             {{/with}}
         </small>
     </div>
