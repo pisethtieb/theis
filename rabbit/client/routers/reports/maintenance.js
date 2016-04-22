@@ -4,6 +4,7 @@
 var subs = new SubsManager();
 rabbitRoutes.route('/maintenanceReport', {
     name: 'rabbit.maintenanceReport',
+    title: 'Maintenance Report',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_office', subs.subscribe('rabbit_office'));
@@ -16,7 +17,7 @@ rabbitRoutes.route('/maintenanceReport', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'maintenance Report',
+        title: 'Maintenance Report',
         icon: 'file-text',
         parent: 'rabbit.home'
     }

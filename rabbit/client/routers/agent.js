@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/agent', {
     name: 'rabbit.agent',
+    title: 'Agent',
     subscriptions: function (params, queryParams) {
         // agent
         //this.register('rabbit_agent', subs.subscribe('rabbit_agent', Session.get('currentBranch')));
@@ -12,7 +13,8 @@ rabbitRoutes.route('/agent', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'agent',
+        title: 'Agent',
+        icon: 'user',
         parent: 'rabbit.home'
     }
 });

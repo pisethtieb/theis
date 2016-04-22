@@ -2,6 +2,7 @@ var subs = new SubsManager();
 
 rabbitRoutes.route('/quotation', {
     name: 'rabbit.quotation',
+    title: 'Quotation',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_customer', subs.subscribe('rabbit_customer', Session.get('currentBranch')));
@@ -14,7 +15,8 @@ rabbitRoutes.route('/quotation', {
     breadcrumb: {
         params: ['customerId'],
         //queryParams: ['show', 'color'],
-        title: 'quotation',
+        title: 'Quotation',
+        icon:'sticky-note',
         parent: 'rabbit.home'
     }
 });

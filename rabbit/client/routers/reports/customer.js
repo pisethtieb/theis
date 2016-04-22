@@ -3,6 +3,7 @@
  */
 rabbitRoutes.route('/customerReport', {
     name: 'rabbit.customerReport',
+    title: 'Customer Report',
     action: function (params, queryParams) {
         Layout.main('rabbit_customerReport');
     },
@@ -34,6 +35,7 @@ rabbitRoutes.route('/customerExcelReport', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Customer Excel Report',
+        icon: 'file-text',
         parent: 'rabbit.home'
     }
 });

@@ -52,12 +52,13 @@ img.profile-img {
     /*transition: all .15s;*/
   }
 
-
 }
+
 .sidebar-collapse #mainnav-shortcut li {
   -webkit-transition: all .20s ease .10s;
   transition: all .20s ease .10s;
 }
+
 @media (min-width: 1200px) {
   #mainnav-shortcut .shortcut-grid i {
     -webkit-transition: font-size .17s linear .15s;
@@ -154,11 +155,11 @@ img.profile-img {
   text-align: center;
 }
 
-form{
+form {
   padding-bottom: 10px;
 }
 
-.logo-sidebar{
+.logo-sidebar {
   width: 25px;
   height: auto;
 }
@@ -170,6 +171,13 @@ button a {
 button a:hover {
   color: rgba(0, 0, 0, 0.84);
 }
+
 select[multiple].form-control, select[multiple].form-control:focus, select[multiple].form-control.focus {
   height: 108px;
+}
+
+.datepicker table tr td.active:hover, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active:focus, .datepicker table tr td.active:hover:focus, .datepicker table tr td.active.disabled:focus, .datepicker table tr td.active.disabled:hover:focus, .datepicker table tr td.active:active, .datepicker table tr td.active:hover:active, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.active, .datepicker table tr td.active:hover.active, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td.active, .open .dropdown-toggle.datepicker table tr td.active:hover, .open .dropdown-toggle.datepicker table tr td.active.disabled, .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  color: #ffffff;
+  background-color: #2196F3;
+  border-color: #2196F3;
 }

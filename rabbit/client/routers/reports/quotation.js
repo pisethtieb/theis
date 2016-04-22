@@ -4,6 +4,7 @@
 var subs = new SubsManager();
 rabbitRoutes.route('/quotationReport', {
     name: 'rabbit.quotationReport',
+    title: 'Quotation Report',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_product', subs.subscribe('rabbit_product'));
@@ -16,7 +17,7 @@ rabbitRoutes.route('/quotationReport', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'quotation Report',
+        title: 'Quotation Report',
         icon: 'file-text',
         parent: 'rabbit.home'
     }

@@ -4,13 +4,14 @@
 var subs = new SubsManager();
 rabbitRoutes.route('/paymentWebsiteBalanceReport', {
     name: 'rabbit.paymentWebsiteBalanceReport',
+    title: 'Payment Website Balance Report',
     action: function (params, queryParams) {
         Layout.main('rabbit_paymentWebsiteBalanceReport');
     },
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'paymentWebsiteBalance Report',
+        title: 'Payment Website Balance Report',
         icon: 'file-text',
         parent: 'rabbit.home'
     }

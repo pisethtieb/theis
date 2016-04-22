@@ -4,6 +4,7 @@
 var subs = new SubsManager();
 rabbitRoutes.route('/renewServiceReport', {
     name: 'rabbit.renewServiceReport',
+    title: 'Renew Service Report',
     subscriptions: function (params, queryParams) {
         // Customer
         this.register('rabbit_website', subs.subscribe('rabbit_website'));
@@ -15,7 +16,7 @@ rabbitRoutes.route('/renewServiceReport', {
     breadcrumb: {
         //params: ['id'],
         //queryParams: ['show', 'color'],
-        title: 'renewService Report',
+        title: 'Renew Service Report',
         icon: 'file-text',
         parent: 'rabbit.home'
     }
