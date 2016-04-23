@@ -36,6 +36,7 @@ Meteor.methods({
             return (str);
         }
 
+        var index = 1;
         if (contract.productType == 'monthlyFee') {
             data.condition = 'monthlyFee';
 
@@ -59,13 +60,16 @@ Meteor.methods({
 
             data.customer = contract._customer;
             data.customer.age = moment().diff(contract._customer.dob, 'years');
-            data.product.number = contract.paymentMethod.count();
-            contract.paymentMethod.forEach(function (obj) {
-                data.content.paymentDuration = obj.paymentDuration;
-                data.content.push(obj)
-
-            });
-
+            if (contract.paymentMethod) {
+                contract.paymentMethod.forEach(function (obj) {
+                    if (obj) {
+                        data.content.paymentDuration = obj.paymentDuration;
+                        data.content.push(obj)
+                        obj.index = index;
+                        data.product.number = toWords(index++);
+                    }
+                });
+            }
 
         } else {
             data.contractor = contract._contractor;
@@ -78,7 +82,7 @@ Meteor.methods({
             data.product.maintenancePriceHeadKh = toWords(contract.maintenancePrice[0].headOffice);
             data.product.maintenancePriceBrandKh = toWords(contract.maintenancePrice[0].branch);
 
-            console.log(data.product.maintenancePriceBrandKh);
+
             data.product.priceHead = contract.basePrice[0].headOffice;
             data.product.priceOffice = contract.basePrice[0].branch;
             data.product.maintenancePriceHead = contract.maintenancePrice[0].headOffice;
@@ -86,12 +90,17 @@ Meteor.methods({
 
             data.customer = contract._customer;
             data.customer.age = moment().diff(contract._customer.dob, 'years');
-            data.product.number = contract.paymentMethod.count();
-            contract.paymentMethod.forEach(function (obj) {
-                data.content.paymentDuration = obj.paymentDuration;
-                data.content.push(obj)
+            if (contract.paymentMethod) {
+                contract.paymentMethod.forEach(function (obj) {
+                    if (obj) {
+                        data.content.paymentDuration = obj.paymentDuration;
+                        data.content.push(obj);
+                        obj.index = index;
+                        data.product.number = toWords(index++);
 
-            });
+                    }
+                });
+            }
         }
         return data
 

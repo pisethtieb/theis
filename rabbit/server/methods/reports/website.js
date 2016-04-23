@@ -49,11 +49,11 @@ Meteor.methods({
         } else {
             params.branch = params.branch;
         }
-        if (params.websiteId == '') {
-            params.websiteId = 'All'
-        } else {
-            params.websiteId = websiteId;
-        }
+        // if (params.websiteId == '') {
+        //     params.websiteId = 'All'
+        // } else {
+        //     // params.websiteId = websiteId;
+        // }
         /****** Header *****/
         data.header = params;
 

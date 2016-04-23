@@ -131,40 +131,44 @@
 <!--Show-->
 <template name="rabbit_customerShow">
     <!--Customer template sub ready by all-->
-    {{#if templateSubReady}} {{#with data}}
-        <dl class="dl-horizontal">
-            <dt>ID:</dt>
-            <dd>{{_id}}</dd>
-            <dt>Name:</dt>
-            <dd>{{contractName}}</dd>
-            <dt>Gender:</dt>
-            <dd>{{gender}}</dd>
-            <dt>Date Of Birth:</dt>
-            <dd>{{dob}}</dd>
-            <dt>ID Card:</dt>
-            <dd>{{id}}</dd>
-            <dt>Position:</dt>
-            <dd>{{position}}</dd>
-            <dt>Telephone:</dt>
-            <dd>{{telephone}}</dd>
-            <dt>Email:</dt>
-            <dd>{{email}}</dd>
-            <dt>Address:</dt>
-            <dd>{{address}}</dd>
-            <dt>Company Name:</dt>
-            <dd>{{companyName}}</dd>
-            <dt>Company Telephone:</dt>
-            <dd>{{telephone}}</dd>
-            <dt>Company Email:</dt>
-            <dd>{{companyEmail}}</dd>
-            <dt>Company Website:</dt>
-            <dd>{{companyWebsite}}</dd>
-            <dt>Company Address:</dt>
-            <dd>{{companyAddress}}</dd>
-            <dt>Contact Person:</dt>
-            <dd>{{contactPerson}}</dd>
-        </dl>
-    {{/with}} {{else}} {{> loading}} {{/if}}
+    {{#if data}}
+        {{#with data}}
+            <dl class="dl-horizontal">
+                <dt>ID:</dt>
+                <dd>{{_id}}</dd>
+                <dt>Name:</dt>
+                <dd>{{contractName}}</dd>
+                <dt>Gender:</dt>
+                <dd>{{gender}}</dd>
+                <dt>Date Of Birth:</dt>
+                <dd>{{dob}}</dd>
+                <dt>ID Card:</dt>
+                <dd>{{id}}</dd>
+                <dt>Position:</dt>
+                <dd>{{position}}</dd>
+                <dt>Telephone:</dt>
+                <dd>{{telephone}}</dd>
+                <dt>Email:</dt>
+                <dd>{{email}}</dd>
+                <dt>Address:</dt>
+                <dd>{{address}}</dd>
+                <dt>Company Name:</dt>
+                <dd>{{companyName}}</dd>
+                <dt>Company Telephone:</dt>
+                <dd>{{telephone}}</dd>
+                <dt>Company Email:</dt>
+                <dd>{{companyEmail}}</dd>
+                <dt>Company Website:</dt>
+                <dd>{{companyWebsite}}</dd>
+                <dt>Company Address:</dt>
+                <dd>{{companyAddress}}</dd>
+                <dt>Contact Person:</dt>
+                <dd>{{contactPerson}}</dd>
+            </dl>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
 </template>
 
 <!--Custom array field-->
