@@ -87,7 +87,7 @@ Rabbit.Schema.Product = new SimpleSchema({
                 type: 'summernote',
                 class: 'editor',// optional
                 settings: {
-                    height: 62.25,
+                    height: 790,
                     toolbar: [
                         ['style', ['bold', 'italic', 'underline', 'clear']],
                         ['font', ['strikethrough', 'superscript', 'subscript']],

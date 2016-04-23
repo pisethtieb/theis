@@ -141,14 +141,14 @@
         {{> afQuickField name="productId" class='productId'}}
       </div>
 
-      <div class="col-md-12 monthly">
+      <div class="col-md-6 monthly">
         <div class="panel panel-default">
           <div class="panel-heading">Monthly Fee</div>
           <div class="panel-body">
-            <div class="col-md-6">
+            <div class="col-md-12">
               {{> afArrayField name="monthlyFee" id="monthlyFee" template="basePriceArrayField"  label=false subtemplate="quotationMonthlyFeeObjectField"}}
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="panel panel-default">
                 <div class="panel-heading">Service</div>
                 <div class="panel-body">
@@ -164,15 +164,14 @@
           </div>
         </div>
       </div>
-
-      <div class="col-md-12 fully">
+      <div class="col-md-6 fully">
         <div class="panel panel-default">
           <div class="panel-heading">Fully Fee</div>
           <div class="panel-body">
-            <div class="col-md-6">
+            <div class="col-md-12">
               {{> afArrayField name="basePrice" template="quotationBasePriceArrayField" subtemplate="quotationBasePriceObjectField" id="basePrice"}}
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
               {{> afArrayField name="maintenancePrice" id="maintenancePrice" template="basePriceArrayField" subtemplate="quotationMaintenancePriceObjectField" }}
             </div>
           </div>

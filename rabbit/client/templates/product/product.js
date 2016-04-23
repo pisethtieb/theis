@@ -142,7 +142,6 @@ showTpl.helpers({
     data: function () {
         var data = Rabbit.Collection.Product.findOne(this._id);
         return data;
-
     },
     base: function () {
         var str = "<table class='table table-bordered'><thead>" +

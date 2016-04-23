@@ -18,7 +18,7 @@ Rabbit.TabularTable.Quotation = new Tabular.Table({
                 return moment(val).format('YYYY-MM-DD');
             }
         },
-        {data: "type", title: "Pro Type"},
+        {data: "type", title: "Product Type"},
         {data: "productId", title: "Product ID"}
 
     ],

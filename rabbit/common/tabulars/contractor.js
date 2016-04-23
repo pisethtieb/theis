@@ -17,7 +17,7 @@ Rabbit.TabularTable.Contractor = new Tabular.Table({
         {data: "id", title: "ID"},
         {data: "telephone", title: "Telephone"},
         {data: "email", title: "Email"},
-        {data: "_contractCount", title: "contract"},
+        {data: "_contractCount", title: "Contract"},
         {data: "_quotationCount", title: "Quotation"}
 
 

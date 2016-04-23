@@ -18,7 +18,7 @@ Rabbit.TabularTable.Agent = new Tabular.Table({
         {data: "telephone", title: "Telephone"},
         {data: "address", title: "Address"},
         //{data: "email", title: "Email"},
-        {data: "_agentCount", title: "contract"}
+        {data: "_agentCount", title: "Contract"}
 
 
     ],

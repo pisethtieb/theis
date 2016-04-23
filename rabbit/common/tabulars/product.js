@@ -51,7 +51,7 @@ Rabbit.TabularTable.Product = new Tabular.Table({
                     val.forEach(function (o) {
 
                         str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
-                            "</li>";
+                          "</li>";
                     });
                 }
                 str += '</ul>';
@@ -59,6 +59,8 @@ Rabbit.TabularTable.Product = new Tabular.Table({
             }
 
         },
+        {data: "installationFee", title: "Installation Fee"},
+        {data: "trainingFee", title: "Training Fee"},
         {data: "_contractCunt", title: "C"},
         {data: "_quotationCount", title: "Q"}
     ],
