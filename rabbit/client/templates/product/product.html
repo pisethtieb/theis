@@ -117,7 +117,6 @@
 <!--Show-->
 <template name="rabbit_productShow">
   <!--Product template sub ready by all-->
-  {{#if templateSubReady}}
     {{#with data}}
       <dl class="dl-horizontal">
         <dt>ID:</dt>
@@ -138,9 +137,6 @@
         <dd>{{{feature}}}</dd>
       </dl>
     {{/with}}
-  {{else}}
-    {{> loading}}
-  {{/if}}
 </template>
 
 
