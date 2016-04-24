@@ -50,7 +50,7 @@ Rabbit.TabularTable.Product = new Tabular.Table({
                 if (val != null) {
                     val.forEach(function (o) {
 
-                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
+                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch + 
                           "</li>";
                     });
                 }
