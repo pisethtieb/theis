@@ -68,12 +68,12 @@
                     <tr>
                         <th>No</th>
                         <!--<th>ID</th>-->
-                        <th>PaidDate</th>
+                        <th>Paid Date</th>
                         <th>Company</th>
-                        <th>Cus Name</th>
-                        <th>Tel</th>
-                        <th>product</th>
-                        <th>paymentOffice Items</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
+                        <th>Product</th>
+                        <th>PaymentOffice Items</th>
                         <th>Due</th>
                         <th>paid</th>
                         <th>Balance</th>
@@ -91,21 +91,21 @@
                             <td>{{_customer.telephone}}</td>
                             <td>{{product.name}}</td>
                             <td>{{{paymentOffice}}}</td>
-                            <td>{{{amount}}}</td>
-                            <td>{{{paid}}}</td>
-                            <td>{{{due}}}</td>
+                            <td align="right">{{{amount}}}</td>
+                            <td align="right">{{{paid}}}</td>
+                            <td align="right">{{{due}}}</td>
 
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr>
-                        <td colspan="8" align="right">
-                            Total :
+                        <td colspan="7" align="right">
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.totalPrice}}</td>
-                        <td>{{footer.totalPaidAmount}}</td>
-                        <td>{{footer.totalDueAmount}}</td>
+                        <td align="right">{{footer.totalPrice}}</td>
+                        <td align="right">{{footer.totalPaidAmount}}</td>
+                        <td align="right">{{footer.totalDueAmount}}</td>
                     </tr>
                     </tbody>
                 </table>
