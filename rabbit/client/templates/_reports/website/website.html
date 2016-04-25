@@ -70,8 +70,8 @@
                         <th>Register Date</th>
                         <th>Website Name</th>
                         <th>Company Name</th>
-                        <th>contract Name</th>
-                        <th>Tel</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
 
                         <th>Price</th>
                     </tr>
@@ -86,18 +86,16 @@
                             <td>{{_customer.companyName}}</td>
                             <td>{{_customer.contractName}}</td>
                             <td>{{_customer.telephone}}</td>
-
-                            <td>{{numFormat price "$0,0.00"}}</td>
-
+                            <td align="right">{{numFormat price "$0,0.00"}}</td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr class="">
                         <td colspan="7" align="right">
-                            Total :
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.total}}</td>
+                        <td align="right">{{footer.total}}</td>
                     </tr>
                     </tbody>
                 </table>

@@ -71,10 +71,10 @@
                     <tr>
                         <th>No</th>
                         <th>ID</th>
-                        <th>PaymentDate</th>
-                        <th>WebsiteId</th>
-                        <th>Cus Name</th>
-                        <th>Tel</th>
+                        <th>Payment Date</th>
+                        <th>Website ID</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
                         <th>Design</th>
                         <th>Paid</th>
                         <th>Due</th>
@@ -99,41 +99,41 @@
                             <td>{{websiteId}}</td>
                             <td>{{_customer.contractName}}</td>
                             <td>{{_customer.telephone}}</td>
-                            <td>{{numFormat buildPrice "$0,0.00"}}</td>
-                            <td>{{numFormat buildPaid "$0,0.00"}}</td>
-                            <td>{{numFormat buildDue "$0,0.00"}}</td>
-                            <td>{{numFormat domainNamePrice "$0,0.00"}}</td>
-                            <td>{{numFormat domainNamePaid "$0,0.00"}}</td>
-                            <td>{{numFormat domainNameDue "$0,0.00"}}</td>
-                            <td>{{numFormat hostingPrice "$0,0.00"}}</td>
-                            <td>{{numFormat hostingPaid "$0,0.00"}}</td>
-                            <td>{{numFormat hostingDue "$0,0.00"}}</td>
-                            <td>{{numFormat maintenancePrice "$0,0.00"}}</td>
-                            <td>{{numFormat maintenancePaid "$0,0.00"}}</td>
-                            <td>{{numFormat maintenanceDue  "$0,0.00"}}</td>
+                            <td align="right">{{numFormat buildPrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat buildPaid "$0,0.00"}}</td>
+                            <td align="right">{{numFormat buildDue "$0,0.00"}}</td>
+                            <td align="right">{{numFormat domainNamePrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat domainNamePaid "$0,0.00"}}</td>
+                            <td align="right">{{numFormat domainNameDue "$0,0.00"}}</td>
+                            <td align="right">{{numFormat hostingPrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat hostingPaid "$0,0.00"}}</td>
+                            <td align="right">{{numFormat hostingDue "$0,0.00"}}</td>
+                            <td align="right">{{numFormat maintenancePrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat maintenancePaid "$0,0.00"}}</td>
+                            <td align="right">{{numFormat maintenanceDue  "$0,0.00"}}</td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr>
                         <td colspan="6" align="right">
-                            Total :
+                            <b>Total :</b>
                         </td>
-                        <td>{{numFormat footer.totalBuildPrice "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalBuildPaid "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalBuildDue "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalBuildPrice "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalBuildPaid "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalBuildDue "$0,0.00"}}</td>
 
-                        <td>{{numFormat footer.totalDomainNamePrice "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalDomainNamePaid "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalDomainNameDue "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalDomainNamePrice "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalDomainNamePaid "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalDomainNameDue "$0,0.00"}}</td>
 
-                        <td>{{numFormat footer.totalHostingPrice "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalHostingPaid "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalHostingDue "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalHostingPrice "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalHostingPaid "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalHostingDue "$0,0.00"}}</td>
 
-                        <td>{{numFormat footer.totalMaintenancePrice "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalMaintenancePaid "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalMaintenanceDue "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalMaintenancePrice "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalMaintenancePaid "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalMaintenanceDue "$0,0.00"}}</td>
 
                     </tr>
                     </tbody>

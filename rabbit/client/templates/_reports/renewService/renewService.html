@@ -37,7 +37,7 @@
                   <span class="report-company-name"
                         style="font-family: 'Khmer OS Muol">{{khName}}</span><br>
                                     <span class="report-company-name">{{enName}}</span><br>
-                                    <u>Service Report</u><br>
+                                    <u>Renew Service Report</u><br>
                                     {{khAddress}}, {{telephone}}
                                 </td>
 
@@ -67,18 +67,12 @@
                     <tr>
                         <th>No</th>
                         <th>ID</th>
-                        <th>ServiceDate</th>
-                        <th>WebsiteId</th>
-                        <th>Cus Name</th>
+                        <th>Service Date</th>
+                        <th>Website ID</th>
+                        <th>Contract Name</th>
                         <th>Domain</th>
-                        <th>Start</th>
-                        <th>End</th>
                         <th>Hosting</th>
-                        <th>Start</th>
-                        <th>End</th>
                         <th>Maintenance</th>
-                        <th>Start</th>
-                        <th>End</th>
                     </tr>
                     </thead>
                     <tbody class="content-body">
@@ -89,33 +83,26 @@
                             <td>{{serviceDate}}</td>
                             <td>{{websiteId}}</td>
                             <td>{{_website._customer.contractName}}</td>
-                            <td>{{{numFormat domainNamePrice "$0,0.00"}}}</td>
-                            <td>{{{domainNameStartDate}}}</td>
-                            <td>{{{domainNameEndDate}}}</td>
-                            <td>{{{numFormat hostingPrice "$0,0.00"}}}</td>
-                            <td>{{{hostingStartDate}}}</td>
-                            <td>{{{hostingEndDate}}}</td>
-                            <td>{{{numFormat maintenancePrice "$0,0.00"}}}</td>
-                            <td>{{{maintenanceStartDate}}}</td>
-                            <td>{{{maintenanceEndDate}}}</td>
-
+                            <td align="right">{{{numFormat domainNamePrice "$0,0.00"}}} ({{{domainNameStartDate}}} - {{{domainNameEndDate}}})</td>
+                            <td align="right">{{{numFormat hostingPrice "$0,0.00"}}} ({{{hostingStartDate}}} - {{{hostingEndDate}}})</td>
+                            <td align="right">{{{numFormat maintenancePrice "$0,0.00"}}} ({{{maintenanceStartDate}}} - {{{maintenanceEndDate}}})</td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr>
-                        <td colspan="11"></td>
+                        <td colspan="5"></td>
                         <td>Domain</td>
                         <td>Hosting</td>
                         <td>Maintenance</td>
                     </tr>
                     <tr class="">
-                        <td colspan="11" align="right">
-                            Total :
+                        <td colspan="5" align="right">
+                            <b>Total :</b>
                         </td>
-                        <td>{{numFormat footer.totalDomainName "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalHosting "$0,0.00"}}</td>
-                        <td>{{numFormat footer.totalMaintenance "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalDomainName "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalHosting "$0,0.00"}}</td>
+                        <td align="right">{{numFormat footer.totalMaintenance "$0,0.00"}}</td>
                     </tr>
                     </tbody>
                 </table>

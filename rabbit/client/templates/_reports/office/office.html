@@ -80,12 +80,12 @@
                         <th>ID</th>
                         <th>Contract Date</th>
                         <th>Company</th>
-                        <th>Cus Name</th>
-                        <th>Tel</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
                         <th>Office Name</th>
                         <th>Office Date</th>
-                        <th>product</th>
-                        <th>type</th>
+                        <th>Product</th>
+                        <th>Type</th>
                         <th>Contract Price</th>
                         <th>Discount</th>
                         <th>Price</th>
@@ -104,20 +104,20 @@
                             <td>{{officeDate}}</td>
                             <td>{{product.name}}</td>
                             <td>{{type}}</td>
-                            <td>{{numFormat contractPrice "$0,0.00"}}</td>
-                            <td>{{numFormat discount "$0,0.00"}}</td>
-                            <td>{{numFormat price "$0,0.00"}}</td>
+                            <td align="right">{{numFormat contractPrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat discount "$0,0.00"}}</td>
+                            <td align="right">{{numFormat price "$0,0.00"}}</td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr class="">
                         <td colspan="10" align="right">
-                            Total :
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.totalContractPrice}}</td>
-                        <td>{{footer.totalDiscount}}</td>
-                        <td>{{footer.totalPrice}}</td>
+                        <td align="right">{{footer.totalContractPrice}}</td>
+                        <td align="right">{{footer.totalDiscount}}</td>
+                        <td align="right">{{footer.totalPrice}}</td>
                     </tr>
                     </tbody>
                 </table>

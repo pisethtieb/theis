@@ -82,12 +82,12 @@
                     <tr>
                         <th>No</th>
                         <th>ID</th>
-                        <th>PaidDate</th>
-                        <th>company</th>
-                        <th>Cus Name</th>
-                        <th>Tel</th>
-                        <th>product</th>
-                        <th>payment Items</th>
+                        <th>Paid Date</th>
+                        <th>Company</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
+                        <th>Product Name</th>
+                        <th>Payment Items</th>
                         <th>Due</th>
                         <th>paid</th>
                         <th>Balance</th>
@@ -115,9 +115,9 @@
                             <td>{{_customer.telephone}}</td>
                             <td>{{product.name}}</td>
                             <td>{{{payment}}}</td>
-                            <td>{{numFormat amount "$0,0.00"}}</td>
-                            <td>{{numFormat paid "$0,0.00"}}</td>
-                            <td>{{numFormat due "$0,0.00"}}</td>
+                            <td align="right">{{numFormat amount "$0,0.00"}}</td>
+                            <td align="right">{{numFormat paid "$0,0.00"}}</td>
+                            <td align="right">{{numFormat due "$0,0.00"}}</td>
 
                         </tr>
                     {{/each}}
@@ -125,11 +125,11 @@
                     <tbody class="content-body">
                     <tr>
                         <td colspan="8" align="right">
-                            Total :
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.totalPrice}}</td>
-                        <td>{{footer.totalPaidAmount}}</td>
-                        <td>{{footer.totalDueAmount}}</td>
+                        <td align="right">{{footer.totalPrice}}</td>
+                        <td align="right">{{footer.totalPaidAmount}}</td>
+                        <td align="right">{{footer.totalDueAmount}}</td>
                     </tr>
                     </tbody>
                 </table>

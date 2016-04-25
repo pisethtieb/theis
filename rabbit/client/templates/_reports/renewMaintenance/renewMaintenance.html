@@ -72,11 +72,11 @@
                         <th>No</th>
                         <th>ID</th>
                         <th>Office Name</th>
-                        <th>company</th>
+                        <th>Company</th>
                         <th>Type</th>
-                        <th>Cus Name</th>
-                        <th>Tel</th>
-                        <th>product</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
+                        <th>Product</th>
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Status</th>
@@ -99,16 +99,16 @@
                             <td>{{startDate}}</td>
                             <td>{{endDate}}</td>
                             <td>{{renewMaintenance}}</td>
-                            <td>{{numFormat price "$0,0.00"}}</td>
+                            <td align="right">{{numFormat price "$0,0.00"}}</td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <tr>
                         <td colspan="11" align="right">
-                            Total :
+                            <b>Total :</b>
                         </td>
-                        <td>{{numFormat footer.total "$0,0.00"}}</td>
+                        <td  align="right">{{numFormat footer.total "$0,0.00"}}</td>
                     </tr>
                     </tbody>
                 </table>

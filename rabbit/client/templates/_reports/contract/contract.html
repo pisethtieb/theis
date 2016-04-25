@@ -79,12 +79,13 @@
                         <th>No</th>
                         <th>ID</th>
                         <th>Contract Date</th>
-                        <th>Company</th>
-                        <th>Contract Name</th>
-                        <th>Tel</th>
                         <th>Product Name</th>
-                        <th>agent</th>
-                        <th>type</th>
+                        <th>Conpany Name</th>
+                        <th>Company Telephone</th>
+                        <th>Contract Name</th>
+                        <th>Contract Telephone</th>
+                        <th>Contractor</th>
+                        <th>Type</th>
                         <th>Fee</th>
                         <th>HO Base Price</th>
                         <th>BO Base Price</th>
@@ -108,16 +109,17 @@
                             <td>{{_customer.companyTelephone}}</td>
                             <td>{{_customer.contractName}}</td>
                             <td>{{_customer.telephone}}</td>
+                            <td>{{_contractor.name}}</td>
                             <td>{{productType}}</td>
-                            <td>{{numFormat amount "$0,0.00"}}</td>
-                            <td>{{numFormat headBasePrice "$0,0.00"}}</td>
-                            <td>{{numFormat brachBasePrice "$0,0.00"}}</td>
-                            <td>{{numFormat headMainPrice "$0,0.00"}}</td>
-                            <td>{{numFormat brachMainPrice "$0,0.00"}}</td>
-                            <td>{{numFormat monthlyFeePriceHead "$0,0.00"}}</td>
-                            <td>{{numFormat monthlyFeeBriceBrand "$0,0.00"}}</td>
-                            <td>{{numFormat installationFee "$0,0.00"}}</td>
-                            <td>{{numFormat trainingFee "$0,0.00"}}</td>
+                            <td align="right">{{numFormat amount "$0,0.00"}}</td>
+                            <td align="right">{{numFormat headBasePrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat brachBasePrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat headMainPrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat brachMainPrice "$0,0.00"}}</td>
+                            <td align="right">{{numFormat monthlyFeePriceHead "$0,0.00"}}</td>
+                            <td align="right">{{numFormat monthlyFeeBriceBrand "$0,0.00"}}</td>
+                            <td align="right">{{numFormat installationFee "$0,0.00"}}</td>
+                            <td align="right">{{numFormat trainingFee "$0,0.00"}}</td>
 
 
                         </tr>
@@ -125,18 +127,18 @@
                     </tbody>
                     <tbody class="content-body">
                     <tr class="">
-                        <td colspan="9" align="right">
-                            Total :
+                        <td colspan="10" align="right">
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.totalFee}}</td>
-                        <td>{{footer.totalHeadBasePrice}}</td>
-                        <td>{{footer.totalBranchBasePrice}}</td>
-                        <td>{{footer.totalHeadMainPrice}}</td>
-                        <td>{{footer.totalBranchMainPrice}}</td>
-                        <td>{{footer.totalMonthlyFeeHeadPrice}}</td>
-                        <td>{{footer.totalMonthlyFeeBranchPrice}}</td>
-                        <td>{{footer.totalInstallationFeePrice}}</td>
-                        <td>{{footer.totalTrainingFeePrice}}</td>
+                        <td align="right">{{footer.totalFee}}</td>
+                        <td align="right">{{footer.totalHeadBasePrice}}</td>
+                        <td align="right">{{footer.totalBranchBasePrice}}</td>
+                        <td align="right">{{footer.totalHeadMainPrice}}</td>
+                        <td align="right">{{footer.totalBranchMainPrice}}</td>
+                        <td align="right">{{footer.totalMonthlyFeeHeadPrice}}</td>
+                        <td align="right">{{footer.totalMonthlyFeeBranchPrice}}</td>
+                        <td align="right">{{footer.totalInstallationFeePrice}}</td>
+                        <td align="right">{{footer.totalTrainingFeePrice}}</td>
                     </tr>
                     </tbody>
                 </table>

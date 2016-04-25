@@ -66,9 +66,9 @@
                     <tr>
                         <th>No</th>
                         <th>ID</th>
-                          <th>AgentName</th>
-                          <th>cust name</th>
-                        <th>ProductName</th>
+                          <th>Agent Name</th>
+                          <th>Customer name</th>
+                        <th>Product Name</th>
                         <th>Telephone</th>
                         <th>Fee Amount</th>
                     </tr>
@@ -84,7 +84,7 @@
 
 
                             <td>{{_agent.telephone}}</td>
-                            <td>{{numFormat amount "$0,0.00"}}</td>
+                            <td align="right">{{numFormat amount "$0,0.00"}}</td>
 
                         </tr>
                     {{/each}}
@@ -92,9 +92,9 @@
 <tbody class="content-body">
                     <tr>
                         <td colspan="6" align="right">
-                            Total Fee:
+                            <b>Total :</b>
                         </td>
-                        <td>{{footer.totalFee}}</td>
+                        <td align="right">{{footer.totalFee}}</td>
                     </tr>
 </tbody>
                 </table>

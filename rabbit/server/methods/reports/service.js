@@ -41,8 +41,6 @@ Meteor.methods({
         let totalMaintenance = 0;
         Rabbit.Collection.Service.find(selector)
             .forEach(function (obj) {
-
-
                 obj.index = index;
                 //total += obj.price;
                 obj.domainNameTotalPrice = obj.domainNameTotalPrice == null ? 0 : obj.domainNamePrice;
