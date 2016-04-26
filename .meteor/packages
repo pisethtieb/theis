@@ -183,6 +183,7 @@ theara:factory
 theara:app-dump
 theara:autoform-file
 theara:scrollup
+theara:admin-lte
 
 natestrauser:select2
 sergeyt:typeahead

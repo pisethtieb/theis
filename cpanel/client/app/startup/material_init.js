@@ -1,5 +1,7 @@
 ////FlowRouter.wait();
-//Meteor.startup(function () {
+
+Meteor.startup(function () {
+  // $('body').addClass('sidebar-mini fixed');
 //    /*** Material Init For All Template ***/
 //    for (var property in Template) {
 //        // check if the property is actually a blaze template
@@ -14,4 +16,4 @@
 //    }
 //
 //    //FlowRouter.initialize();
-//});
+});

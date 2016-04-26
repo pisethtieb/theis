@@ -11,7 +11,7 @@ Template.MainLayout.onRendered(function () {
         cursorborder: '0',
         zindex: '1000'
     });
-    $(".left-side").niceScroll({
+    $(".sidebar").niceScroll({
         styler: "fb",
         cursorcolor: "#65cea7",
         cursorwidth: '3',

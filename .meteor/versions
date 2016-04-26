@@ -184,6 +184,7 @@ stylus@2.511.1
 summernote:standalone@0.6.16
 templating@1.1.5
 templating-tools@1.0.0
+theara:admin-lte@0.3.2
 theara:alertifyjs@1.6.7
 theara:app-dump@1.0.0
 theara:autoform-file@0.0.1
@@ -208,7 +209,7 @@ tomwasd:flow-router-seo@0.0.3
 tracker@1.0.9
 trsdln:flyouts@1.1.2
 tsega:bootstrap3-datetimepicker@3.1.3_3
-twbs:bootstrap@3.3.5
+twbs:bootstrap@3.3.6
 u2622:persistent-session@0.4.4
 ui@1.0.8
 underscore@1.0.4
