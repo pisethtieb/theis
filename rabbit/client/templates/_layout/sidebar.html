@@ -4,6 +4,21 @@
       <i class="fa fa-home"></i> <span>Home</span>
     </a>
   </li>
+  <!--Settings-->
+  {{#if isInRole 'setting' 'Rabbit'}}
+  <li class="header">SETTING</li>
+  <li class="{{isActiveRoute name='rabbit.product'}}">
+    <a href="{{pathFor 'rabbit.product'}}">
+      <i class="fa fa-cubes"></i> <span>Product</span>
+    </a>
+  </li>
+  <li class="{{isActiveRoute name='rabbit.contractor'}}">
+    <a href="{{pathFor 'rabbit.contractor'}}">
+      <i class="fa fa-users"></i> <span>Contractor</span>
+    </a>
+  </li>
+  {{/if}}
+  <!--Data-->
   <li class="header">DATA</li>
   <li class="{{isActiveRoute name='rabbit.customer'}}">
     <a href="{{pathFor 'rabbit.customer'}}">
@@ -119,25 +134,6 @@
           </a>
         </li>
       </ul>
-    </li>
-  {{/if}}
-  <!--Settings-->
-  {{#if isInRole 'setting' 'Rabbit'}}
-    <li class="header">Setting</li>
-    <li class="{{isActiveRoute name='rabbit.product'}}">
-      <a href="{{pathFor 'rabbit.product'}}">
-        <i class="fa fa-cubes"></i> <span>Product</span>
-      </a>
-    </li>
-    <li class="{{isActiveRoute name='rabbit.contractor'}}">
-      <a href="{{pathFor 'rabbit.contractor'}}">
-        <i class="fa fa-users"></i> <span>Contractor</span>
-      </a>
-    </li>
-    <li class="{{isActiveRoute name='cpanel.exchange'}}">
-      <a href="{{pathFor 'cpanel.exchange'}}">
-        <i class="fa fa-money"></i> <span>Exchange</span>
-      </a>
     </li>
   {{/if}}
 </template>
