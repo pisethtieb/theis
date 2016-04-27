@@ -68,5 +68,8 @@ Template.navbar.helpers({
 Template.navbar.events({
   'click .js-logout': function (e, t) {
     SignOut();
+  },
+  'click .js-profile':function () {
+    FlowRouter.go('cpanel.userProfile');
   }
 });

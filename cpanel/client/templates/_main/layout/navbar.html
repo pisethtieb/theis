@@ -18,7 +18,7 @@
       <ul class="nav navbar-nav">
         <!-- Navbar right-->
           <!--{{#if navbar.show}}-->
-        <!--{{> Template.dynamic template=navbar.template.navbar}}-->
+        {{> Template.dynamic template=navbarMenu}}
           <!--{{/if}}-->
 
         <!--Sub is ready-->
@@ -62,8 +62,8 @@
                 <h4 class="username">{{currentUser.profile.fullName}}</h4>
                 <p>Member since {{date}}</p>
                 <div class="btn-group margin-bottom-2x" role="group">
-                  <button type="button" class="btn btn-user-action"><a href="{{pathFor 'cpanel.userProfile'}}"><i
-                      class="fa fa-user"></i> Profile</a>
+                  <button type="button" class="btn btn-user-action js-profile"><i
+                      class="fa fa-user"></i> Profile
                   </button>
                   <button type="button" class="btn btn-user-action js-logout"><i
                       class="fa fa-sign-out"></i> Logout

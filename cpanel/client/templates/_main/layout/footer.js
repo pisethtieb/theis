@@ -1,7 +1,7 @@
 Template.registerHelper('_footerInfo', function () {
   let data = {
     copyright: '2014-2016',
-    company: 'Rabbit Technology',
+    company: 'Rabbit IT Solution',
     website: 'www.rabbit-tec.come',
     tel: '053 50 66 777',
     version: '---'

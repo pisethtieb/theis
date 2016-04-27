@@ -1,26 +1,20 @@
-// Declare state for server date time
-//var state = new ReactiveObj();
 Template.MainLayout.onRendered(function () {
-    $("body").niceScroll({
-        styler: "fb",
-        cursorcolor: "#65cea7",
-        cursorwidth: '6',
-        cursorborderradius: '0px',
-        background: '#424f63',
-        spacebarenabled: false,
-        cursorborder: '0',
-        zindex: '1000'
-    });
-    $(".sidebar").niceScroll({
-        styler: "fb",
-        cursorcolor: "#65cea7",
-        cursorwidth: '3',
-        cursorborderradius: '0px',
-        background: '#424f63',
-        spacebarenabled: false,
-        cursorborder: '0'
-    })
+  // custom scrollbar
+
+  
+  
+  // $(".table-responsive").niceScroll({
+  //    styler: "fb",
+  //    cursorcolor: "#65cea7",
+  //    cursorwidth: '3',
+  //    cursorborderradius: '0px',
+  //    background: '#424f63',
+  //    spacebarenabled: false,
+  //    cursorborder: '0'
+  //    //zindex: '1000'
+  // });
 });
+
 Template.MainLayout.helpers({
     appName: function () {
         var module = Session.get('currentModule');

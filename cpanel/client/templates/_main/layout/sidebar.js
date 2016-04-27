@@ -7,16 +7,6 @@ Template._sidebar.helpers({
         // var menu = s.decapitalize(currentModule);
         return `${currentModule}_sidebar`;
     },
-    navbar: function () {
-        var currentModule = Session.get('currentModule');
-        var currentBranch = Session.get('currentBranch');
-        if (!Meteor.userId() || !currentModule || !currentBranch) {
-            return {show: false};
-        }
-        var bar = s.decapitalize(currentModule);
-
-        return {show: true, template: {left: bar + '_sidebar', right: bar + '_navbarRight'}};
-    },
     currentBranch: function () {
         var currentModule = Session.get('currentModule');
         var currentBranch = Session.get('currentBranch');
