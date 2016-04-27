@@ -1,6 +1,6 @@
 Template.MainLayout.onRendered(function () {
   // custom scrollbar
-
+    
   
   
   // $(".table-responsive").niceScroll({

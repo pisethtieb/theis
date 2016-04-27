@@ -35,16 +35,6 @@ MeteorAdminLTE.options = {
   //This option is forced to true if both the fixed layout and sidebar mini
   //are used together
   sidebarExpandOnHover: true,
-  //BoxRefresh Plugin
-  enableBoxRefresh: true,
-  //Bootstrap.js tooltip
-  enableBSToppltip: true,
-  BSTooltipSelector: "[data-toggle='tooltip']",
-  //Enable Fast Click. Fastclick.js creates a more
-  //native touch experience with touch devices. If you
-  //choose to enable the plugin, make sure you load the script
-  //before AdminLTE's app.js
-  enableFastclick: true,
   //Control Sidebar Options
   enableControlSidebar: true,
   controlSidebarOptions: {
@@ -55,33 +45,7 @@ MeteorAdminLTE.options = {
     //Enable slide over content
     slide: true
   },
-  //Box Widget Plugin. Enable this plugin
-  //to allow boxes to be collapsed and/or removed
-  enableBoxWidget: true,
-  //Box Widget plugin options
-  boxWidgetOptions: {
-    boxWidgetIcons: {
-      //Collapse icon
-      collapse: 'fa-minus',
-      //Open icon
-      open: 'fa-plus',
-      //Remove icon
-      remove: 'fa-times'
-    },
-    boxWidgetSelectors: {
-      //Remove button selector
-      remove: '[data-widget="remove"]',
-      //Collapse button selector
-      collapse: '[data-widget="collapse"]'
-    }
-  },
-  //Direct Chat plugin options
-  directChat: {
-    //Enable direct chat by default
-    enable: true,
-    //The button to open and close the chat contacts pane
-    contactToggleSelector: '[data-widget="chat-pane-toggle"]'
-  },
+
   //Define the set of colors to use globally around the website
   colors: {
     lightBlue: "#3c8dbc",
@@ -152,57 +116,19 @@ MeteorAdminLTE._run = function () {
     }
 
     //Add slimscroll to navbar dropdown
-    // if (o.navbarMenuSlimscroll && typeof $.fn.slimscroll != 'undefined') {
-    //     $(".navbar .menu").slimscroll({
-    //         height: o.navbarMenuHeight,
-    //         alwaysVisible: false,
-    //         size: o.navbarMenuSlimscrollWidth
-    //     }).css("width", "100%");
-    // }
+    if (o.navbarMenuSlimscroll && typeof $.fn.slimscroll != 'undefined') {
+      $(".navbar .menu").slimscroll({
+        height: o.navbarMenuHeight,
+        alwaysVisible: false,
+        size: o.navbarMenuSlimscrollWidth
+      }).css("width", "100%");
+    }
 
     //Activate sidebar push menu
     // if (o.sidebarPushMenu) {
     //     MeteorAdminLTE.pushMenu.activate(o.sidebarToggleSelector);
     // }
 
-    //Activate Bootstrap tooltip
-    if (o.enableBSToppltip) {
-      $('body').tooltip({
-        selector: o.BSTooltipSelector
-      });
-    }
-
-    //Activate box widget
-    if (o.enableBoxWidget) {
-      MeteorAdminLTE.boxWidget.activate();
-    }
-
-    //Activate fast click
-    if (o.enableFastclick && typeof FastClick != 'undefined') {
-      FastClick.attach(document.body);
-    }
-
-    //Activate direct chat widget
-    if (o.directChat.enable) {
-      $(document).on('click', o.directChat.contactToggleSelector, function () {
-        var box = $(this).parents('.direct-chat').first();
-        box.toggleClass('direct-chat-contacts-open');
-      });
-    }
-
-    /*
-     * INITIALIZE BUTTON TOGGLE
-     * ------------------------
-     */
-    $('.btn-group[data-toggle="btn-toggle"]').each(function () {
-      var group = $(this);
-      $(this).find(".btn").on('click', function (e) {
-        group.find(".btn.active").removeClass("active");
-        $(this).addClass("active");
-        e.preventDefault();
-      });
-
-    });
   });
 };
 
@@ -228,22 +154,9 @@ MeteorAdminLTE._init = function () {
       var _this = this;
       _this.fix();
       _this.fixSidebar();
-      _this.scroll();
       $(window, ".wrapper").resize(function () {
         _this.fix();
         _this.fixSidebar();
-        _this.scroll();
-      });
-    },
-    scroll: function () {
-      $(".sidebar").niceScroll({
-        styler: "fb",
-        cursorcolor: "transparent",
-        cursorwidth: '3',
-        cursorborderradius: '0px',
-        background: 'transparent',
-        spacebarenabled: false,
-        cursorborder: '0'
       });
     },
     fix: function () {
@@ -275,7 +188,6 @@ MeteorAdminLTE._init = function () {
       }
     },
     fixSidebar: function () {
-
       //Make sure the body tag has the .fixed class
       if (!$("body").hasClass("fixed")) {
         if (typeof $.fn.slimScroll != 'undefined') {
@@ -312,7 +224,6 @@ MeteorAdminLTE._init = function () {
     activate: function (toggleBtn) {
       //Get the screen sizes
       var screenSizes = MeteorAdminLTE.options.screenSizes;
-
       //Enable sidebar toggle
       $(document).on('click', toggleBtn, function (e) {
         e.preventDefault();
@@ -523,8 +434,9 @@ MeteorAdminLTE._init = function () {
       $(".content-wrapper, .right-side").css('min-height', sidebar.height());
     }
   };
-
 };
+
+
 
 /* --------------------
  * - AdminLTE Run -
@@ -533,6 +445,7 @@ MeteorAdminLTE._init = function () {
  */
 MeteorAdminLTE.run = function () {
   this._run();
+  // this._customPlugins();
 };
 
 /*********************************************
@@ -564,6 +477,7 @@ Template.AdminLTE.onRendered(function () {
       MeteorAdminLTE.run();
     });
   }
+
   $("html").niceScroll({
     styler: "fb",
     cursorcolor: "#65cea7",
