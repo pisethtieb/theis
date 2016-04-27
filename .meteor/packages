@@ -184,9 +184,8 @@ theara:app-dump
 theara:autoform-file
 theara:scrollup
 theara:admin-lte
-#rochal:slimscroll
-#yp2:admin-lte
-#mfactory:admin-lte
+rochal:slimscroll
+
 
 natestrauser:select2
 sergeyt:typeahead
