@@ -1,21 +1,13 @@
 Template.MainLayout.onRendered(function () {
-  // custom scrollbar
-    
-  
-  
-  // $(".table-responsive").niceScroll({
-  //    styler: "fb",
-  //    cursorcolor: "#65cea7",
-  //    cursorwidth: '3',
-  //    cursorborderradius: '0px',
-  //    background: '#424f63',
-  //    spacebarenabled: false,
-  //    cursorborder: '0'
-  //    //zindex: '1000'
-  // });
 });
 
 Template.MainLayout.helpers({
+    navbarMenu: function () {
+        var currentModule = Session.get('currentModule');
+        // var menu = s.decapitalize(currentModule);
+
+        return `${currentModule}_navbarMenu`;
+    },
     appName: function () {
         var module = Session.get('currentModule');
         var branch = Session.get('currentBranch');

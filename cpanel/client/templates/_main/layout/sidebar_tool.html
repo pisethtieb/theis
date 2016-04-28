@@ -1,0 +1,27 @@
+<template name="Cpanel_sidebarTool">
+  <!--Tools-->
+  <li class="header">TOOL</li>
+  <li class="{{isActiveRoute name='cpanel.backup'}}">
+    <a href="{{pathFor 'cpanel.backup'}}">
+      <i class="fa fa-download"></i><span>Backup</span>
+    </a>
+  </li>
+  <!--Check restore-->
+  {{#if restore}}
+    <li class="{{isActiveRoute name='cpanel.restore'}}">
+      <a href="{{pathFor 'cpanel.restore'}}">
+        <i class="fa fa-upload"></i><span>Restore</span>
+      </a>
+    </li>
+  {{/if}}
+  <li>
+    <a href="{{pathFor 'cpanel.help'}}" target="_blank">
+      <i class="fa fa-question-circle"></i><span>Help</span>
+    </a>
+  </li>
+  <li class="{{isActiveRoute name='cpanel.about'}}">
+    <a href="{{pathFor 'cpanel.about'}}">
+      <i class="fa fa-universal-access"></i><span>About</span>
+    </a>
+  </li>
+</template>

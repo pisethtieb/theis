@@ -51,10 +51,9 @@ Template.navbar.helpers({
 
     return 'Rabbit Tech';
   },
-  navbarMenu: function () {
+  navbar: function () {
     var currentModule = Session.get('currentModule');
     // var menu = s.decapitalize(currentModule);
-
     return `${currentModule}_navbarMenu`;
   },
   user: function () {

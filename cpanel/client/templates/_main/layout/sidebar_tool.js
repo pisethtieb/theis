@@ -1,4 +1,4 @@
-Template.cpanel_navbarTool.helpers({
+Template.Cpanel_sidebarTool.helpers({
     helpPath: function () {
         var currentModule = Session.get('currentModule');
         var currentBranch = Session.get('currentBranch');
