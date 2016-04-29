@@ -187,7 +187,7 @@ templating@1.1.5
 templating-tools@1.0.0
 theara:admin-lte@0.3.2
 theara:alertifyjs@1.6.7
-theara:app-dump@1.0.0
+theara:app-dump@1.0.2
 theara:autoform-file@0.0.1
 theara:autoprint@0.0.7
 theara:call-async@0.1.9

@@ -13,11 +13,21 @@ Module.Rabbit = {
     ],
     dump: {
         setting: [
-            'rabbit_location'
+            'rabbit_contractor',
+            'rabbit_product'
         ],
         data: [
             'rabbit_customer',
-            'rabbit_order'
+            'rabbit_quotation',
+            'rabbit_agent',
+            'rabbit_contract',
+            'rabbit_office',
+            'rabbit_payment',
+            'rabbit_paymentMaintenance',
+            'rabbit_paymentOffice',
+            'rabbit_paymentWebsite',
+            'rabbit_service',
+            'rabbit_website'
         ]
     }
 };

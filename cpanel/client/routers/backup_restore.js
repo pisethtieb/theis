@@ -8,6 +8,7 @@ cpanelRoutes.route('/backup', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Backup',
+        icon: 'download',
         parent: 'cpanel.home'
     }
 });
@@ -22,6 +23,7 @@ cpanelRoutes.route('/restore', {
         //params: ['id'],
         //queryParams: ['show', 'color'],
         title: 'Restore',
+        icon: 'upload',
         parent: 'cpanel.home'
     }
 });
