@@ -75,6 +75,10 @@ Rabbit.Schema.PaymentOffice = new SimpleSchema({
     'office.$.dueAmount': {
         type: Number,
         decimal: true
+    },
+    'branchId':{
+      type: String,
+      label:"Branch"
     }
 })
 ;

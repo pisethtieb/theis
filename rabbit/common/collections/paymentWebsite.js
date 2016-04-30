@@ -11,7 +11,6 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
     websiteId: {
         type: String,
         label: 'Website ID'
-
     },
     paymentWebsiteDate: {
         type: String,
@@ -133,9 +132,11 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
     serviceId: {
         type: String,
         optional: true
-}
-
-
+    },
+    branchId:{
+      type:String,
+      label:"Branch"
+    }
 })
 ;
 // Attach schema

@@ -206,7 +206,7 @@ insertTpl.events({
             thisObje.parents('div.item-list').find('.dueAmount').val('');
 
         }
-        debugger;
+
         var maintenance = Rabbit.Collection.Maintenance.findOne({_id: maintenanceId});
         Rabbit.Collection.Maintenance.find(maintenanceId).forEach(function (obj) {
             var paymentMaintenance = Rabbit.Collection.PaymentMaintenance.findOne({
@@ -220,7 +220,6 @@ insertTpl.events({
             console.log(paymentMaintenance);
             debugger;
             if (paymentMaintenance != null) {
-                debugger;
                 paymentMaintenance.maintenance.forEach(function (payObj) {
                     debugger;
                     if (obj._id == payObj.maintenanceId && payObj.dueAmount > 0) {

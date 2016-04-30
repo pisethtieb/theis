@@ -108,8 +108,10 @@ Rabbit.Schema.Service = new SimpleSchema({
         type: String,
         label: "Status",
         defaultValue: "no"
-
-
+    },
+    branchId:{
+      type:String,
+      label:"Branch"
     }
 });
 // Attach schema

@@ -265,7 +265,6 @@ AutoForm.hooks({
     // PaymentOffice
     rabbit_paymentOfficeInsert: {
         before: {
-
             insert: function (doc) {
                 doc.branchId = Session.get('currentBranch');
                 var prefix = doc.branchId + '-';
