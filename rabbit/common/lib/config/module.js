@@ -22,7 +22,6 @@ Module.Rabbit = {
             'rabbit_agent',
             'rabbit_contract',
             'rabbit_office',
-            'rabbit_payment',
             'rabbit_paymentMaintenance',
             'rabbit_paymentOffice',
             'rabbit_paymentWebsite',
