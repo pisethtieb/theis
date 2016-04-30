@@ -75,6 +75,10 @@ Rabbit.Schema.PaymentMaintenance = new SimpleSchema({
     'maintenance.$.dueAmount': {
         type: Number,
         decimal: true
+    },
+    'branchId':{
+      type: String,
+      label: "Branch"
     }
 })
 ;

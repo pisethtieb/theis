@@ -49,7 +49,6 @@ Rabbit.List = {
     list.push({label: "(Select One)", value: ""});
     Rabbit.Collection.Agent.find()
       .forEach(function (obj) {
-        debugger;
         list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
       });
     return list;

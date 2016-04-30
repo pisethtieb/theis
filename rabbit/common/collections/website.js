@@ -46,6 +46,10 @@ Rabbit.Schema.Website = new SimpleSchema({
             }
         },
         optional: true
+    },
+    branchId: {
+        type: String,
+        label: "Branch"
     }
 
 });

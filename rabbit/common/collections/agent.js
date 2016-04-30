@@ -34,6 +34,10 @@ Rabbit.Schema.Agent= new SimpleSchema({
     telephone: {
         type: String,
         label: "Telephone"
+    },
+    branchId: {
+      type: String,
+      label: "Branch"
     }
 })
 ;
