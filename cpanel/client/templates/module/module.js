@@ -41,13 +41,15 @@ class CpanelModuleLogin extends BlazeComponent {
               Bert.alert({
                 // title: 'Error',
                 message: error.message,
-                type: 'danger'
+                type: 'danger',
+                style: 'growl-bottom-right'
               });
             } else {
               Bert.alert({
                 // title: 'Success',
                 message: 'You are sign in',
-                type: 'success'
+                type: 'success',
+                style: 'growl-bottom-right'
               });
             }
           });
@@ -56,7 +58,8 @@ class CpanelModuleLogin extends BlazeComponent {
           Bert.alert({
             // title: 'Error',
             message: error.message,
-            type: 'danger'
+            type: 'danger',
+            style: 'growl-bottom-right'
           });
         }
       }

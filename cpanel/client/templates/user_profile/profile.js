@@ -86,13 +86,15 @@ AutoForm.hooks({
             alertify.userProfile().close();
             Bert.alert({
                 message: 'Success',
-                type: 'success'
+                type: 'success',
+                style: 'growl-bottom-right'
             });
         },
         onError: function (formType, error) {
             Bert.alert({
                 message: error.message,
-                type: 'danger'
+                type: 'danger',
+                style: 'growl-bottom-right'
             });
         }
     },
@@ -106,7 +108,8 @@ AutoForm.hooks({
                 if (error) {
                     Bert.alert({
                         message: error.message,
-                        type: 'danger'
+                        type: 'danger',
+                        style: 'growl-bottom-right'
                     });
                 } else {
                     alertify.userProfile().close();
@@ -117,7 +120,8 @@ AutoForm.hooks({
         onError: function (formType, error) {
             Bert.alert({
                 message: error.message,
-                type: 'danger'
+                type: 'danger',
+                style: 'growl-bottom-right'
             });
         }
     }

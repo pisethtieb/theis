@@ -3,12 +3,13 @@ SignOut = function () {
         if (!error) {
             // Clear Session
             Session.clearPersistent();
-            
+
             FlowRouter.go('cpanel.module');
             Bert.alert({
                 // title: 'Success',
                 message: 'You are sign out',
-                type: 'success'
+                type: 'success',
+                style: 'growl-bottom-right'
             });
         }
     });

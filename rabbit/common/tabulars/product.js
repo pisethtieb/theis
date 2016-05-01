@@ -13,48 +13,45 @@ Rabbit.TabularTable.Product = new Tabular.Table({
         {data: "_id", title: "ID"},
         {data: "name", title: "Name"},
         {
-            data: "basePrice", title: "Product Price",
+            data: "basePrice", title: "Fully Fee",
             render: function (val, type, doc) {
-                var str = "<ul>";
+                var str = "";
                 if (val != null) {
                     val.forEach(function (o) {
 
-                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
+                        str += "<li>HeadOffice : " + o.headOffice + " | branch :" + o.branch +
                             "</li>";
                     });
                 }
-                str += '</ul>';
                 return str
             }
         },
         {
             data: "maintenancePrice", title: "Maintenance Price",
             render: function (val, type, doc) {
-                var str = "<ul>";
+                var str = "";
                 if (val != null) {
                     val.forEach(function (o) {
 
-                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
+                        str += "<li>HeadOffice : " + o.headOffice + " | branch :" + o.branch +
                             "</li>";
                     });
                 }
-                str += '</ul>';
                 return str
             }
 
         },
         {
-            data: "monthlyFee", title: "MonthlyFee Price",
+            data: "monthlyFee", title: "Monthly Fee",
             render: function (val, type, doc) {
-                var str = "<ul>";
+                var str = "";
                 if (val != null) {
                     val.forEach(function (o) {
 
-                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
+                        str += "<li>HeadOffice : " + o.headOffice + " | branch :" + o.branch +
                             "</li>";
                     });
                 }
-                str += '</ul>';
                 return str
             }
 
@@ -62,7 +59,7 @@ Rabbit.TabularTable.Product = new Tabular.Table({
         {
             data: "", title: "Mothly Service",
             render: function (val, type, doc) {
-                return "Install : " + doc.installationFee + " | " + " Train : " + doc.trainingFee;
+                return "<li> Install : " + doc.installationFee + " | " + " Train : " + doc.trainingFee + "</li>";
             }
         },
 

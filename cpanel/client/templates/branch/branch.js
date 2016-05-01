@@ -18,11 +18,22 @@ indexTpl.events({
         alertify.branch(fa("pencil", "Branch"), renderTemplate(editTpl, this));
     },
     'click .js-destroy': function (e, t) {
-        destroyAction(
-          Cpanel.Collection.Branch,
-          {_id: this._id},
-          {title: 'Branch', item: this._id}
-        );
+      var id = this._id;
+
+      alertify.confirm(
+          fa("remove", "Branch"),
+          "Are you sure to delete [" + id + "]?",
+          function () {
+
+              Cpanel.Collection.Branch.remove(id, function (error) {
+                  if (error) {
+                      alertify.error(error.message);
+                  } else {
+                      alertify.success("Success");
+                  }
+              });
+          },
+          null);
     },
     'click .js-display': function (e, t) {
         alertify.alert(fa("eye", "Branch"), renderTemplate(showTpl, this).html);
@@ -63,31 +74,19 @@ showTpl.helpers({
 AutoForm.hooks({
     Cpanel_branchNew: {
         onSuccess: function (formType, result) {
-            Bert.alert({
-                message: 'Success',
-                type: 'success'
-            });
+          alertify.success("Success");
         },
         onError: function (formType, error) {
-            Bert.alert({
-                message: error.message,
-                type: 'danger'
-            });
+          alertify.error(error.message);
         }
     },
     Cpanel_branchEdit: {
         onSuccess: function (formType, result) {
             alertify.branch().close();
-            Bert.alert({
-                message: 'Success',
-                type: 'success'
-            });
+            alertify.success("Success");
         },
         onError: function (formType, error) {
-            Bert.alert({
-                message: error.message,
-                type: 'danger'
-            });
+            alertify.error(error.message);
         }
     }
 });

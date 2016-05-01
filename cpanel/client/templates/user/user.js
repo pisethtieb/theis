@@ -26,15 +26,9 @@ indexTpl.events({
             function () {
                 Meteor.call('userRemove', self._id, function (error, result) {
                     if (error) {
-                        Bert.alert({
-                            message: error.message,
-                            type: 'danger'
-                        });
+                      alertify.error(error.message);
                     } else {
-                        Bert.alert({
-                            message: 'Success',
-                            type: 'success'
-                        });
+                      alertify.success('Success');
                     }
                 });
             },
@@ -133,26 +127,17 @@ AutoForm.hooks({
 
             Meteor.call('userInsert', insertDoc, function (error, result) {
                 if (error) {
-                    Bert.alert({
-                        message: error.message,
-                        type: 'danger'
-                    });
+                  alertify.error(error.message);
                 }
             });
 
             this.done();
         },
         onSuccess: function (formType, result) {
-            Bert.alert({
-                message: 'Success',
-                type: 'success'
-            });
+          alertify.success("Success");
         },
         onError: function (formType, error) {
-            Bert.alert({
-                message: error.message,
-                type: 'danger'
-            });
+            alertify.error(error.message);
         }
     },
     Cpanel_userEdit: {
@@ -161,10 +146,7 @@ AutoForm.hooks({
 
             Meteor.call('userUpdate', currentDoc._id, insertDoc, function (error, result) {
                 if (error) {
-                    Bert.alert({
-                        message: error.message,
-                        type: 'danger'
-                    });
+                    alertify.error(error.message);
                 }
             });
 
@@ -172,16 +154,10 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.user().close();
-            Bert.alert({
-                message: 'Success',
-                type: 'success'
-            });
+            alertify.success("Success");
         },
         onError: function (formType, error) {
-            Bert.alert({
-                message: error.message,
-                type: 'danger'
-            });
+              alertify.error(error.message);
         }
     }
 });

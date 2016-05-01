@@ -20,10 +20,11 @@ indexTpl.events({
     },
     'click .remove': function (e, t) {
         var id = this._id;
+        var exDate = moment(this.exDate).format('YYYY-MM-DD');
 
         alertify.confirm(
             fa("remove", "Exchange"),
-            "Are you sure to delete [" + this.dateTime + "]?",
+            "Are you sure to delete [" + exDate + "]?",
             function () {
 
                 Cpanel.Collection.Exchange.remove(id, function (error) {
