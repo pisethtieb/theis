@@ -7,7 +7,8 @@
         <small>
 
             {{#with customer}}
-                <span class="jsInfo">{{_id}} | contractPerson: {{contractName}} | Tel: {{telephone}} | Company: {{companyName}} |
+                <span class="jsInfo">{{_id}} | ContractPerson: {{contractName}} | Tel: {{telephone}}
+                    | Company: {{companyName}} |
                     CompanyTel: {{companyTelephone}}</span>
             {{/with}}
         </small>
@@ -93,18 +94,18 @@
 <template name="rabbit_serviceLinkAction">
     <button type="button" class="btn btn-primary btn-sm serviceAction">
         {{#if _serviceCount}}
-            {{_serviceCount}}
+            buy {{_serviceCount}}
         {{else}}
-            0
+            buy 0
         {{/if}}
     </button>
 </template>
 <template name="rabbit_paymentWebsiteLinkAction">
     <button type="button" class="btn btn-primary btn-sm paymentWebsiteAction">
         {{#if _paymentWebsiteCount}}
-            {{_paymentWebsiteCount}}
+            pay {{_paymentWebsiteCount}}
         {{else}}
-            0
+            pay 0
         {{/if}}
     </button>
 </template>

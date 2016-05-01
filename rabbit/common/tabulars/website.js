@@ -18,9 +18,9 @@ Rabbit.TabularTable.Website = new Tabular.Table({
                 return moment(val).format('YYYY-MM-DD');
             }
         },
-        {data: "webName", title: "Web Name"},
+        {data: "webName", title: "Website Name"},
         {data: "type", title: "Type"},
-        {data: "price", title: "price"},
+        {data: "price", title: "Price"},
         {
             data: "_serviceCount",
             title: "Service <i class='fa fa-arrow-up'></i>",
