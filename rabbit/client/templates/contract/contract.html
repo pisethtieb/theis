@@ -33,9 +33,9 @@
 <template name="rabbit_contractInsert">
     {{#autoForm collection=Rabbit.Collection.Contract id="rabbit_contractInsert" doc=contractObj type="insert"}}
         <div class="row">
-            <div class="col-md-2">
-                {{> afQuickField name="customerId"  readOnly=true value=customerId}}
-                {{> afQuickField name="type" class='type'}}
+            <div class="col-md-2 hidden">
+                {{> afQuickField name="customerId" value=customerId   label=false}}
+
             </div>
             <div class="col-md-3">
                 {{> afQuickField name="contractDate"}}
@@ -48,6 +48,9 @@
             <div class="col-md-2">
                 {{> afQuickField name="productType" class="productType"}}
                 {{> afQuickField name="productId" class='productId'}}
+            </div>
+            <div class="col-md-2">
+                {{> afQuickField name="type" class='type'}}
             </div>
             <div class="col-sm-3">
                 {{> afQuickField name="des" class='desCustom' rows=5}}
@@ -342,9 +345,16 @@
 <template name="rabbit_officeLinkAction">
     <button type="button" class="btn btn-primary btn-sm officeAction">
         {{#if _officeCount}}
-            {{_officeCount}}
+            Buy {{_officeCount}}
         {{else}}
-            0
+            Buy 0
+        {{/if}}
+    </button>
+    <button type="button" class="btn btn-primary btn-sm paymentOfficeAction">
+        {{#if _paymentOfficeCount}}
+            Pay {{_paymentOfficeCount}}
+        {{else}}
+            Pay 0
         {{/if}}
     </button>
 </template>
