@@ -78,6 +78,14 @@ indexTpl.events({
         FlowRouter.go('rabbit.maintenance', {
             customerId: this._contract.customerId, contractId: this.contractId, officeId: this._id
         })
+    },
+    'click .payOnOffice': function () {
+        let id = FlowRouter.getParam('contractId');
+        let contract = Rabbit.Collection.Contract.findOne({_id: id});
+        FlowRouter.go('rabbit.paymentOffice', {
+            customerId: contract.customerId, contractId: contract._id
+
+        });
     }
 });
 

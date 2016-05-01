@@ -63,6 +63,14 @@ indexTpl.events({
     'click .js-show': function (e, t) {
         alertify.maintenanceShow(fa("eye", "Maintenance"), renderTemplate(showTpl, this));
     },
+    'click .payOnMain': function () {
+        let id = FlowRouter.getParam('officeId');
+        let office = Rabbit.Collection.Office.findOne({_id: id});
+        FlowRouter.go('rabbit.paymentMaintenance', {
+            customerId: office._contract.customerId, contractId: office._contract._id
+
+        });
+    }
 
 });
 
