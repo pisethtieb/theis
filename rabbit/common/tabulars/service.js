@@ -10,7 +10,7 @@ Rabbit.TabularTable.Service = new Tabular.Table({
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_ServiceAction},
         {data: "_id", title: "ID"},
-        {data: "websiteId", title: "paymentWebsite ID"},
+        {data: "websiteId", title: "PaymentWebsite ID"},
         {
             data: "serviceDate", title: "Service Date",
             render: function (val, type, doc) {

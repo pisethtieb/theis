@@ -50,8 +50,8 @@ Rabbit.TabularTable.Product = new Tabular.Table({
                 if (val != null) {
                     val.forEach(function (o) {
 
-                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch + 
-                          "</li>";
+                        str += "<li>HeadOffice : " + o.headOffice + "| branch :" + o.branch +
+                            "</li>";
                     });
                 }
                 str += '</ul>';
@@ -59,10 +59,15 @@ Rabbit.TabularTable.Product = new Tabular.Table({
             }
 
         },
-        {data: "installationFee", title: "Installation Fee"},
-        {data: "trainingFee", title: "Training Fee"},
+        {
+            data: "", title: "Mothly Service",
+            render: function (val, type, doc) {
+                return "Install : " + doc.installationFee + " | " + " Train : " + doc.trainingFee;
+            }
+        },
+
         {data: "_contractCunt", title: "C"},
         {data: "_quotationCount", title: "Q"}
     ],
-    extraFields: ['feature','installationFee','trainingFee']
+    extraFields: ['feature', 'installationFee', 'trainingFee']
 });

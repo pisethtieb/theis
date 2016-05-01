@@ -10,10 +10,10 @@ Rabbit.TabularTable.PaymentMaintenance = new Tabular.Table({
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_paymentMaintenanceAction},
         {data: "_id", title: "ID"},
-        {data: "_customer.companyName", title: "customer"},
+        {data: "_customer.companyName", title: "Customer"},
         {data: "contractId", title: "Contract ID"},
         {
-            data: "maintenance", title: "payment",
+            data: "maintenance", title: "Payment",
             render: function (val, type, doc) {
                 var str = "<ul>";
                 if (val != null) {
