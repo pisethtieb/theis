@@ -47,6 +47,15 @@ Meteor.methods({
                     service.domainNamePrice = service.domainNamePrice == null ? 0 : service.domainNamePrice;
                     service.hostingPrice = service.hostingPrice == null ? 0 : service.hostingPrice;
                     service.maintenancePrice = service.maintenancePrice == null ? 0 : service.maintenancePrice;
+                    //start
+                    service.domainNameStartDate = service.domainNameStartDate == null ? 0 : service.domainNameStartDate;
+                    service.hostingStartDate = service.hostingStartDate == null ? 0 : service.hostingStartDate;
+                    service.maintenanceStartDate = service.maintenanceStartDate == null ? 0 : service.maintenanceStartDate;
+                    //end
+                    service.domainNameEndDate = service.domainNameEndDate == null ? 0 : service.domainNameEndDate;
+                    service.hostingEndDate = service.hostingEndDate == null ? 0 : service.hostingEndDate;
+                    service.maintenanceEndDate = service.maintenanceStartDate == null ? 0 : service.maintenanceStartDate;
+
                     totalDomainName += service.domainNamePrice;
                     totalHosting += service.hostingPrice;
                     totalMaintenance += service.maintenancePrice;
