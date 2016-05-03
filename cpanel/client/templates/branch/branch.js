@@ -73,6 +73,12 @@ showTpl.helpers({
 // Hook
 AutoForm.hooks({
     Cpanel_branchNew: {
+        before: {
+          insert: function (doc) {
+              doc._id = idGenerator.gen(Cpanel.Collection.Branch,3);
+              return doc;
+          }
+        },
         onSuccess: function (formType, result) {
           alertify.success("Success");
         },
