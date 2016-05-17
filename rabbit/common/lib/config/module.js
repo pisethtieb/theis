@@ -5,7 +5,7 @@ Meteor.isClient && Template.registerHelper('Module', Module);
 Module.Rabbit = {
     name: 'Rabbit System',
     version: '0.0.1',
-    summary: 'Rabbit Management System is ...',
+    summary: 'Rabbit Management System',
     roles: [
         'setting',
         'data',
