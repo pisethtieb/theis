@@ -9,7 +9,8 @@ Module.Rabbit = {
     roles: [
         'setting',
         'data',
-        'report'
+        'report',
+        'restore'
     ],
     dump: {
         setting: [
