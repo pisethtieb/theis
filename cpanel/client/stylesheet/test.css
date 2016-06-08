@@ -68,7 +68,7 @@ img.profile-img {
 @media (min-width: 1200px) {
   #mainnav-shortcut .shortcut-grid i {
     -webkit-transition: font-size .17s linear .15s;
-    transition: font-size .17s linear .15s;
+    transition: font-size 0.57s linear .15s;
   }
 }
 
