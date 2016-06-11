@@ -29,7 +29,8 @@ Rabbit.Schema.Customer = new SimpleSchema({
   id: {
     type: String,
     label: 'ID Card',
-    optional: true
+    optional: true,
+    unique:true
   },
   position: {
     type: String,
@@ -47,7 +48,8 @@ Rabbit.Schema.Customer = new SimpleSchema({
   },
   telephone: {
     type: String,
-    label: 'Telephone'
+    label: 'Telephone',
+    unique:true
   },
   email: {
     type: String,
@@ -73,7 +75,8 @@ Rabbit.Schema.Customer = new SimpleSchema({
   },
   companyTelephone: {
     type: String,
-    label: "Telephone"
+    label: "Telephone",
+    unique:true
   },
   companyEmail: {
     type: String,
