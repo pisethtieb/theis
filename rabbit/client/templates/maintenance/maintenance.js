@@ -108,7 +108,7 @@ insertTpl.helpers({
                     type: office.type,
                     discount: 0,
                     startDate: moment(ReactiveMethod.call("currentDate"), 'YYYY-MM-DD').format('YYYY-MM-DD'),
-                    endDate: moment().add(1, 'years').format('YYYY-MM-DD')
+                    endDate: moment().add(1, 'month').format('YYYY-MM-DD')
                 }
             } else {
                 return {
@@ -131,7 +131,7 @@ insertTpl.helpers({
                     type: office.type,
                     discount: 0,
                     startDate: moment(ReactiveMethod.call("currentDate"), 'YYYY-MM-DD').format('YYYY-MM-DD'),
-                    endDate: moment().add(1, 'years').format('YYYY-MM-DD')
+                    endDate: moment().add(1, 'month').format('YYYY-MM-DD')
 
                 }
             } else {
