@@ -5,8 +5,10 @@ Rabbit.Collection.Contractor = new Mongo.Collection("rabbit_contractor");
 Rabbit.Schema.Contractor = new SimpleSchema({
     name: {
         type: String,
-        label: "Name"
+        label: "Name",
+        unique: true
     },
+
     gender: {
         type: String,
         label: "Gender",
@@ -49,7 +51,6 @@ Rabbit.Schema.Contractor = new SimpleSchema({
         type: String,
         label: "Position"
     }
-})
-;
+});
 // Attach schema
 Rabbit.Collection.Contractor.attachSchema(Rabbit.Schema.Contractor);
