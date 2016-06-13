@@ -94,10 +94,8 @@ insertTpl.events({
             }
         }
         return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
-    },
+    }
 });
-
-
 /**
  * Update
  */
@@ -110,7 +108,6 @@ updateTpl.onRendered(function () {
     }, 200);
 });
 updateTpl.events({
-
     'keypress #basePriceHeadOffice,#basePriceBranch,#MaintenaceHeadOffice,#MaintenaceBranch,#monthlyFeeHeadOffice,#monthlyFeeBranch,.trainingFee,.installationFee': function (evt) {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         if ($(evt.currentTarget).val().indexOf('.') != -1) {
