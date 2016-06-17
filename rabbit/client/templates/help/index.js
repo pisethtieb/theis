@@ -1,10 +1,10 @@
 // Declare template
-var indexTpl = Template.cpanel_help;
+var indexTpl = Template.rabbit_help;
 
 indexTpl.onCreated(function () {
     // SEO
     SEO.set({
-        title: 'Cpanel Help',
+        title: 'Rabbit Help',
         description: 'Description for this page'
     });
 });

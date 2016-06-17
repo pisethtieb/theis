@@ -168,7 +168,6 @@ Rabbit.List = {
     var list = [];
     var contractId = FlowRouter.getParam("contractId");
     Rabbit.Collection.Maintenance.find({'_office.contractId': contractId}).forEach(function (obj) {
-        console.log(obj.endDate)
         var today = moment().format("YYYY-MM-DD");
         if (obj.endDate > today) {
           var payment = Rabbit.Collection.PaymentMaintenance.findOne({

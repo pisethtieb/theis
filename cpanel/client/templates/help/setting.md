@@ -19,5 +19,5 @@ sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliqu
 Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
 
 ---
-    
+
 {{/template}}

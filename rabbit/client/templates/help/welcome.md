@@ -1,22 +1,12 @@
 {{#template name="rabbit_helpWelcome"}}
 
-## Welcome
+##welcome
 
-At Bootply we like to build simple Bootstrap templates that utilize the code Bootstap CSS without a lot of customization. Sure you can
-find a lot of Bootstrap themes and inspiration, but these templates tend to be heavy on customization.
-
-
-
-Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut.
-Rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores
-eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut!
+ ក្រុមហ៊ុន Rabbit IT Solution គឺជាក្រុមហ៊ុនមួយដែលផ្តល់សេវាកម្មជាច្រើនដូចជា ការលក់ប្រព័ន្ធគ្រប់គ្រងលក្ខណៈ Web-based
+ Application និងគេហទំព័រ កុំព្យូទ័រ(Desktop, Laptop) គ្រឿងបន្លាស់ និងផ្តល់ការបង្រៀនជំនាញកុំព្យូទ័រដល់សិស្ស និស្សិតផងដែរ ហើយក្រុមហ៊ុននេះត្រូវបាន
+ បង្កើតឡើងក្នុងឆ្នាំ ២០១៤ ដែលមានទីតាំងស្ថិតនៅតាមបណ្តោយផ្លូវជាតិលេខ៥ ភូមិរំចេក៤ សង្កាត់រតនៈ ក្រុងបាត់ដំបង ខេត្តបាត់ដំបង (ទល់មុខសាខាពន្ធដារ ខេត្តបាត់ដំបង)។ ដោយសារតែពី
+ មួយថ្ងៃទៅមួយថ្ងៃ មានអតិថិជនមកទិញ ប្រព័ន្ធគ្រប់គ្រងលក្ខណៈ Web-based Application និងគេហទំព័រ កាន់តែច្រើនឡើង ហើយសព្វថ្ងៃនេះក្រុមហ៊ុនមិនទាន់មាន
+ ប្រព័ន្ធគ្រប់គ្រងទិន្នន័យនៅឡើយទេ គឺកំពុងតែប្រើប្រាស់ការកត់ត្រាដោយដៃផង និងប្រើប្រាស់កម្មវិធី Microsoft Excel ផង ទើបបង្កឱ្យមានភាពលំបាកក្នុងការគ្រប់គ្រង និងការងារមានភាពយឺតយ៉ាវ។
 
 ---
     
