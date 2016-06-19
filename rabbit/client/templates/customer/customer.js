@@ -90,9 +90,20 @@ indexTpl.events({
     }
     ,
     'click .contractAction': function () {
-        FlowRouter.go('rabbit.contract', {
-            customerId: this._id
-        })
+
+        if (this._websiteCount == 0 || this._websiteCount == null) {
+            FlowRouter.go('rabbit.contract', {
+                customerId: this._id
+            })
+            alertify.customer(fa("plus", "Contract"), renderTemplate(Template.rabbit_contractInsert));
+
+        } else {
+            FlowRouter.go('rabbit.contract', {
+                customerId: this._id
+            })
+        }
+
+
 
     }
     ,

@@ -160,6 +160,7 @@ AutoForm.hooks({
       }
     },
     onSuccess: function (formType, result) {
+      alertify.customer().close();
       alertify.website().close();
       alertify.success('Success');
     },
@@ -169,6 +170,7 @@ AutoForm.hooks({
   },
   rabbit_websiteUpdate: {
     onSuccess: function (formType, result) {
+
       alertify.website().close();
       alertify.addFile().close();
       alertify.success('Success');
