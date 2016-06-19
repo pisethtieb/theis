@@ -202,10 +202,7 @@ insertTpl.events({
         let type = $('.productType').val();
         let productId = $('.productId').val();
         let product = Rabbit.Collection.Product.findOne({_id: productId});
-
-
         if (type == 'fullyFee') {
-
             if (product) {
                 $('#basePriceHeadOffice').val(product.basePrice[0].headOffice);
                 $('#basePriceBranch').val(product.basePrice[0].branch);

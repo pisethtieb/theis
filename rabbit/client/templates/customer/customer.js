@@ -97,12 +97,22 @@ indexTpl.events({
     }
     ,
     'click .websiteAction': function () {
-        FlowRouter.go('rabbit.website', {
-            customerId: this._id
-        })
+
+        if (this._websiteCount == 0 || this._websiteCount == null) {
+            FlowRouter.go('rabbit.website', {
+                customerId: this._id
+            });
+            alertify.customer(fa("plus", "Website"), renderTemplate(Template.rabbit_websiteInsert));
+
+        } else {
+            FlowRouter.go('rabbit.website', {
+                customerId: this._id
+            })
+        }
     }
-})
-;
+
+
+});
 
 /**
  * Insert
