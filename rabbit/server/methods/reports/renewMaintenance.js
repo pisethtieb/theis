@@ -21,12 +21,13 @@ Meteor.methods({
             selector.branchId = params.branch;
         }
         if (!_.isEmpty(params.contractId)) {
-            selector._id = params.contractId
+            selector = {'_office.contractId': params.contractId}
         }
         var i = 1;
-        let total = 0;
+        let total = 0;s
         var now = moment().format('YYYY-MM-DD');
         let maintenance = Rabbit.Collection.Maintenance.find(selector);
+        console.log(maintenance.count());
         maintenance.forEach(function (o) {
 
             let renew = Rabbit.Collection.Maintenance.findOne({officeId: o.officeId}, {sort: {_id: -1}});

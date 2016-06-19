@@ -34,7 +34,7 @@ Meteor.methods({
             //selector.branchId = params.branch;
         }
         if (!_.isEmpty(params.websiteId)) {
-            selector.websiteID = params.websiteId
+            selector.websiteId = params.websiteId
         }
         var index = 1;
         let total = 0;
