@@ -15,7 +15,7 @@ Rabbit.Schema.Website = new SimpleSchema({
     },
     webName: {
         type: String,
-        label: 'Website Name',
+        label: 'Domain Name',
         unique: true
     },
     type: {
@@ -40,11 +40,6 @@ Rabbit.Schema.Website = new SimpleSchema({
     des: {
         type: String,
         label: "Description",
-        autoform: {
-            afFieldInput: {
-                type: "textarea"
-            }
-        },
         optional: true
     },
     branchId: {

@@ -78,10 +78,10 @@
                 <table class="report-content">
                     <thead class="content-header">
                     <tr>
+                        <th>No</th>
                         <th>ID</th>
-                        <th>Date</th>
                         <th>Payment Date</th>
-                        <th>Website Id</th>
+                        <th>Website</th>
                         <th>Contract Name</th>
                         <th>Contract Telephone</th>
                         <th>Design</th>
@@ -105,7 +105,7 @@
                             <td>{{index}}</td>
                             <td>{{_id}}</td>
                             <td>{{paymentWebsiteDate}}</td>
-                            <td>{{websiteId}}</td>
+                            <td>{{websiteId}} : {{_website.webName}}</td>
                             <td>{{_customer.contractName}}</td>
                             <td>{{_customer.telephone}}</td>
                             <td align="right">{{numFormat buildPrice "$0,0.00"}}</td>

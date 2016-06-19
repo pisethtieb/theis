@@ -7,9 +7,9 @@
         <small>
 
             {{#with website}}
-                <span class="jsInfo">{{_id}} | RegisterDate : {{registerDate}} | WebsiteName: {{webName}} |
-                    price : {{price}} | Customer(company) : {{_customer.companyName}} |
-                    ContractName : {{_customer.contractName}}</span>
+                <span class="jsInfo">Register Date : {{registerDate}} | Website: {{_id}} ( {{webName}} ) |
+                    Price : {{price}} | Company Name : {{_customer.companyName}} |
+                    Contract Name : {{_customer.contractName}}</span>
             {{/with}}
         </small>
     </div>
@@ -179,17 +179,23 @@
     <dl class="dl-horizontal">
         <dt>ID:</dt>
         <dd>{{_id}}</dd>
-        <dt>Customer:</dt>
+        <dt>Company Name:</dt>
         <dd>{{_customer.companyName}}</dd>
-        <dt>Website ID:</dt>
-        <dd>{{websiteId}}</dd>
-        <dt>Payment Website Date:</dt>
+        <dt>Company Tel:</dt>
+        <dd>{{_customer.companyTelephone}}</dd>
+        <dt>Contract Name:</dt>
+        <dd>{{_customer.contractName}}</dd>
+        <dt>Contract Tel:</dt>
+        <dd>{{_customer.telephone}}</dd>
+        <dt>Website:</dt>
+        <dd>{{websiteId}} ( {{_website.webName}} )</dd>
+        <dt>Payment Date:</dt>
         <dd>{{paymentWebsiteDate}}</dd>
-        <dt>Design Price:</dt>
+        <dt>Build Price:</dt>
         <dd>{{buildPrice}}</dd>
-        <dt>Design Paid:</dt>
+        <dt>Build Paid:</dt>
         <dd>{{buildPaid}}</dd>
-        <dt>Design Due:</dt>
+        <dt>Build Due:</dt>
         <dd>{{buildDue}}</dd>
         <dt>Domain Name Price:</dt>
         <dd>{{domainNamePrice}}</dd>
