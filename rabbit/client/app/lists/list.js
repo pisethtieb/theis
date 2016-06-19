@@ -19,8 +19,11 @@ Rabbit.List = {
   webType: function () {
     var list = [];
     list.push({label: "(Select One)", value: ""});
-    list.push({label: 'Advertise', value: 'advertise'});
-    list.push({label: 'Post', value: 'post'});
+    list.push({label: 'Personal', value: 'personal'});
+    list.push({label: 'eCommerce', value: 'ecommerce'});
+    list.push({label: 'Business', value: 'business'});
+    list.push({label: 'Podcasting', value: 'podcasting'});
+    list.push({label: 'School & College', value: 'school & college'});
     return list;
   },
   address: function () {

@@ -23,7 +23,7 @@ Rabbit.TabularTable.Customer = new Tabular.Table({
         },
         {
             data: "_websiteCount",
-            title: "Website Contract <i class='fa fa-arrow-up'></i>",
+            title: "Buy Website <i class='fa fa-arrow-up'></i>",
             tmpl: Meteor.isClient && Template.rabbit_websiteLinkAction
         }
         //{

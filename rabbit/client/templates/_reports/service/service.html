@@ -52,7 +52,7 @@
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
                             <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>WebsiteId:</strong> {{websiteId}}</div>
+                            <div><strong>Website Id:</strong> {{websiteId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -68,7 +68,7 @@
                         <th>No</th>
                         <th>ID</th>
                         <th>ServiceDate</th>
-                        <th>Website ID</th>
+                        <th>Website</th>
                         <th>Contract Name</th>
                         <th>Domain</th>
                         <th>Hosting</th>
@@ -81,7 +81,7 @@
                             <td>{{index}}</td>
                             <td>{{_id}}</td>
                             <td>{{serviceDate}}</td>
-                            <td>{{websiteId}}</td>
+                            <td>{{websiteId}} : {{_website.webName}}</td>
                             <td>{{_website._customer.contractName}}</td>
                             <td align="right">{{numFormat domainNamePrice "$0,0.00"}} ({{domainNameStartDate}} - {{domainNameEndDate}})</td>
                             <td align="right">{{numFormat hostingPrice "$0,0.00"}} ({{hostingStartDate}} - {{hostingEndDate}})</td>

@@ -33,7 +33,8 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         type: Number,
         label: "Price",
         optional: true,
-        decimal: true
+        decimal: true,
+        defaultValue: 0
     },
     buildPaid: {
         type: Number,
@@ -44,13 +45,15 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
                 return "buidlPraid";
             }
         },
+        defaultValue: 0,
         decimal: true
     },
     buildDue: {
         type: Number,
         label: "Due Amount",
         optional: true,
-        decimal: true
+        decimal: true,
+        defaultValue: 0
     },
 
 //    domainName
@@ -58,13 +61,15 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         type: Number,
         label: "Price",
         decimal: true,
-        optional: true
+        optional: true,
+        defaultValue: 0
     },
     domainNamePaid: {
         type: Number,
         label: "Paid Amount",
         optional: true,
         decimal: true,
+        defaultValue: 0,
         custom: function () {
             if (this.value > this.field('domainNamePrice').value) {
                 return "buidlPraid";
@@ -74,7 +79,8 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
     domainNameDue: {
         type: Number,
         label: "Due Amount",
-        optional: true
+        optional: true,
+        defaultValue: 0
     },
 
 //    Hosting
@@ -82,7 +88,8 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         type: Number,
         label: "Price",
         decimal: true,
-        optional: true
+        optional: true,
+        defaultValue: 0
     },
 
     hostingPaid: {
@@ -90,6 +97,7 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         label: "Paid Amount",
         optional: true,
         decimal: true,
+        defaultValue: 0,
         custom: function () {
             if (this.value > this.field('hostingPrice').value) {
                 return "buidlPraid";
@@ -100,7 +108,8 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
     hostingDue: {
         type: Number,
         label: "Due Amount",
-        optional: true
+        optional: true,
+        defaultValue: 0
     },
     //    maintenance
 
@@ -109,13 +118,15 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         type: Number,
         label: "Price",
         decimal: true,
-        optional: true
+        optional: true,
+        defaultValue: 0
     },
     maintenancePaid: {
         type: Number,
         label: "Paid Amount",
         optional: true,
         decimal: true,
+        defaultValue: 0,
         custom: function () {
             if (this.value > this.field('maintenancePrice').value) {
                 return "buidlPraid";
@@ -127,7 +138,8 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
         type: Number,
         label: "Due Amount",
         optional: true,
-        decimal: true
+        decimal: true,
+        defaultValue: 0
     },
     serviceId: {
         type: String,

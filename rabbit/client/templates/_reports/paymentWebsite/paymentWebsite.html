@@ -56,7 +56,7 @@
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
                             <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>ContractId:</strong> {{contractId}}</div>
+                            <!-- <div><strong>ContractId:</strong> {{contractId}}</div> -->
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -70,9 +70,9 @@
                     <thead class="content-header">
                     <tr>
                         <th>No</th>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Payment Date</th>
-                        <th>Website ID</th>
+                        <th>Website</th>
                         <th>Contract Name</th>
                         <th>Contract Telephone</th>
                         <th>Design</th>
@@ -94,9 +94,9 @@
                     {{#each content}}
                         <tr>
                             <td>{{index}}</td>
-                            <td>{{_id}}</td>
+                            <!-- <td>{{_id}}</td> -->
                             <td>{{paymentWebsiteDate}}</td>
-                            <td>{{websiteId}}</td>
+                            <td>{{websiteId}} : {{_website.webName}}</td>
                             <td>{{_customer.contractName}}</td>
                             <td>{{_customer.telephone}}</td>
                             <td align="right">{{numFormat buildPrice "$0,0.00"}}</td>
@@ -116,7 +116,7 @@
                     </tbody>
                     <tbody class="content-body">
                     <tr>
-                        <td colspan="6" align="right">
+                        <td colspan="5" align="right">
                             <b>Total :</b>
                         </td>
                         <td align="right">{{numFormat footer.totalBuildPrice "$0,0.00"}}</td>

@@ -10,19 +10,41 @@ Rabbit.TabularTable.PaymentWebsite = new Tabular.Table({
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_paymentWebsiteAction},
         {data: "_id", title: "ID"},
-        {data: "websiteId", title: "paymentWebsite ID"},
-        {data: "_customer.contractName", title: "CustomerName"},
         {
-            data: "PaymentWebsiteDate", title: "PaymentWebsite Date",
+            data: "Payment Date", title: "Payment Date",
             render: function (val, type, doc) {
                 return moment(val).format('YYYY-MM-DD');
             }
         },
-        {data: "buildPrice", title: "Build"},
-        {data: "domainNamePrice", title: "Domain"},
-        {data: "hostingPrice", title: "Hosting"},
-        {data: "maintenancePrice", title: "Maintenance"}
+        {
+          data: "buildPrice", title: "Build",
+          render:function (val, type, doc) {
+            var result = "Price : " + val + " | " + "Paid : " + doc.buildPaid + " | " + "Due : " + doc.buildDue ;
+            return result;
+          }
+        },
+        {
+          data: "domainNamePrice", title: "Domain",
+          render:function (val, type, doc) {
+            var result = "Price : " + val + " | " + "Paid : " + doc.domainNamePaid + " | " + "Due : " + doc.domainNameDue ;
+            return result;
+          }
+        },
+        {
+          data: "hostingPrice", title: "Hosting",
+          render:function (val, type, doc) {
+            var result = "Price : " + val + " | " + "Paid : " + doc.hostingPaid + " | " + "Due : " + doc.hostingDue ;
+            return result;
+          }
+        },
+        {
+          data: "maintenancePrice", title: "Maintenance",
+          render:function (val, type, doc) {
+            var result = "Price : " + val + " | " + "Paid : " + doc.maintenancePaid + " | " + "Due : " + doc.maintenanceDue ;
+            return result;
+          }
+        }
 
     ],
-    extraFields: ['serviceId','domainNamePaid', 'domainNameDue', 'hostingPaid', 'hostingDue', 'maintenancePaid', 'maintenanceDue', 'paymentWebsiteDate', 'buildPaid', 'buildDue', 'customerId','maintenanceOwedAmount','maintenanceTotalPrice']
+    extraFields: ['websiteId','serviceId','domainNamePaid', 'domainNameDue', 'hostingPaid', 'hostingDue', 'maintenancePaid', 'maintenanceDue', 'paymentWebsiteDate', 'buildPaid', 'buildDue', 'customerId','maintenanceOwedAmount','maintenanceTotalPrice','_customer','_website']
 });
