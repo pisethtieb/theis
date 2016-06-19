@@ -126,21 +126,21 @@ Rabbit.Schema.Contract = new SimpleSchema({
     'paymentMethod.$.paymentDuration': {
         type: String
     },
-    type: {
-        type: String,
-        label: 'Type',
-        autoform: {
-            type: 'select2',
-            options(){
-                return Rabbit.List.contractType();
-            },
-            afFieldInput: {
-                select2Options: {
-                    theme: "bootstrap"
-                }
-            }
-        }
-    },
+    // type: {
+    //     type: String,
+    //     label: 'Type',
+    //     autoform: {
+    //         type: 'select2',
+    //         options(){
+    //             return Rabbit.List.contractType();
+    //         },
+    //         afFieldInput: {
+    //             select2Options: {
+    //                 theme: "bootstrap"
+    //             }
+    //         }
+    //     }
+    // },
     branchId: {
         type: String,
         label: "Branch"

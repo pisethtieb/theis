@@ -3,7 +3,7 @@ Meteor.methods({
         var data = {
             title: {},
             header: {},
-            content: [],
+            content: [{index: 'No Result'}],
             footer: {}
         };
         //****** Title *****/

@@ -23,7 +23,7 @@ Rabbit.Schema.RenewMaintenanceReport = new SimpleSchema({
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.contract();
+                return Rabbit.ListForReport.MaintenanceContract();
             },
             afFieldInput: {
                 select2Options: {

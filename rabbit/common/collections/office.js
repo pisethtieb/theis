@@ -69,7 +69,7 @@ Rabbit.Schema.Office = new SimpleSchema({
     },
     officeDate: {
         type: String,
-        label: "Office Date",
+        label: "Date",
         defaultValue: function () {
             var currentDate = moment(ReactiveMethod.call("currentDate"), 'YYYY-MM-DD').format('YYYY-MM-DD');
             return currentDate;

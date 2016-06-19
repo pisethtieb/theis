@@ -50,9 +50,9 @@
                 {{> afQuickField name="productId" class='productId'}}
             </div>
             <div class="col-md-2">
-                {{> afQuickField name="type" class='type'}}
+                <!--{{> afQuickField name="type" class='type'}}-->
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
                 {{> afQuickField name="des" class='desCustom' rows=5}}
             </div>
             <!--<div class="col-md-12 monthly">-->
@@ -119,9 +119,9 @@
     {{#if Template.subscriptionsReady}}
         {{#autoForm collection=Rabbit.Collection.Contract id="rabbit_contractUpdate" doc=this type="update"}}
             <div class="row">
-                <div class="col-md-2">
-                    {{> afQuickField name="customerId"  readOnly=true value=customerId}}
-                    {{> afQuickField name="type" class='type'}}
+                <div class="col-md-2 hidden">
+                    {{> afQuickField name="customerId" value=customerId   label=false}}
+
                 </div>
                 <div class="col-md-3">
                     {{> afQuickField name="contractDate"}}
@@ -135,7 +135,10 @@
                     {{> afQuickField name="productType" class="productType"}}
                     {{> afQuickField name="productId" class='productId'}}
                 </div>
-                <div class="col-sm-3">
+                <div class="col-md-2">
+                    <!--{{> afQuickField name="type" class='type'}}-->
+                </div>
+                <div class="col-sm-5">
                     {{> afQuickField name="des" class='desCustom' rows=5}}
                 </div>
                 <!--<div class="col-md-12 monthly">-->
