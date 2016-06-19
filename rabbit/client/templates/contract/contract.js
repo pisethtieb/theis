@@ -308,8 +308,8 @@ updateTpl.events({
     'change .productId': function (e, t) {
         let productId = $(e.currentTarget).val();
         let type = $('.productType').val();
-
         let product = Rabbit.Collection.Product.findOne({_id: productId});
+
         if (type == 'fullyFee') {
             if (product) {
                 $('#basePriceHeadOffice').val(product.basePrice[0].headOffice);
@@ -348,7 +348,6 @@ updateTpl.events({
                 $('.installationFee').val('');
                 $('.trainingFee').val('');
             }
-
         }
     },
     'keypress #basePriceHeadOffice,#basePriceBranch,#MaintenaceHeadOffice,#MaintenaceBranch,#monthlyFeeHeadOffice,#monthlyFeeBranch,.trainingFee,.installationFee': function (evt) {
@@ -361,17 +360,29 @@ updateTpl.events({
         return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
     },
     'change .productType': function (e, t) {
-        let type = $('.productType').val()
-
+        let type = $('.productType').val();
+        let productId = $('.productId').val();
+        let product = Rabbit.Collection.Product.findOne({_id: productId});
         if (type == 'fullyFee') {
-            $('#basePriceHeadOffice').val("");
-            $('#basePriceBranch').val("");
-            $('#MaintenaceHeadOffice').val("");
-            $('#MaintenaceBranch').val("");
-            $('#monthlyFeeHeadOffice').val('');
-            $('#monthlyFeeBranch').val('');
-            $('.installationFee').val('');
-            $('.trainingFee').val('');
+            if (product) {
+                $('#basePriceHeadOffice').val(product.basePrice[0].headOffice);
+                $('#basePriceBranch').val(product.basePrice[0].branch);
+                $('#MaintenaceHeadOffice').val(product.maintenancePrice[0].headOffice);
+                $('#MaintenaceBranch').val(product.maintenancePrice[0].branch);
+                $('#monthlyFeeHeadOffice').val('');
+                $('#monthlyFeeBranch').val('');
+                $('.installationFee').val('');
+                $('.trainingFee').val('');
+            } else if (productId == "") {
+                $('#basePriceHeadOffice').val("");
+                $('#basePriceBranch').val("");
+                $('#MaintenaceHeadOffice').val("");
+                $('#MaintenaceBranch').val("");
+                $('#monthlyFeeHeadOffice').val('');
+                $('#monthlyFeeBranch').val('');
+                $('.installationFee').val('');
+                $('.trainingFee').val('');
+            }
             $('#basePriceHeadOffice').removeAttr('disabled', "disabled");
             $('#basePriceBranch').removeAttr('disabled', "disabled");
             $('#MaintenaceHeadOffice').removeAttr('disabled', "disabled");
@@ -382,14 +393,26 @@ updateTpl.events({
             $('.trainingFee').attr('disabled', "disabled");
             $('.productId').removeAttr('disabled', "disabled");
         } else if (type == "monthlyFee") {
-            $('#basePriceHeadOffice').val("");
-            $('#basePriceBranch').val("");
-            $('#MaintenaceHeadOffice').val("");
-            $('#MaintenaceBranch').val("");
-            $('#monthlyFeeHeadOffice').val('');
-            $('#monthlyFeeBranch').val('');
-            $('.installationFee').val('');
-            $('.trainingFee').val('');
+
+            if (product) {
+                $('#monthlyFeeHeadOffice').val(product.monthlyFee[0].headOffice);
+                $('#monthlyFeeBranch').val(product.monthlyFee[0].branch);
+                $('.trainingFee').val(product.trainingFee);
+                $('.installationFee').val(product.installationFee);
+                $('#basePriceHeadOffice').val("");
+                $('#basePriceBranch').val("");
+                $('#MaintenaceHeadOffice').val("");
+                $('#MaintenaceBranch').val("");
+            } else if (productId == "") {
+                $('#basePriceHeadOffice').val("");
+                $('#basePriceBranch').val("");
+                $('#MaintenaceHeadOffice').val("");
+                $('#MaintenaceBranch').val("");
+                $('#monthlyFeeHeadOffice').val('');
+                $('#monthlyFeeBranch').val('');
+                $('.installationFee').val('');
+                $('.trainingFee').val('');
+            }
             $('#basePriceHeadOffice').attr('disabled', "disabled");
             $('#basePriceBranch').attr('disabled', "disabled");
             $('#MaintenaceHeadOffice').attr('disabled', "disabled");
@@ -400,6 +423,9 @@ updateTpl.events({
             $('.installationFee').removeAttr('disabled', "disabled");
             $('.productId').removeAttr('disabled', "disabled");
         } else {
+
+
+            //clear all
             $('#basePriceHeadOffice').val("");
             $('#basePriceBranch').val("");
             $('#MaintenaceHeadOffice').val("");
@@ -419,7 +445,6 @@ updateTpl.events({
             $('.trainingFee').attr('disabled', "disabled");
         }
     }
-
 });
 /**
  * Show
@@ -513,6 +538,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.contract().close();
+            alertify.customer().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {
