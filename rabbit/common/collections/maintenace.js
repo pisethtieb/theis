@@ -14,7 +14,13 @@ Rabbit.Schema.Maintenance = new SimpleSchema({
     },
     endDate: {
         type: String,
-        label: 'End Date'
+        label: 'End Date',
+        custom: function () {
+            if (this.value < this.field('startDate').value) {
+                return "endDate";
+            }
+        }
+
 
     },
     officeId: {
@@ -80,5 +86,6 @@ Rabbit.Collection.Maintenance.attachSchema(Rabbit.Schema.Maintenance);
 // Attach soft remove
 //Rabbit.Collection.Customer.attachBehaviour('softRemovable');
 SimpleSchema.messages({
-    "greaterThan": "it mustn't be greater than ContractPrice!"
+    "greaterThan": "it mustn't be greater than ContractPrice!",
+    "endDate": "It must longer than the start Date !"
 });
