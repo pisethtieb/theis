@@ -24,7 +24,6 @@ indexTpl.onCreated(function () {
     // Create new  alertify
     createNewAlertify(["maintenance"], {size: 'lg'});
     createNewAlertify(["maintenanceShow"]);
-    //createNewAlertify(["locationAddon"], {transition: 'zoom', size: 'lg'});
 });
 
 indexTpl.events({
@@ -33,9 +32,20 @@ indexTpl.events({
         checkLastMaintenance(self);
     },
     'click .js-insert': function (e, t) {
+        let id = FlowRouter.getParam('officeId');
+        let today = (moment().format('YYYY-MM-DD'));
+        let maintenance = Rabbit.Collection.Maintenance.findOne({officeId: id}, {sort: {_id: -1}});
+        if (maintenance) {
+            if (maintenance.endDate > today && maintenance) {
+                alertify.message("Maintenance " + maintenance.officeId + ' | ' + maintenance._office.name + " is not Expire yet !:)  ");
+                return false
+            } else {
+                alertify.maintenance(fa("plus", "Maintenance"), renderTemplate(insertTpl));
+            }
+        } else {
+            alertify.maintenance(fa("plus", "Maintenance"), renderTemplate(insertTpl));
 
-        alertify.maintenance(fa("plus", "Maintenance"), renderTemplate(insertTpl));
-
+        }
     },
     'click .js-update': function (e, t) {
         alertify.maintenance(fa("pencil", "Maintenance"), renderTemplate(updateTpl, this));
@@ -149,9 +159,6 @@ insertTpl.helpers({
 })
 ;
 insertTpl.events({
-    //'click .endDate': function (e, t) {
-    //    $('.endDate').val(moment().add(1, 'years').format('YYYY-MM-DD'))
-    //},
     'keyup .discount'(e){
 
         $('#price').val($('.contractPrice').val() - $('.discount').val());
@@ -220,6 +227,10 @@ AutoForm.hooks({
     rabbit_maintenanceInsert: {
         before: {
             insert: function (doc) {
+                // if (doc.startDate > doc.endDate) {
+                //     alertify.error("End Date must be Longer than Start Date !")
+                //     return false
+                // }
                 doc.branchId = Session.get('currentBranch');
                 var prefix = doc.branchId + '-';
                 Meteor.call('rabbit', prefix);
