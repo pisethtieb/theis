@@ -25,11 +25,7 @@ Rabbit.TabularTable.Contract = new Tabular.Table({
             title: "Office <i class='fa fa-arrow-up'></i>",
             tmpl: Meteor.isClient && Template.rabbit_officeLinkAction
         },
-        // {
-        //     data: "_paymentOfficeCount",
-        //     title: "Pay Office <i class='fa fa-arrow-up'></i>",
-        //     tmpl: Meteor.isClient && Template.rabbit_paymentOfficeLinkAction
-        // },
+      
         {
             data: "_paymentMaintenanceCount",
             title: "Maintenance",

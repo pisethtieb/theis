@@ -9,8 +9,6 @@ var indexTpl = Template.rabbit_maintenance,
     updateTpl = Template.rabbit_maintenanceUpdate,
     showTpl = Template.rabbit_maintenanceShow;
 
-//locationAddOnTpl = Template.rabbit_locationAddOnMaintenance;
-
 
 /**
  * Index
@@ -70,6 +68,7 @@ indexTpl.events({
             customerId: office._contract.customerId, contractId: office._contract._id
 
         });
+        alertify.maintenance(fa("plus", "Maintenance Payment"), renderTemplate(Template.rabbit_paymentMaintenanceInsert));
     }
 
 });
@@ -95,7 +94,6 @@ insertTpl.onRendered(function () {
 
 });
 insertTpl.helpers({
-
     maintenance(){
         let officeId = FlowRouter.getParam('officeId');
         let office = Rabbit.Collection.Office.findOne({_id: officeId});
@@ -190,7 +188,6 @@ updateTpl.helpers({
 });
 updateTpl.events({
     'keyup .discount'(e){
-
         $('#price').val($('.contractPrice').val() - $('.discount').val());
     },
     'keypress .discount': function (evt) {
@@ -231,6 +228,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.maintenance().close();
+            alertify.office().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {

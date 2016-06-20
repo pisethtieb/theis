@@ -10,10 +10,6 @@ var indexTpl = Template.rabbit_contract,
  * Index
  */
 indexTpl.onCreated(function () {
-    //Meteor.subscribe('rabbit_office');
-    //Meteor.subscribe('rabbit_paymentOffice');
-    //Meteor.subscribe('rabbit_paymentMaintenance');
-    // SEO
     SEO.set({
         title: 'Contract',
         description: 'Description for this page'
@@ -77,22 +73,47 @@ indexTpl.events({
         alertify.contractShow(fa("eye", "Contract"), renderTemplate(showTpl, this));
     },
     'click .officeAction': function () {
-        FlowRouter.go('rabbit.office', {
-            customerId: this.customerId, contractId: this._id
 
-        });
+        if (this._officeCount == 0 || this._officeCount == null) {
+            FlowRouter.go('rabbit.office', {
+                customerId: this.customerId, contractId: this._id
+
+            });
+            alertify.contract(fa("plus", "Contract"), renderTemplate(Template.rabbit_officeInsert));
+
+        } else {
+            FlowRouter.go('rabbit.office', {
+                customerId: this.customerId, contractId: this._id
+
+            });
+        }
     },
     'click .paymentOfficeAction': function () {
-        FlowRouter.go('rabbit.paymentOffice', {
-            customerId: this.customerId, contractId: this._id
+        if (this._officeCount == 0 || this._officeCount == null) {
+            alertify.message(this._id + '|' + this.contractDate + " have not had Office Yet !");
+        } else {
+                FlowRouter.go('rabbit.paymentOffice', {
+                    customerId: this.customerId, contractId: this._id
+                });
+                alertify.contract(fa("plus", "Payment Office"), renderTemplate(Template.rabbit_paymentOfficeInsert));
 
-        });
+
+
+        }
+
     },
     'click .paymentMaintenanceAction': function () {
-        FlowRouter.go('rabbit.paymentMaintenance', {
-            customerId: this.customerId, contractId: this._id
+        if (this._officeCount == 0 || this._officeCount == null) {
+            alertify.message(this._id + '|' + this.contractDate + " haven't had Office Yet !");
+        }
+        else {
+            FlowRouter.go('rabbit.paymentMaintenance', {
+                customerId: this.customerId, contractId: this._id
 
-        });
+            });
+            alertify.contract(fa("plus", "Payment Maintenance"), renderTemplate(Template.rabbit_paymentMaintenanceInsert));
+
+        }
     }, 'click .addFile': function () {
         alertify.addFile(fa("pencil", "Contract"), renderTemplate(Template.rabbit_UpdateAddFile, this)).minimize()
     }
