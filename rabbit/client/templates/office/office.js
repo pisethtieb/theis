@@ -72,12 +72,20 @@ indexTpl.events({
     },
     'click .js-show': function (e, t) {
         alertify.officeShow(fa("eye", "Office"), renderTemplate(showTpl, this));
-
     },
     'click .maintenanceAction': function () {
-        FlowRouter.go('rabbit.maintenance', {
-            customerId: this._contract.customerId, contractId: this.contractId, officeId: this._id
-        })
+        if (this._maintenanceCount == 0 || this._maintenanceCount == null) {
+            FlowRouter.go('rabbit.maintenance', {
+                customerId: this._contract.customerId, contractId: this.contractId, officeId: this._id
+            })
+            alertify.office(fa("plus", "Payment Office"), renderTemplate(Template.rabbit_maintenanceInsert));
+
+        } else {
+            FlowRouter.go('rabbit.maintenance', {
+                customerId: this._contract.customerId, contractId: this.contractId, officeId: this._id
+            })
+
+        }
     },
     'click .payOnOffice': function () {
         let id = FlowRouter.getParam('contractId');
@@ -86,6 +94,8 @@ indexTpl.events({
             customerId: contract.customerId, contractId: contract._id
 
         });
+        alertify.office(fa("plus", "Payment Office"), renderTemplate(Template.rabbit_paymentOfficeInsert));
+
     }
 });
 
@@ -107,20 +117,20 @@ indexTpl.helpers({
 
 /*Insert*/
 insertTpl.onRendered(function () {
-    configOnRender();
-    //auto selected on office selected"HeadOffice"
-    //var contractId = FlowRouter.getParam('contractId');
-    //let office = Rabbit.Collection.Office.findOne({contractId: contractId});
-    //if (office == null || undefined) {
-    //    $('.type').val("HO");
-    //    $('.discount').val(0);
-    //    $('.type').change();
-    //    //$('[name=price]').val(contract.basePrice[0].headOffice);
-    //} else {
-    //    $('.type').val("BO");
-    //    $('.discount').val(0);
-    //    $('.type').change();
-    //}
+    Meteor.setTimeout(function () {
+
+
+        let contractId = FlowRouter.getParam('contractId');
+        let office = Rabbit.Collection.Office.findOne({contractId: contractId});
+        if (office) {
+            $('.type').val("BO");
+            $('.type').change();
+        } else {
+            $('.type').val("HO");
+            $('.type').change();
+        }
+        configOnRender();
+    }, 200)
 });
 insertTpl.helpers({
     office(){
@@ -137,7 +147,6 @@ insertTpl.events({
         var contractId = FlowRouter.getParam('contractId');
         var contract = Rabbit.Collection.Contract.findOne({_id: contractId});
         let office = Rabbit.Collection.Office.findOne({contractId: contractId});
-        debugger;
         if (type == 'HO' && office != null) {
             debugger;
             if (contract.productType == 'fullyFee') {
@@ -237,7 +246,6 @@ updateTpl.events({
         let type = $(e.currentTarget).val();
         var contractId = FlowRouter.getParam('contractId');
         var contract = Rabbit.Collection.Contract.findOne({_id: contractId});
-        //let types = Rabbit.List.getProduct(type);
         let office = Rabbit.Collection.Office.findOne({contractId: contractId});
         if (type == 'HO' && office != null) {
             $('.type').val("BO");
@@ -278,28 +286,6 @@ updateTpl.events({
         return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
     }
 });
-//
-//updateTpl.helpers({
-//    data: function () {
-//        var data = Rabbit.Collection.Office.findOne(this._id);
-//        return data;
-//    }
-//});
-//
-///**
-// * Show
-// */
-//showTpl.onCreated(function () {
-//    this.subscribe('rabbit_office', this.data._id);
-//});
-//
-//showTpl.helpers({
-//    data: function () {
-//        var data = Rabbit.Collection.Office.findOne(this._id);
-//        return data;
-//
-//    }
-//});
 
 /**
  * Hook
@@ -319,6 +305,7 @@ AutoForm.hooks({
 
         },
         onSuccess: function (formType, result) {
+            alertify.contract().close();
             alertify.office().close();
             alertify.success('Success');
         },

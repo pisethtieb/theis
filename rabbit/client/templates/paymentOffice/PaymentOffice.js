@@ -274,6 +274,8 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.paymentOffice().close();
+            alertify.contract().close();
+            alertify.office().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {

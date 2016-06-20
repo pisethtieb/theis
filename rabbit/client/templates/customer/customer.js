@@ -74,16 +74,6 @@ indexTpl.events({
                 }
             }
         );
-
-
-        //        let website = Rabbit.Collection.Website.findOne({customerId: self._id});
-        //if (contract != null || quotation != null || website != null) {
-        //    alertify.message(self._id + '|' + self.companyName + '  is in used !');
-        //    return false;
-        //
-        //}
-
-
     },
     'click .js-show': function (e, t) {
         alertify.customerShow(fa("eye", "Customer"), renderTemplate(showTpl, this));
@@ -91,10 +81,10 @@ indexTpl.events({
     ,
     'click .contractAction': function () {
 
-        if (this._websiteCount == 0 || this._websiteCount == null) {
+        if (this._contractCount == 0 || this._contractCount == null) {
             FlowRouter.go('rabbit.contract', {
                 customerId: this._id
-            })
+            });
             alertify.customer(fa("plus", "Contract"), renderTemplate(Template.rabbit_contractInsert));
 
         } else {

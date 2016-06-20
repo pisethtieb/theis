@@ -486,6 +486,8 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.paymentMaintenance().close();
+            alertify.maintenance().close();
+            alertify.contract().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {
@@ -522,15 +524,5 @@ function checkLastPaymentMaintenance(self) {
         $('.updatePaymentMaintenance').hide();
         $('.removePaymentMaintenance').hide();
     }
-    //let checkingLastPaymentMaintenanceForMaintenance = Rabbit.Collection.PaymentMaintenance.findOne({maintenanceId: paymentMaintenance.maintenanceId}, {sort: {_id: -1}})._id;
-    //
-    //if (checkingLastPaymentMaintenanceForMaintenance == self._id) {
-    //
-    //    $('.updatePaymentMaintenance').show();
-    //    $('.removePaymentMaintenance').show();
-    //} else {
-    //    $('.updatePaymentMaintenance').hide();
-    //    $('.removePaymentMaintenance').hide();
-    //}
 
 }
