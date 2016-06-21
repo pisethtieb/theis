@@ -5,7 +5,7 @@ Rabbit.Collection.Quotation = new Mongo.Collection("rabbit_quotation");
 Rabbit.Schema.Quotation = new SimpleSchema({
     quotationDate: {
         type: String,
-        label: "Quotation Date",
+        label: "Date",
         defaultValue: function () {
             var currentDate = moment(ReactiveMethod.call("currentDate"), 'YYYY-MM-DD').format('YYYY-MM-DD');
             return currentDate;

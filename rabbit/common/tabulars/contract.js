@@ -10,7 +10,7 @@ Rabbit.TabularTable.Contract = new Tabular.Table({
     order: [['1', 'desc']],
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_contractAction},
-        {data: "_id", title: "ID"},
+        // {data: "_id", title: "ID"},
         {data: "_customer.companyName", title: "Customer"},
         {
             data: "contractDate", title: "Contract Date",
@@ -36,5 +36,5 @@ Rabbit.TabularTable.Contract = new Tabular.Table({
             tmpl: Meteor.isClient && Template.rabbit_addFile
         }
     ],
-    extraFields: ['customerId', 'contractDate', 'basePrice', 'maintenancePrice', 'paymentMethod', 'type', 'testing', 'maintenanceFee', 'des', '_product', '_customer', 'addFile', 'contractorId', 'agentId', 'paymentMethod', 'amount', 'productId', 'monthlyFee', 'installationFee', 'trainingFee', 'productType', "_paymentOfficeCount"]
+    extraFields: ['_id','customerId', 'contractDate', 'basePrice', 'maintenancePrice', 'paymentMethod', 'type', 'testing', 'maintenanceFee', 'des', '_product', '_customer', 'addFile', 'contractorId', 'agentId', 'paymentMethod', 'amount', 'productId', 'monthlyFee', 'installationFee', 'trainingFee', 'productType', "_paymentOfficeCount"]
 });
