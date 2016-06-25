@@ -11,7 +11,7 @@ Rabbit.TabularTable.Contract = new Tabular.Table({
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_contractAction},
         // {data: "_id", title: "ID"},
-        {data: "_customer.companyName", title: "Customer"},
+        {data: "_customer.companyName", title: "Company"},
         {
             data: "contractDate", title: "Contract Date",
             render: function (val, type, doc) {
