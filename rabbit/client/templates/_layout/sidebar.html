@@ -20,11 +20,11 @@
   {{/if}}
   <!--Data-->
   <li class="header">DATA</li>
-  <!--<li class="{{isActiveRoute name='rabbit.agent'}}">-->
-    <!--<a href="{{pathFor 'rabbit.agent'}}">-->
-      <!--<i class="fa fa-users"></i> <span>Agent</span>-->
-    <!--</a>-->
-  <!--</li>-->
+  <li class="{{isActiveRoute name='rabbit.agent'}}">
+    <a href="{{pathFor 'rabbit.agent'}}">
+      <i class="fa fa-users"></i> <span>Agent</span>
+    </a>
+  </li>
   <li class="{{isActiveRoute name='rabbit.customer'}}">
     <a href="{{pathFor 'rabbit.customer'}}">
       <i class="fa fa-users"></i> <span>Customer</span>
@@ -47,9 +47,9 @@
         <li class="{{isActiveRoute name='rabbit.quotationReport'}}">
           <a href="{{pathFor 'rabbit.quotationReport'}}">Quotation</a>
         </li>
-        <li class="{{isActiveRoute name='rabbit.agentReport'}}">
-          <a href="{{pathFor 'rabbit.agentReport'}}">Agent</a>
-        </li>
+        <!--<li class="{{isActiveRoute name='rabbit.agentReport'}}">-->
+          <!--<a href="{{pathFor 'rabbit.agentReport'}}">Agent</a>-->
+        <!--</li>-->
         <li class="{{isActiveRoute name='rabbit.contractReport'}}">
           <a href="{{pathFor 'rabbit.contractReport'}}">Contract</a>
         </li>
