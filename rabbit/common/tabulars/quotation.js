@@ -13,7 +13,7 @@ Rabbit.TabularTable.Quotation = new Tabular.Table({
         {data: "_id", title: "ID"},
         {data: "_customer.companyName", title: "Customer"},
         {
-            data: "quotationDate", title: "Quotation Date",
+            data: "quotationDate", title: "Date",
             render: function (val, type, doc) {
                 return moment(val).format('YYYY-MM-DD');
             }

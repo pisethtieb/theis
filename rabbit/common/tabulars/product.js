@@ -10,7 +10,7 @@ Rabbit.TabularTable.Product = new Tabular.Table({
     order: [['1', 'desc']],
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_productAction},
-        {data: "_id", title: "ID"},
+        // {data: "_id", title: "ID"},
         {data: "name", title: "Name"},
         {
             data: "basePrice", title: "Fully Fee",
@@ -66,5 +66,5 @@ Rabbit.TabularTable.Product = new Tabular.Table({
         {data: "_contractCunt", title: "C"},
         {data: "_quotationCount", title: "Q"}
     ],
-    extraFields: ['feature', 'installationFee', 'trainingFee']
+    extraFields: ['_id', 'feature', 'installationFee', 'trainingFee']
 });

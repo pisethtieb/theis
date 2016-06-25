@@ -19,6 +19,21 @@ Rabbit.ListForReport = {
             });
         return list;
     },
+    quotation: function () {
+        var list = [];
+        list.push({label: "(Select All)", value: ""});
+        Rabbit.Collection.Product.find()
+            .forEach(function (obj) {
+                let quotation = Rabbit.Collection.Quotation.findOne({productId: obj._id}, {sort: {_id: -1}});
+                if (quotation) {
+                    if (obj._id == quotation.productId) {
+                        list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
+                    }
+                }
+            });
+
+        return list;
+    },
     customer: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -35,39 +50,39 @@ Rabbit.ListForReport = {
 
         Rabbit.Collection.Contract.find()
             .forEach(function (obj) {
-                list.push({
-                    label: obj._id + ' : ' + obj.contractDate + " : " + obj._customer.contractName,
-                    value: obj._id
-                });
+                    list.push({
+                        label: obj._id + ' : ' + obj.contractDate + " : " + obj._customer.contractName,
+                        value: obj._id
+                    });
 
                 }
             );
 
         return list;
     },
-        MaintenanceContract: function () {
+    MaintenanceContract: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
 
         let today = moment().format("YYYY-MM-DD");
-            var doc = Rabbit.Collection.Contract.find({}, {sort: {_id: -1}});
-            if (doc) {
-                doc.forEach(function (obj) {
-                    let maintenance = Rabbit.Collection.Maintenance.findOne({'_office.contractId': obj._id}, {sort: {_id: -1}});
-                    if (maintenance) {
-                        if (maintenance._office.contractId == obj._id && maintenance.endDate <= today) {
-                            //maintenance.countIndex = [maintenance];
-                            list.push({
-                                label: obj._id + ' : ' + obj.contractDate + " : " + obj._customer.contractName,
-                                value: obj._id
-                            });
+        var doc = Rabbit.Collection.Contract.find({}, {sort: {_id: -1}});
+        if (doc) {
+            doc.forEach(function (obj) {
+                let maintenance = Rabbit.Collection.Maintenance.findOne({'_office.contractId': obj._id}, {sort: {_id: -1}});
+                if (maintenance) {
+                    if (maintenance._office.contractId == obj._id && maintenance.endDate <= today) {
+                        //maintenance.countIndex = [maintenance];
+                        list.push({
+                            label: obj._id + ' : ' + obj.contractDate + " : " + obj._customer.contractName,
+                            value: obj._id
+                        });
 
-                            // arr.push(maintenance._id, maintenance.paymentMaintenanceDate);
-                        }
+                        // arr.push(maintenance._id, maintenance.paymentMaintenanceDate);
                     }
-                });
+                }
+            });
 
-            }
+        }
 
         return list;
     },
@@ -77,7 +92,7 @@ Rabbit.ListForReport = {
         list.push({label: "(Select All)", value: ""});
         Rabbit.Collection.Office.find()
             .forEach(function (obj) {
-                list.push({label: obj._id + ' : ' + obj.name , value: obj._id});
+                list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
             });
         return list;
     },

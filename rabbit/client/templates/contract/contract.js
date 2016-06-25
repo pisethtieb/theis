@@ -79,7 +79,7 @@ indexTpl.events({
                 customerId: this.customerId, contractId: this._id
 
             });
-            alertify.contract(fa("plus", "Contract"), renderTemplate(Template.rabbit_officeInsert));
+            alertify.contract(fa("plus", "Office"), renderTemplate(Template.rabbit_officeInsert));
 
         } else {
             FlowRouter.go('rabbit.office', {

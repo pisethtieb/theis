@@ -10,7 +10,7 @@ Rabbit.TabularTable.Customer = new Tabular.Table({
     order: [['1', 'desc']],
     columns: [
         {title: '<i class="fa fa-bars"></i>', tmpl: Meteor.isClient && Template.rabbit_customerAction},
-        {data: "_id", title: "ID"},
+        // {data: "_id", title: "ID"},
         {data: "companyName", title: "Company Name"},
         {data: "contractName", title: "Contract Name"},
         {data: "address", title: "Address"},
@@ -31,6 +31,6 @@ Rabbit.TabularTable.Customer = new Tabular.Table({
         //    title: "Web<i class='fa fa-arrow-up'></i>",
         //    tmpl: Meteor.isClient && Template.rabbit_contractLinkAction
         //}
-    ], extraFields: ['contactPerson', 'contractName', 'age', 'telephone', 'dob', 'id', 'position', 'gender', 'email',
+    ], extraFields: ['_id','contactPerson', 'contractName', 'age', 'telephone', 'dob', 'id', 'position', 'gender', 'email',
         'companyName', 'companyAddress', 'companyWebsite', 'companyTelephone', 'companyEmail']
 });

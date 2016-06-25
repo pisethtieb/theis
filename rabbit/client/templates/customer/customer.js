@@ -195,6 +195,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.success('Success');
+            alertify.customer().close();
         },
         onError: function (formType, error) {
             alertify.error(error.message);

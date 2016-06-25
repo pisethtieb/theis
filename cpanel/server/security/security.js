@@ -11,9 +11,9 @@ Cpanel.Collection.Setting.permit(['update']).cpanel_ifSuperOrAdmin().apply();
 /**
  * Branch
  */
-Cpanel.Collection.Branch.permit(['insert']).cpanel_ifSuper().apply();
+Cpanel.Collection.Branch.permit(['insert']).cpanel_ifSuperOrAdmin().apply();
 Cpanel.Collection.Branch.permit(['update']).cpanel_ifSuperOrAdmin().apply();
-Cpanel.Collection.Branch.permit(['remove']).cpanel_ifSuper().apply();
+Cpanel.Collection.Branch.permit(['remove']).cpanel_ifSuperOrAdmin().apply();
 
 /**
  * Exchange

@@ -19,11 +19,11 @@ Rabbit.Schema.QuotationReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "ProductId",
+        label: "Product",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.product();
+                return Rabbit.ListForReport.quotation();
             },
             afFieldInput: {
                 select2Options: {
