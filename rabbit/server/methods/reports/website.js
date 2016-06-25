@@ -44,10 +44,11 @@ Meteor.methods({
             data.content = content;
             data.footer.total = numeral(total).format('$0,0.00');
         }
-        if (params.branch == '') {
-            params.branch = 'All'
+        if (params.customerId == '') {
+            params.customerId = 'All'
         } else {
-            params.branch = params.branch;
+            let customer=Rabbit.Collection.Customer.findOne({_id: params.customerId})
+            params.customerId=customer._id+" | "+ customer.contractName
         }
         // if (params.websiteId == '') {
         //     params.websiteId = 'All'

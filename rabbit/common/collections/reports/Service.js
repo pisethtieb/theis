@@ -19,7 +19,7 @@ Rabbit.Schema.ServiceReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "websiteId",
+        label: "website",
         autoform: {
             type: 'select2',
             options(){

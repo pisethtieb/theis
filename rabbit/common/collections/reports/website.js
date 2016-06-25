@@ -19,11 +19,11 @@ Rabbit.Schema.WebsiteReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "CustomerId",
+        label: "Customer",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.customer();
+                return Rabbit.ListForReport.websiteCustomer();
             },
             afFieldInput: {
                 select2Options: {

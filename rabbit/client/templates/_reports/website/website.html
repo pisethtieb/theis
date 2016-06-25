@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.WebsiteReport id="rabbit_websiteReport" action="websiteReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="customerId"}}
             </div>
             <div class="col-md-6">
@@ -51,8 +51,8 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>CustomerId:</strong> {{customerId}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                            <div><strong>Customer:</strong> {{customerId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -69,10 +69,9 @@
                         <th>ID</th>
                         <th>Register Date</th>
                         <th>Website Name</th>
-                        <th>Company Name</th>
+                        <th>Company</th>
                         <th>Contract Name</th>
-                        <th>Contract Telephone</th>
-
+                        <th>Telephone</th>
                         <th>Price</th>
                     </tr>
                     </thead>
