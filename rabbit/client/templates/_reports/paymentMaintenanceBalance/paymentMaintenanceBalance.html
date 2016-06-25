@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.PaymentMaintenanceBalanceReport id="rabbit_paymentMaintenanceBalanceReport" action="paymentMaintenanceBalanceReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="contractId"}}
 
             </div>
@@ -50,7 +50,7 @@
                   <span class="report-company-name"
                         style="font-family: 'Khmer OS Muol">{{khName}}</span><br>
                                     <span class="report-company-name">{{enName}}</span><br>
-                                    <u>Outstanding Maintenance Payment Report</u><br>
+                                    <u>Maintenance Payment Balance Report</u><br>
                                     {{khAddress}}, {{telephone}}
                                 </td>
 
@@ -64,8 +64,8 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>ContractId:</strong> {{contractId}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                            <div><strong>Contract:</strong> {{contractId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -85,7 +85,7 @@
                         <th>PaidDate</th>
                         <th>company</th>
                         <th>Contract Name</th>
-                        <th>Contract Telephone</th>
+                        <th>Telephone</th>
                         <th>Product</th>
                         <th>Payment Items</th>
                         <th>Due</th>

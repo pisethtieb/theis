@@ -19,7 +19,7 @@ Rabbit.Schema.ContractReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "CustomerId",
+        label: "Customer",
         autoform: {
             type: 'select2',
             options(){

@@ -19,11 +19,11 @@ Rabbit.Schema.PaymentMaintenanceBalanceReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "ContractId",
+        label: "Contract",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.contract();
+                return Rabbit.ListForReport.paymentMaintenaceReport();
             },
             afFieldInput: {
                 select2Options: {

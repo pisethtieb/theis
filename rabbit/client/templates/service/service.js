@@ -43,33 +43,24 @@ indexTpl.events({
     'click .js-remove': function (e, t) {
         var id = this._id;
         let self = this;
-        var arr = [
-            {collection: 'Rabbit.Collection.PaymentWebsite', selector: {websiteId: id}}
 
-        ];
-        Meteor.call('isRelationExist', arr, function (error, result) {
-                if (result) {
 
-                    alertify.message(self._id + '|' + self.serviceDate + '  is in used !');
-                    return false
-                } else {
-                    alertify.confirm(
-                        fa("remove", "Service"),
-                        "Are you sure to delete [" + self._id + "] ?",
-                        function () {
-                            Rabbit.Collection.Service.remove(self._id, function (error) {
-                                if (error) {
-                                    alertify.error(error.message);
-                                } else {
-                                    alertify.success("Success");
-                                }
-                            });
-                        },
-                        null
-                    );
-                }
-            }
+        alertify.confirm(
+            fa("remove", "Service"),
+            "Are you sure to delete [" + self._id + "] ?",
+            function () {
+                Rabbit.Collection.Service.remove(self._id, function (error) {
+                    if (error) {
+                        alertify.error(error.message);
+                    } else {
+                        alertify.success("Success");
+                    }
+                });
+            },
+            null
         );
+       
+
     },
     'click .js-show': function (e, t) {
         alertify.serviceShow(fa("eye", "Service"), renderTemplate(showTpl, this));

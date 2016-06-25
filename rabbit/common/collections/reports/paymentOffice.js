@@ -19,11 +19,11 @@ Rabbit.Schema.paymentOfficeReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "ContractId",
+        label: "Contract",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.contract();
+                return Rabbit.ListForReport.OfficePayment();
             },
             afFieldInput: {
                 select2Options: {
@@ -32,18 +32,7 @@ Rabbit.Schema.paymentOfficeReport = new SimpleSchema({
             }
         }
     },
-    //officeId: {
-    //    type: String,
-    //    max: 100,
-    //    optional: true,
-    //    label: "OfficeId",
-    //    autoform: {
-    //        type: 'select2',
-    //        options(){
-    //            return Rabbit.ListForReport.office();
-    //        }
-    //    }
-    //},
+  
     date: {
         type: String,
         defaultValue: function () {
