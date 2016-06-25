@@ -10,7 +10,7 @@ Rabbit.Schema.Service = new SimpleSchema({
     },
     serviceDate: {
         type: String,
-        label: 'Service Date'
+        label: 'Date'
     },
     des: {
         type: String,
@@ -37,7 +37,12 @@ Rabbit.Schema.Service = new SimpleSchema({
     domainNameEndDate: {
         type: String,
         label: "End Date",
-        optional: true
+        optional: true,
+        custom: function () {
+            if (this.value < this.field('domainNameStartDate').value) {
+                return "endDate";
+            }
+        }
     },
     domainNameOwedAmount: {
         type: Number,
@@ -64,7 +69,13 @@ Rabbit.Schema.Service = new SimpleSchema({
     hostingEndDate: {
         type: String,
         label: "End Date",
-        optional: true
+        optional: true,
+        custom: function () {
+            if (this.value < this.field('hostingStartDate').value) {
+                return "endDate";
+            }
+        }
+
     },
     hostingOwedAmount: {
         type: Number,
@@ -88,11 +99,17 @@ Rabbit.Schema.Service = new SimpleSchema({
         type: String,
         label: "Start Date",
         optional: true
+
     },
     maintenanceEndDate: {
         type: String,
         label: "End Date",
-        optional: true
+        optional: true,
+        custom: function () {
+            if (this.value < this.field('maintenanceStartDate').value) {
+                return "endDate";
+            }
+        }
     },
     maintenanceOwedAmount: {
         type: Number,
@@ -109,9 +126,9 @@ Rabbit.Schema.Service = new SimpleSchema({
         label: "Status",
         defaultValue: "no"
     },
-    branchId:{
-      type:String,
-      label:"Branch"
+    branchId: {
+        type: String,
+        label: "Branch"
     }
 });
 // Attach schema
@@ -121,6 +138,6 @@ Rabbit.Collection.Service.attachSchema(Rabbit.Schema.Service);
 //Rabbit.Collection.Customer.attachBehaviour('softRemovable');
 
 SimpleSchema.messages({
-    "greaterThan": "it mustn't be greater than ContractPrice!"
+    "greaterThan": "it mustn't be greater than ContractPrice!",
+    "endDate": "It must be longer than the start Date !"
 });
-//Status API Training Shop Blog About Pricing
