@@ -185,8 +185,31 @@ Rabbit.ListForReport = {
         var list = [];
         list.push({label: "(Select All)", value: ""});
         Rabbit.Collection.Website.find()
+
             .forEach(function (obj) {
-                list.push({label: obj._id + ' : ' + obj.webName + ' | ' + obj.registerDate, value: obj._id});
+                let service = Rabbit.Collection.Service.findOne({websiteId: obj._id}, {sort: {_id: -1}});
+                if (service) {
+                    if (service.websiteId == obj._id) {
+                        list.push({label: obj._id + ' : ' + obj.webName + ' | ' + obj.registerDate, value: obj._id});
+                    }
+                }
+            });
+        return list;
+
+    },
+    //for website customerId
+    websiteCustomer: function () {
+        var list = [];
+        list.push({label: "(Select All)", value: ""});
+        Rabbit.Collection.Website.find()
+            .forEach(function (obj) {
+                let customer = Rabbit.Collection.Customer.findOne({_id: obj.customerId});
+                if (customer._id == obj.customerId) {
+                    list.push({
+                        label: customer._id + ' : ' + customer.contractName,
+                        value: customer._id
+                    });
+                }
             });
         return list;
     }
