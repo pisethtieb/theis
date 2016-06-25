@@ -36,8 +36,8 @@ Meteor.methods({
         //if (!_.isEmpty(params.contractId)) {
         //    selector.{office.contractId}= params.contractId
         //}
-        if (!_.isEmpty(params.officeId)) {
-            selector.officeId = params.officeId;
+        if (!_.isEmpty(params.contractId)) {
+            selector = {'_office.contractId': params.contractId}
         }
 
         var index = 1;
@@ -47,12 +47,12 @@ Meteor.methods({
         Rabbit.Collection.Maintenance.find(selector)
 
             .forEach(function (obj) {
-                if (obj._office.contractId == params.contractId) {
-                    obj.index = index;
-                    content.push(obj);
-                    index++;
-
-                } else {
+                // if (obj._office.contractId == params.contractId) {
+                //     obj.index = index;
+                //     content.push(obj);
+                //     index++;
+                //
+                // } else {
 
                     let contract = Rabbit.Collection.Contract.findOne({_id: obj._office.contractId});
                     obj.contract = contract;
@@ -67,7 +67,7 @@ Meteor.methods({
                     content.push(obj);
 
                     index++;
-                }
+                
             });
 
         if (content.length > 0) {
@@ -84,13 +84,13 @@ Meteor.methods({
             params.branch = params.branch;
         }
 
-        if (params.officeId == '') {
-            params.officeId = 'All'
+        if (params.contractId == '') {
+            params.contractId = 'All'
 
         } else {
 
-            params.officeId = Rabbit.Collection.Office.findOne({_id: params.officeId}).name;
-        }
+            let contract = Rabbit.Collection.Contract.findOne({_id: params.contractId});
+            params.contractId = contract._id + " | " + contract.contractDate;        }
         //if (params.contractId == '') {
         //    params.contractId = 'All'
         //

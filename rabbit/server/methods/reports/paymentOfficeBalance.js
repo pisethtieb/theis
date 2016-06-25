@@ -39,7 +39,7 @@ Meteor.methods({
 
                         o.discount = o.discount == null ? 0 : o.discount;
                         o.paidAmount = o.paidAmount == null ? 0 : o.paidAmount;
-                        str += "<li>" +officeName +
+                        str += "<li>" + officeName +
                             " |" + o.office + " | Price: " + o.price + " | dis: " + o.discount + " | paid: " + o.paidAmount + " | Due: " + o.dueAmount +
                             "</li>";
                     }
@@ -90,7 +90,9 @@ Meteor.methods({
 
         } else {
 
-            params.contractId = params.contractId;
+            let contract = Rabbit.Collection.Contract.findOne({_id: params.contractId});
+            params.contractId = contract._id + " | " + contract.contractDate;
+
         }
         /****** Header *****/
         data.header = params;

@@ -88,6 +88,10 @@ Meteor.methods({
 
         if (params.contractId == '') {
             params.contractId = 'All'
+        } else {
+            let contract = Rabbit.Collection.Contract.findOne({_id: params.contractId});
+            params.contractId = contract._id + " | " + contract.contractDate;
+
         }
         /****** Header *****/
         data.header = params;

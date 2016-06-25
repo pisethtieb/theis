@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.RenewMaintenanceReport id="rabbit_renewMaintenanceReport" action="renewMaintenanceReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="contractId"}}
 
             </div>
@@ -53,8 +53,8 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>ContractId:</strong> {{contractId}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                            <div><strong>Contract:</strong> {{contractId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -75,7 +75,7 @@
                         <th>Company</th>
                         <th>Type</th>
                         <th>Contract Name</th>
-                        <th>Contract Telephone</th>
+                        <th>Telephone</th>
                         <th>Product</th>
                         <th>Start Date</th>
                         <th>End Date</th>

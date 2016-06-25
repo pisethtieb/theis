@@ -19,11 +19,11 @@ Rabbit.Schema.PaymentOfficeBalanceReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "ContractId",
+        label: "Contract",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.contract();
+                return Rabbit.ListForReport.OfficePayment();
             },
             afFieldInput: {
                 select2Options: {
@@ -46,7 +46,7 @@ Rabbit.Schema.PaymentOfficeBalanceReport = new SimpleSchema({
     //},
     date: {
         type: String,
-        label:'Date'
+        label: 'Date'
 
     }
 });

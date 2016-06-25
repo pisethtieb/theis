@@ -89,7 +89,9 @@ Meteor.methods({
 
         } else {
 
-            params.contractId = params.contractId;
+            let contract = Rabbit.Collection.Contract.findOne({_id: params.contractId});
+            params.contractId = contract._id + " | " + contract.contractDate;
+
         }
         //if (params.contractId == '') {
         //    params.contractId = 'All'

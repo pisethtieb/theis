@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.OfficeReport id="rabbit_officeReport" action="officeReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="contractId"}}
             </div>
             <div class="col-md-6">
@@ -23,17 +23,6 @@
         {{#reportTpl options}}
 
             {{#with data}}
-
-                <!--Title-->
-                    <!--{{#with title}}-->
-                <!--<div class="title">-->
-                <!--<div class="title-1x-kh-muol">{{khName}}</div>-->
-                <!--<div class="title-1x">{{enName}}</div>-->
-                <!--<div><u>Office Report</u></div>-->
-                <!--<div class="title-2x">{{enAddress}}</div>-->
-                <!--</div>-->
-                    <!--{{/with}}-->
-                <!--Title-->
                 {{#with title}}
                     <div class="title">
                         <table class="report-title" style="width:100%;">
@@ -62,7 +51,7 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
                             <div><strong>ContractId:</strong> {{contractId}}</div>
                         </div>
 
@@ -83,7 +72,7 @@
                         <th>Contract Name</th>
                         <th>Contract Telephone</th>
                         <th>Office Name</th>
-                        <th>Office Date</th>
+                        <th>Date</th>
                         <th>Product</th>
                         <th>Type</th>
                         <th>Contract Price</th>

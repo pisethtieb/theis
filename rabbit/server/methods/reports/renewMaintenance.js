@@ -24,27 +24,28 @@ Meteor.methods({
             selector = {'_office.contractId': params.contractId}
         }
         var i = 1;
-        let total = 0;s
+        let total = 0;
+        
         var now = moment().format('YYYY-MM-DD');
         let maintenance = Rabbit.Collection.Maintenance.find(selector);
-        console.log(maintenance.count());
-        maintenance.forEach(function (o) {
+        if(maintenance) {
+            maintenance.forEach(function (o) {
 
-            let renew = Rabbit.Collection.Maintenance.findOne({officeId: o.officeId}, {sort: {_id: -1}});
-            if (renew._id == o._id) {
-                if (renew.endDate <= params.date) {
-                    let contract = Rabbit.Collection.Contract.findOne({_id: renew._office.contractId});
-                    renew.contract = contract;
-                    renew.index = i;
-                    total += renew.price;
-                    renew.renewMaintenance = 'ReNew';
-                    data.content.push(renew);
-                    i++
+                let renew = Rabbit.Collection.Maintenance.findOne({officeId: o.officeId}, {sort: {_id: -1}});
+                if (renew._id == o._id) {
+                    if (renew.endDate <= params.date) {
+                        let contract = Rabbit.Collection.Contract.findOne({_id: renew._office.contractId});
+                        renew.contract = contract;
+                        renew.index = i;
+                        total += renew.price;
+                        renew.renewMaintenance = 'ReNew';
+                        content.push(renew);
+                        i++
+                    }
                 }
-            }
 
-        });
-
+            });
+        }
         if (params.branch == '') {
             params.branch = 'All'
 
@@ -58,13 +59,18 @@ Meteor.methods({
 
         } else {
 
-            params.contractId = params.contractId;
+            let contract = Rabbit.Collection.Contract.findOne({_id: params.contractId});
+            params.contractId = contract._id + " | " + contract.contractDate;
         }
+
         /****** Header *****/
         data.header = params;
 
+        if (content.length > 0) {
+            data.content = content;
+            data.footer.total = total
+        }
 
-        data.footer.total = total
         return data
     }
 })
