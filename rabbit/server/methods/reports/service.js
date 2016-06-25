@@ -41,17 +41,19 @@ Meteor.methods({
         let totalMaintenance = 0;
         Rabbit.Collection.Service.find(selector)
             .forEach(function (obj) {
-                obj.index = index;
-                //total += obj.price;
-                obj.domainNameTotalPrice = obj.domainNameTotalPrice == null ? 0 : obj.domainNamePrice;
-                obj.hostingTotalPrice = obj.hostingTotalPrice == null ? 0 : obj.hostingPrice;
-                obj.maintenanceTotalPrice = obj.maintenanceTotalPrice == null ? 0 : obj.maintenancePrice;
-                totalDomainName += obj.domainNamePrice;
-                totalHosting += obj.hostingPrice;
-                totalMaintenance += obj.maintenancePrice;
-                content.push(obj);
+                if (obj) {
+                    obj.index = index;
+                    //total += obj.price;
+                    obj.domainNameTotalPrice = obj.domainNameTotalPrice == null ? 0 : obj.domainNamePrice;
+                    obj.hostingTotalPrice = obj.hostingTotalPrice == null ? 0 : obj.hostingPrice;
+                    obj.maintenanceTotalPrice = obj.maintenanceTotalPrice == null ? 0 : obj.maintenancePrice;
+                    totalDomainName += obj.domainNamePrice;
+                    totalHosting += obj.hostingPrice;
+                    totalMaintenance += obj.maintenancePrice;
+                    content.push(obj);
 
-                index++;
+                    index++;
+                }
             });
 
         if (content.length > 0) {
@@ -60,10 +62,11 @@ Meteor.methods({
             data.footer.totalHosting = totalHosting;
             data.footer.totalMaintenance = totalMaintenance;
         }
-        if (params.branch == '') {
-            params.branch = 'All'
+        if (params.websiteId == '') {
+            params.websiteId = 'All'
         } else {
-            params.branch = params.branch;
+            let website = Rabbit.Collection.Website.findOne({_id: params.websiteId});
+            params.websiteId = website._id + " | " + website.websiteName + " | " + website.registerDate
         }
 
         //if (params.customerId == '') {
