@@ -478,6 +478,10 @@ AutoForm.hooks({
         before: {
 
             insert: function (doc) {
+                if (doc.maintenance == null) {
+                    alertify.error("Nothing to pay ! ");
+                    return false;
+                }
                 doc.branchId = Session.get('currentBranch');
                 var prefix = doc.branchId + '-';
                 Meteor.call('rabbit', prefix);

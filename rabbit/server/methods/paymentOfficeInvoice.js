@@ -45,38 +45,6 @@ Meteor.methods({
             i++;
 
         });
-        ///****** Content *****/
-        //let i = 1;
-        //var totalPrice = 0;
-        //let sumAmount = 0;
-        ////let maintenancePrice = 0;
-        //let office = Rabbit.Collection.Office.find({contractId: paymentOffice.contractId});
-        //if (office.count() > 0) {
-        //    office.forEach(function (obj) {
-        //        let paymentOffice = Rabbit.Collection.Payment.findOne({officeId: obj._id}, {sort: {_id: -1}});
-        //        data.paymentOffice.push(paymentOffice);
-        //        if (paymentOffice) {
-        //            obj.sumAmount = parseFloat(paymentOffice.price);
-        //            obj.paidAmount = parseFloat(paymentOffice.paidAmount);
-        //            obj.dueAmount = parseFloat(paymentOffice.dueAmount);
-        //        } else {
-        //            obj.sumAmount = 0;
-        //            obj.paidAmount = 0;
-        //            obj.sumAmount = parseFloat(paymentOffice.price);
-        //
-        //        }
-        //
-        //        totalPrice += parseFloat(obj.price);
-        //        obj.index = i;
-        //        data.content.push(obj);
-        //        i++;
-        //
-        //
-        //    });
-        //}
-        //
-        ////
-        //
         data.footer.totalPrice = numeral(totalPrice).format('$0,0.00');
         //data.footer.maintenancePrice = maintenancePrice;
         data.footer.sumPaid = numeral(sumPaid).format('$0,0.00');

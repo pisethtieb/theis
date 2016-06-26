@@ -266,6 +266,11 @@ AutoForm.hooks({
     rabbit_paymentOfficeInsert: {
         before: {
             insert: function (doc) {
+
+                if (doc.office == null) {
+                    alertify.error("Nothing to pay ! ");
+                    return false;
+                }
                 doc.branchId = Session.get('currentBranch');
                 var prefix = doc.branchId + '-';
                 Meteor.call('rabbit', prefix);
