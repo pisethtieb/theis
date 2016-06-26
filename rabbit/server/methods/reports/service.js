@@ -66,7 +66,7 @@ Meteor.methods({
             params.websiteId = 'All'
         } else {
             let website = Rabbit.Collection.Website.findOne({_id: params.websiteId});
-            params.websiteId = website._id + " | " + website.websiteName + " | " + website.registerDate
+            params.websiteId = website._id + " | " + website.webName + " | " + website.registerDate
         }
 
         //if (params.customerId == '') {

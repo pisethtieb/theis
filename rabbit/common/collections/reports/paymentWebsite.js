@@ -24,7 +24,7 @@ Rabbit.Schema.PaymentWebsiteReport = new SimpleSchema({
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.website();
+                return Rabbit.ListForReport.websitePayment();
             },
             afFieldInput: {
                 select2Options: {

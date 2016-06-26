@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.RenewServiceReport id="rabbit_renewServiceReport" action="renewServiceReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="websiteId"}}
             </div>
             <div class="col-md-6">
@@ -51,8 +51,8 @@
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>websiteId:</strong> {{websiteId}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                            <div><strong>Website:</strong> {{websiteId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -68,8 +68,8 @@
                         <th>No</th>
                         <th>ID</th>
                         <th>Service Date</th>
-                        <th>Website ID</th>
-                        <th>Contract Name</th>
+                        <th>Website</th>
+                        <th>Customer Name</th>
                         <th>Domain</th>
                         <th>Hosting</th>
                         <th>Maintenance</th>
@@ -81,20 +81,26 @@
                             <td>{{index}}</td>
                             <td>{{_id}}</td>
                             <td>{{serviceDate}}</td>
-                            <td>{{websiteId}}</td>
+                            <td>{{_website.webName}}</td>
                             <td>{{_website._customer.contractName}}</td>
-                            <td align="right">{{{numFormat domainNamePrice "$0,0.00"}}} ({{{domainNameStartDate}}} - {{{domainNameEndDate}}})</td>
-                            <td align="right">{{{numFormat hostingPrice "$0,0.00"}}} ({{{hostingStartDate}}} - {{{hostingEndDate}}})</td>
-                            <td align="right">{{{numFormat maintenancePrice "$0,0.00"}}} ({{{maintenanceStartDate}}} - {{{maintenanceEndDate}}})</td>
+                            <td align="right">{{{numFormat domainNamePrice "$0,0.00"}}} ({{{domainNameStartDate}}}
+                                - {{{domainNameEndDate}}})
+                            </td>
+                            <td align="right">{{{numFormat hostingPrice "$0,0.00"}}} ({{{hostingStartDate}}}
+                                - {{{hostingEndDate}}})
+                            </td>
+                            <td align="right">{{{numFormat maintenancePrice "$0,0.00"}}} ({{{maintenanceStartDate}}}
+                                - {{{maintenanceEndDate}}})
+                            </td>
                         </tr>
                     {{/each}}
                     </tbody>
                     <tbody class="content-body">
                     <!--<tr>-->
-                        <!--<td colspan="5"></td>-->
-                        <!--<td>Domain</td>-->
-                        <!--<td>Hosting</td>-->
-                        <!--<td>Maintenance</td>-->
+                    <!--<td colspan="5"></td>-->
+                    <!--<td>Domain</td>-->
+                    <!--<td>Hosting</td>-->
+                    <!--<td>Maintenance</td>-->
                     <!--</tr>-->
                     <tr class="">
                         <td colspan="5" align="right">

@@ -180,7 +180,7 @@ Rabbit.ListForReport = {
             });
         return list;
     },
-    //for website
+    //for websiteService
     website: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -188,6 +188,23 @@ Rabbit.ListForReport = {
 
             .forEach(function (obj) {
                 let service = Rabbit.Collection.Service.findOne({websiteId: obj._id}, {sort: {_id: -1}});
+                if (service) {
+                    if (service.websiteId == obj._id) {
+                        list.push({label: obj._id + ' : ' + obj.webName + ' | ' + obj.registerDate, value: obj._id});
+                    }
+                }
+            });
+        return list;
+
+    },
+    //for paymentWebsite and for balance
+    websitePayment: function () {
+        var list = [];
+        list.push({label: "(Select All)", value: ""});
+        Rabbit.Collection.Website.find()
+
+            .forEach(function (obj) {
+                let service = Rabbit.Collection.PaymentWebsite.findOne({websiteId: obj._id}, {sort: {_id: -1}});
                 if (service) {
                     if (service.websiteId == obj._id) {
                         list.push({label: obj._id + ' : ' + obj.webName + ' | ' + obj.registerDate, value: obj._id});
@@ -212,5 +229,47 @@ Rabbit.ListForReport = {
                 }
             });
         return list;
+    },
+    //alertrenew service
+    alertrenewService: function () {
+
+        let today = moment().format("YYYY-MM-DD");
+        var list = [];
+        list.push({label: "(Select All)", value: ""});
+        Rabbit.Collection.Website.find()
+
+            .forEach(function (obj) {
+                let service = Rabbit.Collection.Service.findOne({websiteId: obj._id}, {sort: {_id: -1}});
+                if (service) {
+                    if (service.websiteId == obj._id) {
+                        if ((service.domainNameEndDate <= today || service.hostingEndDate <= today || service.maintenanceEndDate <= today)) {
+
+                            list.push({
+                                label: obj._id + ' : ' + obj.webName + ' | ' + obj.registerDate,
+                                value: obj._id
+                            });
+                        }
+                    }
+                }
+            });
+        return list;
+
+
+        // var doc = Rabbit.Collection.Service.find();
+        // if (doc != null) {
+        //     doc.forEach(function (obj) {
+        //         let service = Rabbit.Collection.Service.findOne({websiteId: obj.websiteId}, {sort: {_id: -1}});
+        //         // console.log(service);
+        //         if (service) {
+        //             // console.log(service.websiteId)
+        //             list.push({
+        //                 label: obj.websiteId,
+        //                 value: obj.websiteId
+        //             });
+        //             // }
+        //         }
+        //     });
+        // }
+        // return list;
     }
 };

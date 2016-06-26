@@ -38,19 +38,19 @@ indexTpl.events({
     'click .js-insert': function (e, t) {
         let id = FlowRouter.getParam('contractId');
 
-        alertify.paymentWebsite(fa("plus", "Payment Website"), renderTemplate(insertTpl));
+        alertify.paymentWebsite(fa("plus", "Website Payment"), renderTemplate(insertTpl));
 
     },
     'click .js-update': function (e, t) {
         debugger;
-        alertify.paymentWebsite(fa("pencil", "Payment Website"), renderTemplate(updateTpl, this));
+        alertify.paymentWebsite(fa("pencil", "Website Payment"), renderTemplate(updateTpl, this));
         debugger;
     },
     'click .js-remove': function (e, t) {
         var self = this;
 
         alertify.confirm(
-            fa("remove", "Payment Website"),
+            fa("remove", "Website Payment"),
             "Are you sure to delete [" + self._id + "] ?",
             function () {
                 Rabbit.Collection.PaymentWebsite.remove(self._id, function (error) {
@@ -65,7 +65,7 @@ indexTpl.events({
         );
     },
     'click .js-show': function (e, t) {
-        alertify.paymentWebsiteShow(fa("eye", "Payment Website"), renderTemplate(showTpl, this));
+        alertify.paymentWebsiteShow(fa("eye", "Website Payment"), renderTemplate(showTpl, this));
 
     },
     'click .maintenanceAction': function () {
@@ -241,6 +241,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.paymentWebsite().close();
+            alertify.service().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {

@@ -7,7 +7,7 @@ Meteor.subscribe('rabbit_service');
 ////Meteor.subscribe('rabbit_agent');
 Meteor.subscribe('rabbit_product');
 Meteor.subscribe('rabbit_maintenance');
-//Meteor.subscribe('rabbit_paymentWebsite');
+Meteor.subscribe('rabbit_paymentWebsite');
 Meteor.subscribe('rabbit_website');
 Meteor.subscribe('alertRenewMaintenance');
 Meteor.subscribe('alertRenewService');

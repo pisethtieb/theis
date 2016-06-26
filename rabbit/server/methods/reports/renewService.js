@@ -103,7 +103,9 @@ Meteor.methods({
 
         } else {
 
-            params.websiteId = params.websiteId;
+            let website = Rabbit.Collection.Website.findOne({_id: params.websiteId});
+            params.websiteId = website._id + " | " + website.webName + " | " + website.registerDate
+
         }
         /****** Header *****/
         data.header = params;

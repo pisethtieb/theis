@@ -3,7 +3,7 @@
     {{#autoForm schema=Rabbit.Schema.PaymentWebsiteBalanceReport id="rabbit_paymentWebsiteBalanceReport" action="paymentWebsiteBalanceReportGen" target="_blank"}}
         <div class="row">
             <div class="col-md-6">
-                {{> afQuickField name="branch"}}
+                <!--{{> afQuickField name="branch"}}-->
                 {{> afQuickField name="websiteId"}}
             </div>
             <div class="col-md-6">
@@ -23,17 +23,6 @@
         {{#reportTpl options}}
 
             {{#with data}}
-
-                <!--Title-->
-                    <!--{{#with title}}-->
-                <!--<div class="title">-->
-                <!--<div class="title-1x-kh-muol">{{khName}}</div>-->
-                <!--<div class="title-1x">{{enName}}</div>-->
-                <!--<div><u>PaymentWebsiteBalance Report</u></div>-->
-                <!--<div class="title-2x">{{enAddress}}</div>-->
-                <!--</div>-->
-                    <!--{{/with}}-->
-                <!--Title-->
                 {{#with title}}
                     <div class="title">
                         <table class="report-title" style="width:100%;">
@@ -48,7 +37,7 @@
                   <span class="report-company-name"
                         style="font-family: 'Khmer OS Muol">{{khName}}</span><br>
                                     <span class="report-company-name">{{enName}}</span><br>
-                                    <u>Outstanding Payment Website Report</u><br>
+                                    <u>Website Payment Balance Report</u><br>
                                     {{khAddress}}, {{telephone}}
                                 </td>
 
@@ -57,13 +46,12 @@
                         </table>
                     </div>
                 {{/with}}
-
                 <!--Header-->
                 {{#with header}}
                     <div style="width: 100%">
                         <div style="width: 50%; float: left">
-                            <div><strong>Branch:</strong> {{branch}}</div>
-                            <div><strong>WebsiteId:</strong> {{websiteId}}</div>
+                            <!--<div><strong>Branch:</strong> {{branch}}</div>-->
+                            <div><strong>Website:</strong> {{websiteId}}</div>
                         </div>
 
                         <div style="width: 50%; float: right">
@@ -83,7 +71,7 @@
                         <th>Payment Date</th>
                         <th>Website</th>
                         <th>Contract Name</th>
-                        <th>Contract Telephone</th>
+                        <th>Telephone</th>
                         <th>Design</th>
                         <th>Paid</th>
                         <th>Balance</th>

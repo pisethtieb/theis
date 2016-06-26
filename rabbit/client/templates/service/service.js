@@ -59,18 +59,24 @@ indexTpl.events({
             },
             null
         );
-       
+
 
     },
     'click .js-show': function (e, t) {
         alertify.serviceShow(fa("eye", "Service"), renderTemplate(showTpl, this));
 
     },
-    'click .maintenanceAction': function () {
-        FlowRouter.go('rabbit.maintenance', {
-            customerId: this._contract.customerId, contractId: this.contractId, serviceId: this._id
-        })
+    'click .payOnService': function () {
+        let websiteId = FlowRouter.getParam('websiteId');
+        let customerId = FlowRouter.getParam('customerId');
+        FlowRouter.go('rabbit.paymentWebsite', {
+            customerId: customerId, websiteId: websiteId
+
+        });
+        alertify.service(fa("plus", "Website Payment"), renderTemplate(Template.rabbit_paymentWebsiteInsert));
+
     }
+
 });
 
 indexTpl.helpers({
@@ -457,28 +463,6 @@ updateTpl.events({
     }
 
 });
-//
-//updateTpl.helpers({
-//    data: function () {
-//        var data = Rabbit.Collection.Service.findOne(this._id);
-//        return data;
-//    }
-//});
-//
-///**
-// * Show
-// */
-//showTpl.onCreated(function () {
-//    this.subscribe('rabbit_service', this.data._id);
-//});
-//
-//showTpl.helpers({
-//    data: function () {
-//        var data = Rabbit.Collection.Service.findOne(this._id);
-//        return data;
-//
-//    }
-//});
 
 /**
  * Hook
@@ -523,6 +507,7 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.service().close();
+            alertify.customer().close();
             alertify.success('Success');
         },
         onError: function (formType, error) {

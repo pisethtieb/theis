@@ -19,11 +19,11 @@ Rabbit.Schema.RenewServiceReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "websiteId",
+        label: "website",
         autoform: {
             type: 'select2',
             options(){
-                return Rabbit.ListForReport.website();
+                return Rabbit.ListForReport.alertrenewService();
             },
             afFieldInput: {
                 select2Options: {

@@ -266,168 +266,168 @@ insertTpl.events({
     }
 });
 updateTpl.events({
-  'click .btnRemove': function (e) {
+    'click .btnRemove': function (e) {
 
-      setTimeout(function () {
-          var enable = true;
-          $('.amount').each(function () {
-              var amount = $(this).val() == "" ? 0 : parseFloat($(this).val());
-              if (amount == 0) {
-                  enable = false;
-                  return false;
-              }
-              enable = true;
-          });
-          if (enable) {
-              $('.btnAdd').attr('disabled', false);
-          } else {
-              $('.btnAdd').attr('disabled', true);
-          }
-      }, 300);
-  },
-  'keyup .discount': function (e, t) {
+        setTimeout(function () {
+            var enable = true;
+            $('.amount').each(function () {
+                var amount = $(this).val() == "" ? 0 : parseFloat($(this).val());
+                if (amount == 0) {
+                    enable = false;
+                    return false;
+                }
+                enable = true;
+            });
+            if (enable) {
+                $('.btnAdd').attr('disabled', false);
+            } else {
+                $('.btnAdd').attr('disabled', true);
+            }
+        }, 300);
+    },
+    'keyup .discount': function (e, t) {
 
-      var thisObj = $(e.currentTarget);
-      thisObj.parents('div.item-list').find('.paidAmount').val('');
-      var price = thisObj.parents('div.item-list').find('.price').val();
-      var discount = thisObj.parents('div.item-list').find('.discount').val();
-      let dueAmount = price - discount;
-      thisObj.parents('div.item-list').find('.dueAmount').val(dueAmount);
-      if (parseFloat(price) < parseFloat(discount)) {
-          thisObj.parents('div.item-list').find('.dueAmount').val(price);
-          thisObj.parents('div.item-list').find('.discount').val('');
-      }
-  },
-  'keyup .paidAmount': function (e, t) {
-      var thisObj = $(e.currentTarget);
-      var price = thisObj.parents('div.item-list').find('.price').val();
-      var paid = thisObj.parents('div.item-list').find('.paidAmount').val();
-      var discount = thisObj.parents('div.item-list').find('.discount').val();
-      if (discount > 0) {
-          let disAmount = (price - discount);
-          let subAmount = disAmount - paid;
-          thisObj.parents('div.item-list').find('.dueAmount').val(subAmount);
-          if (disAmount < paid) {
-              thisObj.parents('div.item-list').find('.paidAmount').val('');
-              thisObj.parents('div.item-list').find('.dueAmount').val(subAmount);
-          }
-      } else if (discount == 0 || discount == null) {
-          let dueAmount = parseFloat(price) - parseFloat(paid);
-          debugger;
-          thisObj.parents('div.item-list').find('.dueAmount').val(dueAmount);
-          if (parseFloat(price) < parseFloat(paid)) {
-              thisObj.parents('div.item-list').find('.paidAmount').val('');
-              thisObj.parents('div.item-list').find('.dueAmount').val(price);
-          }
+        var thisObj = $(e.currentTarget);
+        thisObj.parents('div.item-list').find('.paidAmount').val('');
+        var price = thisObj.parents('div.item-list').find('.price').val();
+        var discount = thisObj.parents('div.item-list').find('.discount').val();
+        let dueAmount = price - discount;
+        thisObj.parents('div.item-list').find('.dueAmount').val(dueAmount);
+        if (parseFloat(price) < parseFloat(discount)) {
+            thisObj.parents('div.item-list').find('.dueAmount').val(price);
+            thisObj.parents('div.item-list').find('.discount').val('');
+        }
+    },
+    'keyup .paidAmount': function (e, t) {
+        var thisObj = $(e.currentTarget);
+        var price = thisObj.parents('div.item-list').find('.price').val();
+        var paid = thisObj.parents('div.item-list').find('.paidAmount').val();
+        var discount = thisObj.parents('div.item-list').find('.discount').val();
+        if (discount > 0) {
+            let disAmount = (price - discount);
+            let subAmount = disAmount - paid;
+            thisObj.parents('div.item-list').find('.dueAmount').val(subAmount);
+            if (disAmount < paid) {
+                thisObj.parents('div.item-list').find('.paidAmount').val('');
+                thisObj.parents('div.item-list').find('.dueAmount').val(subAmount);
+            }
+        } else if (discount == 0 || discount == null) {
+            let dueAmount = parseFloat(price) - parseFloat(paid);
+            debugger;
+            thisObj.parents('div.item-list').find('.dueAmount').val(dueAmount);
+            if (parseFloat(price) < parseFloat(paid)) {
+                thisObj.parents('div.item-list').find('.paidAmount').val('');
+                thisObj.parents('div.item-list').find('.dueAmount').val(price);
+            }
 
-      } else {
-          thisObj.parents('div.item-list').find('.dueAmount').val(price);
+        } else {
+            thisObj.parents('div.item-list').find('.dueAmount').val(price);
 
-      }
+        }
 
-  },
-  'keypress .paidAmount,.discount,.dueAmount,.price': function (evt) {
-      var charCode = (evt.which) ? evt.which : evt.keyCode;
-      if ($(evt.currentTarget).val().indexOf('.') != -1) {
-          if (charCode == 46) {
-              return false;
-          }
-      }
-      return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
-  },
-  //'keypress .paidAmount'(e){
-  //    var thisObj = $(e.currentTarget);
-  //    var paid = thisObj.parents('div.item-list').find('.paidAmount').val();
-  //    if (paid == 0) {
-  //        thisObj.parents('div.item-list').find('.paidAmount').val('');
-  //    }
-  //},
-  'click .btnAdd': function (e) {
-      setTimeout(function () {
-          $('.btnAdd').attr('disabled', 'disabled');
-      }, 300);
-      var thisObj = $(e.currentTarget);
-      var officeId = thisObj.parents('div.item-list').find('.officeId').val();
-      var price = thisObj.parents('div.item-list').find('.price').val();
-      setTimeout(function () {
-          if (officeId != "" && price != 0) {
-              $('.btnAdd').attr('disabled', false);
-          } else {
-              $('.btnAdd').attr('disabled', true);
-          }
-      }, 300);
-  },
-  'change .maintenanceId': function (e) {
-      var thisObje = $(e.currentTarget);
-      var maintenanceId = $(e.currentTarget).val();
-      if (maintenanceId == '') {
-          thisObje.parents('div.item-list').find('.officeId').val('');
-          thisObje.parents('div.item-list').find('.office').val('');
-          thisObje.parents('div.item-list').find('.price').val('');
-          thisObje.parents('div.item-list').find('.paidAmount').val('');
-          thisObje.parents('div.item-list').find('.dueAmount').val('');
+    },
+    'keypress .paidAmount,.discount,.dueAmount,.price': function (evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        if ($(evt.currentTarget).val().indexOf('.') != -1) {
+            if (charCode == 46) {
+                return false;
+            }
+        }
+        return !(charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57));
+    },
+    //'keypress .paidAmount'(e){
+    //    var thisObj = $(e.currentTarget);
+    //    var paid = thisObj.parents('div.item-list').find('.paidAmount').val();
+    //    if (paid == 0) {
+    //        thisObj.parents('div.item-list').find('.paidAmount').val('');
+    //    }
+    //},
+    'click .btnAdd': function (e) {
+        setTimeout(function () {
+            $('.btnAdd').attr('disabled', 'disabled');
+        }, 300);
+        var thisObj = $(e.currentTarget);
+        var officeId = thisObj.parents('div.item-list').find('.officeId').val();
+        var price = thisObj.parents('div.item-list').find('.price').val();
+        setTimeout(function () {
+            if (officeId != "" && price != 0) {
+                $('.btnAdd').attr('disabled', false);
+            } else {
+                $('.btnAdd').attr('disabled', true);
+            }
+        }, 300);
+    },
+    'change .maintenanceId': function (e) {
+        var thisObje = $(e.currentTarget);
+        var maintenanceId = $(e.currentTarget).val();
+        if (maintenanceId == '') {
+            thisObje.parents('div.item-list').find('.officeId').val('');
+            thisObje.parents('div.item-list').find('.office').val('');
+            thisObje.parents('div.item-list').find('.price').val('');
+            thisObje.parents('div.item-list').find('.paidAmount').val('');
+            thisObje.parents('div.item-list').find('.dueAmount').val('');
 
-      }
-      debugger;
-      var maintenance = Rabbit.Collection.Maintenance.findOne({_id: maintenanceId});
-      Rabbit.Collection.Maintenance.find(maintenanceId).forEach(function (obj) {
-          var paymentMaintenance = Rabbit.Collection.PaymentMaintenance.findOne({
-                  'maintenance.maintenanceId': obj._id
-              },
-              {
-                  sort: {
-                      _id: -1
-                  }
-              });
-          console.log(paymentMaintenance);
-          debugger;
-          if (paymentMaintenance != null) {
-              debugger;
-              paymentMaintenance.maintenance.forEach(function (payObj) {
-                  debugger;
-                  if (obj._id == payObj.maintenanceId && payObj.dueAmount > 0) {
-                      thisObje.parents('div.item-list').find('.maintenance').val(maintenance.type);
-                      thisObje.parents('div.item-list').find('.price').val(payObj.dueAmount);
-                      thisObje.parents('div.item-list').find('.paidAmount').val(0);
-                      thisObje.parents('div.item-list').find('.dueAmount').val(payObj.dueAmount);
-                  }
-              })
-          } else if (paymentMaintenance == null) {
-              debugger;
-              thisObje.parents('div.item-list').find('.maintenance').val(maintenance.type);
-              thisObje.parents('div.item-list').find('.price').val(maintenance.price);
-              thisObje.parents('div.item-list').find('.paidAmount').val(0);
-              thisObje.parents('div.item-list').find('.dueAmount').val(maintenance.price);
-          }
-      });
-      var num = 0;
-      $('.maintenanceId').each(function () {
-          if (maintenanceId == $(this).val()) {
-              num += 1;
-          }
-      });
-      if (num > 1) {
+        }
+        debugger;
+        var maintenance = Rabbit.Collection.Maintenance.findOne({_id: maintenanceId});
+        Rabbit.Collection.Maintenance.find(maintenanceId).forEach(function (obj) {
+            var paymentMaintenance = Rabbit.Collection.PaymentMaintenance.findOne({
+                    'maintenance.maintenanceId': obj._id
+                },
+                {
+                    sort: {
+                        _id: -1
+                    }
+                });
+            console.log(paymentMaintenance);
+            debugger;
+            if (paymentMaintenance != null) {
+                debugger;
+                paymentMaintenance.maintenance.forEach(function (payObj) {
+                    debugger;
+                    if (obj._id == payObj.maintenanceId && payObj.dueAmount > 0) {
+                        thisObje.parents('div.item-list').find('.maintenance').val(maintenance.type);
+                        thisObje.parents('div.item-list').find('.price').val(payObj.dueAmount);
+                        thisObje.parents('div.item-list').find('.paidAmount').val(0);
+                        thisObje.parents('div.item-list').find('.dueAmount').val(payObj.dueAmount);
+                    }
+                })
+            } else if (paymentMaintenance == null) {
+                debugger;
+                thisObje.parents('div.item-list').find('.maintenance').val(maintenance.type);
+                thisObje.parents('div.item-list').find('.price').val(maintenance.price);
+                thisObje.parents('div.item-list').find('.paidAmount').val(0);
+                thisObje.parents('div.item-list').find('.dueAmount').val(maintenance.price);
+            }
+        });
+        var num = 0;
+        $('.maintenanceId').each(function () {
+            if (maintenanceId == $(this).val()) {
+                num += 1;
+            }
+        });
+        if (num > 1) {
 
-          thisObje.parents('div.item-list').find('.maintenanceId').val('');
-          thisObje.parents('div.item-list').find('.maintenance').val('');
-          thisObje.parents('div.item-list').find('.price').val('');
-          thisObje.parents('div.item-list').find('.paidAmount').val('');
-          thisObje.parents('div.item-list').find('.dueAmount').val('');
-          setTimeout(function () {
-              $('.btnAdd').attr('disabled', 'disabled');
+            thisObje.parents('div.item-list').find('.maintenanceId').val('');
+            thisObje.parents('div.item-list').find('.maintenance').val('');
+            thisObje.parents('div.item-list').find('.price').val('');
+            thisObje.parents('div.item-list').find('.paidAmount').val('');
+            thisObje.parents('div.item-list').find('.dueAmount').val('');
+            setTimeout(function () {
+                $('.btnAdd').attr('disabled', 'disabled');
 
-          }, 100);
-          debugger;
-      }
-      if (maintenanceId) {
-          $('.btnAdd').removeAttr('disabled');
-      } else {
-          $('.btnAdd').attr('disabled', "disabled");
-      }
+            }, 100);
+            debugger;
+        }
+        if (maintenanceId) {
+            $('.btnAdd').removeAttr('disabled');
+        } else {
+            $('.btnAdd').attr('disabled', "disabled");
+        }
 
 
-  }
-  });
+    }
+});
 //show
 showTpl.helpers({
 
@@ -486,9 +486,11 @@ AutoForm.hooks({
         },
         onSuccess: function (formType, result) {
             alertify.paymentMaintenance().close();
-            alertify.maintenance().close();
-            alertify.contract().close();
             alertify.success('Success');
+            alertify.contract().close();
+            alertify.maintenance().close();
+
+
         },
         onError: function (formType, error) {
             alertify.error(error.message);
