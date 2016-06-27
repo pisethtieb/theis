@@ -14,7 +14,7 @@ Rabbit.Schema.PaymentWebsite = new SimpleSchema({
     },
     paymentWebsiteDate: {
         type: String,
-        label: 'Payment Website Date'
+        label: 'Paid Date'
     },
     des: {
         type: String,

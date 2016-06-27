@@ -72,9 +72,10 @@
                         <th>Company</th>
                         <th>Telephone</th>
                         <th>Contract Name</th>
-                        <th>Telephone</th>
+                        <th>Tel</th>
                         <th>Contractor</th>
                         <th>Type</th>
+                        <th>Agent</th>
                         <th>Fee</th>
                         <th>HO Base Price</th>
                         <th>BO Base Price</th>
@@ -100,6 +101,7 @@
                             <td>{{_customer.telephone}}</td>
                             <td>{{_contractor.name}}</td>
                             <td>{{productType}}</td>
+                            <td>{{_agent.name}}</td>
                             <td align="right">{{numFormat amount "$0,0.00"}}</td>
                             <td align="right">{{numFormat headBasePrice "$0,0.00"}}</td>
                             <td align="right">{{numFormat brachBasePrice "$0,0.00"}}</td>
@@ -116,7 +118,7 @@
                     </tbody>
                     <tbody class="content-body">
                     <tr class="">
-                        <td colspan="10" align="right">
+                        <td colspan="11" align="right">
                             <b>Total :</b>
                         </td>
                         <td align="right">{{footer.totalFee}}</td>

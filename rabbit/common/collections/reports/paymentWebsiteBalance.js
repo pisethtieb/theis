@@ -19,7 +19,7 @@ Rabbit.Schema.PaymentWebsiteBalanceReport = new SimpleSchema({
         type: String,
         max: 100,
         optional: true,
-        label: "WebsiteId",
+        label: "Website",
         autoform: {
             type: 'select2',
             options(){

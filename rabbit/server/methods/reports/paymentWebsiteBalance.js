@@ -118,12 +118,12 @@ Meteor.methods({
 
         }
 
-        if (params.branch == '') {
-            params.branch = 'All'
-        }
 
-        if (params.contractId == '') {
-            params.contractId = 'All'
+        if (params.websiteId == '') {
+            params.websiteId = 'All'
+        } else {
+            let website = Rabbit.Collection.Website.findOne({_id: params.websiteId});
+            params.websiteId = website._id + " | " + website.webName + " | " + website.registerDate
         }
         /****** Header *****/
         data.header = params;
