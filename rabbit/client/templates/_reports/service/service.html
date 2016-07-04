@@ -67,9 +67,9 @@
                     <tr>
                         <th>No</th>
                         <th>ID</th>
-                        <th>ServiceDate</th>
+                        <th>Date</th>
                         <th>Website</th>
-                        <th>Customer Name</th>
+                        <th>Customer</th>
                         <th>Domain</th>
                         <th>Hosting</th>
                         <th>Maintenance</th>
@@ -83,9 +83,9 @@
                             <td>{{serviceDate}}</td>
                             <td>{{websiteId}} : {{_website.webName}}</td>
                             <td>{{_website._customer.contractName}}</td>
-                            <td align="right">{{numFormat domainNamePrice "$0,0.00"}} ({{domainNameStartDate}} - {{domainNameEndDate}})</td>
-                            <td align="right">{{numFormat hostingPrice "$0,0.00"}} ({{hostingStartDate}} - {{hostingEndDate}})</td>
-                            <td align="right">{{numFormat maintenancePrice "$0,0.00"}} ({{maintenanceStartDate}} - {{maintenanceEndDate}})</td>
+                            <td align="right">{{numFormat domainNameTotalPrice "$0,0.00"}} ({{domainNameStartDate}} - {{domainNameEndDate}})</td>
+                            <td align="right">{{numFormat hostingTotalPrice "$0,0.00"}} ({{hostingStartDate}} - {{hostingEndDate}})</td>
+                            <td align="right">{{numFormat maintenanceTotalPrice "$0,0.00"}} ({{maintenanceStartDate}} - {{maintenanceEndDate}})</td>
                         </tr>
                     {{/each}}
                     </tbody>

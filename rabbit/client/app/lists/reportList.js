@@ -72,29 +72,30 @@ Rabbit.ListForReport = {
         list.push({label: "(Select All)", value: ""});
 
         let today = moment().format("YYYY-MM-DD");
-        var doc = Rabbit.Collection.Contract.find({}, {sort: {_id: -1}});
+        var doc = Rabbit.Collection.Maintenance.find({endDate: {$lte: today}}, {sort: {_id: -1}});
         if (doc) {
             doc.forEach(function (obj) {
-                let maintenance = Rabbit.Collection.Maintenance.findOne({'_office.contractId': obj._id}, {sort: {_id: -1}});
+                let maintenance = Rabbit.Collection.Maintenance.findOne({officeId: obj.officeId}, {sort: {_id: -1}});
                 if (maintenance) {
-                    if (maintenance._office.contractId == obj._id && maintenance.endDate <= today) {
-                        //maintenance.countIndex = [maintenance];
+
+                    if (maintenance._id == obj._id && maintenance.endDate <= today) {
+                        let contract = Rabbit.Collection.Contract.findOne({_id: maintenance._office.contractId});
                         list.push({
-                            label: obj._id + ' : ' + obj.contractDate + " : " + obj._customer.contractName,
-                            value: obj._id
+                            label: contract._id + ' : ' + contract.contractDate + " : " + contract._customer.contractName,
+
+                            value: contract._id
                         });
 
                         // arr.push(maintenance._id, maintenance.paymentMaintenanceDate);
                     }
                 }
             });
-
         }
 
         return list;
 
     },
-    //for maintenance report
+//for maintenance report
     MaintenanceReport: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -118,8 +119,9 @@ Rabbit.ListForReport = {
         }
 
         return list;
-    },
-    //OfficePayment
+    }
+    ,
+//OfficePayment
     OfficePayment: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -143,8 +145,9 @@ Rabbit.ListForReport = {
         }
 
         return list;
-    },
-    //payment maintenace &balance
+    }
+    ,
+//payment maintenace &balance
 
     paymentMaintenaceReport: function () {
         var list = [];
@@ -169,7 +172,8 @@ Rabbit.ListForReport = {
         }
 
         return list;
-    },
+    }
+    ,
 
     agent: function () {
         var list = [];
@@ -179,8 +183,9 @@ Rabbit.ListForReport = {
                 list.push({label: obj._id + ' : ' + obj.name, value: obj._id});
             });
         return list;
-    },
-    //for websiteService
+    }
+    ,
+//for websiteService
     website: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -196,8 +201,9 @@ Rabbit.ListForReport = {
             });
         return list;
 
-    },
-    //for paymentWebsite and for balance
+    }
+    ,
+//for paymentWebsite and for balance
     websitePayment: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -213,8 +219,9 @@ Rabbit.ListForReport = {
             });
         return list;
 
-    },
-    //for website customerId
+    }
+    ,
+//for website customerId
     websiteCustomer: function () {
         var list = [];
         list.push({label: "(Select All)", value: ""});
@@ -229,8 +236,9 @@ Rabbit.ListForReport = {
                 }
             });
         return list;
-    },
-    //alertrenew service
+    }
+    ,
+//alertrenew service
     alertrenewService: function () {
 
         let today = moment().format("YYYY-MM-DD");
@@ -272,4 +280,5 @@ Rabbit.ListForReport = {
         // }
         // return list;
     }
-};
+}
+;

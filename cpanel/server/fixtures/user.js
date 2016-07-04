@@ -25,5 +25,7 @@ Meteor.startup(function () {
                 }
             }
         );
+        Roles.addUsersToRoles(adminId, ['super'], 'Cpanel');
+        Meteor.users.update({_id: adminId}, {$set: {rolesBranch: ['001']}});
     }
 });

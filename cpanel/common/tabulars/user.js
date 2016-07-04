@@ -2,7 +2,7 @@ Cpanel.TabularTable.User = new Tabular.Table({
     name: "cpanelUserList",
     collection: Meteor.users,
     selector: function (userId) {
-        return {username: {$ne: 'super'}}
+        return { username: {$ne: 'super',$or:"admin"}}
     },
     pagingType: "full_numbers",
     autoWidth: false,
